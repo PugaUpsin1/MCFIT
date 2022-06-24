@@ -1,5 +1,5 @@
 
-package sextocuatri.Proyecto;
+package sextocuatri.MCFIT.Proyecto;
 
 import java.awt.Color;
 import java.awt.Container;
