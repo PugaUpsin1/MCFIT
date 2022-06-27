@@ -27,16 +27,12 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
-
-        jMenu1.setText("Archivo");
-        jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Clientes");
         jMenuBar1.add(jMenu2);
@@ -103,7 +99,6 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JLabel jLabel2;
-    javax.swing.JMenu jMenu1;
     javax.swing.JMenu jMenu2;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JTabbedPane jTabbedPane1;
