@@ -28,6 +28,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        menuClientes = new javax.swing.JMenuItem();
+        menuProductos = new javax.swing.JMenuItem();
+        menuMembresias = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -35,6 +39,24 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
 
         jMenu2.setText("MCFIT");
+
+        menuClientes.setText("Clientes");
+        jMenu2.add(menuClientes);
+
+        menuProductos.setText("Productos");
+        jMenu2.add(menuProductos);
+
+        menuMembresias.setText("Membresías");
+        menuMembresias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuMembresiasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuMembresias);
+
+        jMenuItem4.setText("jMenuItem4");
+        jMenu2.add(jMenuItem4);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -63,6 +85,10 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuMembresiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMembresiasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuMembresiasActionPerformed
 
 
     public static void main(String args[]) {
@@ -101,6 +127,10 @@ public class Principal extends javax.swing.JFrame {
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu2;
     javax.swing.JMenuBar jMenuBar1;
+    javax.swing.JMenuItem jMenuItem4;
     javax.swing.JTabbedPane jTabbedPane1;
+    javax.swing.JMenuItem menuClientes;
+    javax.swing.JMenuItem menuMembresias;
+    javax.swing.JMenuItem menuProductos;
     // End of variables declaration//GEN-END:variables
 }
