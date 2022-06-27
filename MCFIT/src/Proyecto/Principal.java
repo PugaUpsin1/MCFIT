@@ -44,12 +44,15 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu2.setText("MCFIT");
 
+        menuClientes.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
         menuClientes.setText("Clientes");
         jMenu2.add(menuClientes);
 
+        menuProductos.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
         menuProductos.setText("Productos");
         jMenu2.add(menuProductos);
 
+        menuMembresias.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
         menuMembresias.setText("Membresías");
         menuMembresias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,12 +61,15 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(menuMembresias);
 
+        menuProveedores.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
         menuProveedores.setText("Proveedores");
         jMenu2.add(menuProveedores);
 
+        menuEmpleados.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
         menuEmpleados.setText("Empleados");
         jMenu2.add(menuEmpleados);
 
+        menuHistorial.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
         menuHistorial.setText("Historial");
         menuHistorial.setToolTipText("");
         jMenu2.add(menuHistorial);
