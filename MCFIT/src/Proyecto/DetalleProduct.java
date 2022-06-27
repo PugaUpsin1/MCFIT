@@ -1,8 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Descripcion: Realización de la tabla de Detalle Productos.
+Nombre: Issacn David Puga Vazquez
+Fecha: 26/06/2022.
  */
 package Proyecto;
+
+import java.awt.Color;
 
 /**
  *
@@ -15,6 +18,7 @@ public class DetalleProduct extends javax.swing.JFrame {
      */
     public DetalleProduct() {
         initComponents();
+        getContentPane().setBackground(new Color(139,150,216));
     }
 
     /**
