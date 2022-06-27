@@ -31,7 +31,7 @@ public class Principal extends javax.swing.JFrame {
         menuClientes = new javax.swing.JMenuItem();
         menuProductos = new javax.swing.JMenuItem();
         menuMembresias = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menuProveedores = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -54,8 +54,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(menuMembresias);
 
-        jMenuItem4.setText("jMenuItem4");
-        jMenu2.add(jMenuItem4);
+        menuProveedores.setText("Proveedores");
+        jMenu2.add(menuProveedores);
 
         jMenuBar1.add(jMenu2);
 
@@ -127,10 +127,10 @@ public class Principal extends javax.swing.JFrame {
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu2;
     javax.swing.JMenuBar jMenuBar1;
-    javax.swing.JMenuItem jMenuItem4;
     javax.swing.JTabbedPane jTabbedPane1;
     javax.swing.JMenuItem menuClientes;
     javax.swing.JMenuItem menuMembresias;
     javax.swing.JMenuItem menuProductos;
+    javax.swing.JMenuItem menuProveedores;
     // End of variables declaration//GEN-END:variables
 }
