@@ -5,7 +5,7 @@ import java.awt.Color;
 public class Clientes extends javax.swing.JFrame {
     public Clientes() {
         initComponents();
-        getContentPane().setBackground(new Color(252,207,22));
+        getContentPane().setBackground(new Color(139,150,216));
     }
 
     /**
