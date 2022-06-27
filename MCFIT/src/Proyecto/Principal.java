@@ -34,7 +34,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
 
-        jMenu2.setText("Clientes");
+        jMenu2.setText("MCFIT");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
