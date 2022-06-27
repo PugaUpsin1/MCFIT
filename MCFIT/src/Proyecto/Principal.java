@@ -26,6 +26,11 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel2 = new javax.swing.JLabel();
+        btnNuevo = new javax.swing.JButton();
+        btnNuevo1 = new javax.swing.JButton();
+        btnNuevo2 = new javax.swing.JButton();
+        btnNuevo3 = new javax.swing.JButton();
+        btnNuevo4 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menuClientes = new javax.swing.JMenuItem();
@@ -37,6 +42,56 @@ public class Principal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+
+        btnNuevo.setBackground(new java.awt.Color(252, 207, 22));
+        btnNuevo.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        btnNuevo.setText("DETALLE COMPRAS");
+        btnNuevo.setBorderPainted(false);
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+
+        btnNuevo1.setBackground(new java.awt.Color(252, 207, 22));
+        btnNuevo1.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        btnNuevo1.setText("COMPRAS");
+        btnNuevo1.setBorderPainted(false);
+        btnNuevo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevo1ActionPerformed(evt);
+            }
+        });
+
+        btnNuevo2.setBackground(new java.awt.Color(252, 207, 22));
+        btnNuevo2.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        btnNuevo2.setText("DETALLE PRODUCTO");
+        btnNuevo2.setBorderPainted(false);
+        btnNuevo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevo2ActionPerformed(evt);
+            }
+        });
+
+        btnNuevo3.setBackground(new java.awt.Color(252, 207, 22));
+        btnNuevo3.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        btnNuevo3.setText("PAGO PRODUCTO");
+        btnNuevo3.setBorderPainted(false);
+        btnNuevo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevo3ActionPerformed(evt);
+            }
+        });
+
+        btnNuevo4.setBackground(new java.awt.Color(252, 207, 22));
+        btnNuevo4.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        btnNuevo4.setText("PAGO MEMBRESÍA");
+        btnNuevo4.setBorderPainted(false);
+        btnNuevo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevo4ActionPerformed(evt);
+            }
+        });
 
         jMenuBar1.setBackground(new java.awt.Color(4, 2, 7));
 
@@ -69,22 +124,41 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevo2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevo3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevo4, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevo1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1)
-                .addGap(551, 551, 551)
+                .addGap(528, 528, 528)
                 .addComponent(jLabel2)
-                .addGap(356, 356, 356))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(137, 137, 137))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnNuevo1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnNuevo3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevo4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNuevo2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(35, 35, 35))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap()))))
         );
 
         pack();
@@ -93,6 +167,26 @@ public class Principal extends javax.swing.JFrame {
     private void menuMembresiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMembresiasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuMembresiasActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnNuevo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevo1ActionPerformed
+
+    private void btnNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevo2ActionPerformed
+
+    private void btnNuevo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevo3ActionPerformed
+
+    private void btnNuevo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevo4ActionPerformed
 
 
     public static void main(String args[]) {
@@ -128,6 +222,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    javax.swing.JButton btnNuevo;
+    javax.swing.JButton btnNuevo1;
+    javax.swing.JButton btnNuevo2;
+    javax.swing.JButton btnNuevo3;
+    javax.swing.JButton btnNuevo4;
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu2;
     javax.swing.JMenuBar jMenuBar1;
