@@ -20,7 +20,7 @@ public class Productos extends javax.swing.JFrame {
         // 252,207,22
 
         initComponents();
-        getContentPane().setBackground(new Color(254,101,195));
+        getContentPane().setBackground(new Color(139,150,216));
         
     }
 
