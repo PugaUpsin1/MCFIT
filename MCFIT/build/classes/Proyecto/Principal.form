@@ -5,7 +5,7 @@
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="7" green="2" red="4" type="rgb"/>
+          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
       </Properties>
       <SubComponents>
@@ -35,6 +35,17 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuProveedores">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Proveedores"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuEmpleados">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Empleados"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuHistorial">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Historial"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </MenuItem>
           </SubComponents>

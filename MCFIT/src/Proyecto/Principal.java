@@ -32,13 +32,15 @@ public class Principal extends javax.swing.JFrame {
         menuProductos = new javax.swing.JMenuItem();
         menuMembresias = new javax.swing.JMenuItem();
         menuProveedores = new javax.swing.JMenuItem();
+        menuEmpleados = new javax.swing.JMenuItem();
+        menuHistorial = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
 
-        jMenuBar1.setBackground(new java.awt.Color(4, 2, 7));
+        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
 
         jMenu2.setText("MCFIT");
 
@@ -58,6 +60,13 @@ public class Principal extends javax.swing.JFrame {
 
         menuProveedores.setText("Proveedores");
         jMenu2.add(menuProveedores);
+
+        menuEmpleados.setText("Empleados");
+        jMenu2.add(menuEmpleados);
+
+        menuHistorial.setText("Historial");
+        menuHistorial.setToolTipText("");
+        jMenu2.add(menuHistorial);
 
         jMenuBar1.add(jMenu2);
 
@@ -133,6 +142,8 @@ public class Principal extends javax.swing.JFrame {
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JTabbedPane jTabbedPane1;
     javax.swing.JMenuItem menuClientes;
+    javax.swing.JMenuItem menuEmpleados;
+    javax.swing.JMenuItem menuHistorial;
     javax.swing.JMenuItem menuMembresias;
     javax.swing.JMenuItem menuProductos;
     javax.swing.JMenuItem menuProveedores;
