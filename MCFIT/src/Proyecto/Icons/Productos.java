@@ -1,24 +1,39 @@
 
 package Proyecto.Icons;
 
+import Proyecto.Conexion;
 import java.awt.Color;
 import javax.swing.JFrame;
 import java.sql.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Productos extends javax.swing.JFrame {
+    JTable Prod;
+    ResultSet rs;
 
-    /**
-     * Creates new form Productos
-     */
     public Productos() {
         initComponents();
-        
         this.setBackground(Color.yellow);
-       
         this.setLocationRelativeTo(null);
         this.setTitle("Productos");
-//        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        this.pack();
+        
+        
+        DefaultTableModel dfm = new DefaultTableModel();
+        Prod= this.ProdT;
+        Prod.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","PRODUCTO","PV","PC","EXISTENCIA", "PROVEDOR"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectProductos();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idProducto"),rs.getString("tipoProducto"),rs.getDouble("precioVenta"),rs.getDouble("precioCompra"),rs.getInt("existencia"),rs.getInt("idProveedor")});
+            }
+        } catch (Exception e) {
+        }
+
     }
 
 
@@ -59,7 +74,8 @@ public class Productos extends javax.swing.JFrame {
 
         btnEdit.setText("Editar");
 
-        btneli.setText("Eliminar");
+        btneli.setBackground(new java.awt.Color(242, 242, 242));
+        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/eliminar.png"))); // NOI18N
 
         jButton4.setText("Recargar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -93,17 +109,21 @@ public class Productos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgg, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btneli, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(138, 138, 138))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(137, 137, 137))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAgg, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(138, 138, 138))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(137, 137, 137))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(btneli))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(164, 164, 164)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,9 +150,9 @@ public class Productos extends javax.swing.JFrame {
                         .addComponent(btnAgg)
                         .addGap(12, 12, 12)
                         .addComponent(btnEdit)
-                        .addGap(17, 17, 17)
+                        .addGap(101, 101, 101)
                         .addComponent(btneli)
-                        .addGap(102, 102, 102)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(65, Short.MAX_VALUE))
         );

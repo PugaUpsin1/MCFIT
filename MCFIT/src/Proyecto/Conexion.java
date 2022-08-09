@@ -12,8 +12,9 @@ public class Conexion {
     public Connection Conectar(){
         Connection cn = null;
         try {
-            Class.forName("con.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Gym","root","");
+            Driver driver = new com.mysql.jdbc.Driver();
+            DriverManager.registerDriver(driver);
+            cn = DriverManager.getConnection("jdbc:mysql://localhost/Gym","root","");
             
         } catch (Exception e) {
             
@@ -27,7 +28,7 @@ public class Conexion {
         ResultSet rs = null;
         try {
             st = cn.createStatement();
-            rs = st.executeQuery("SELECT + FROM Productos");
+            rs = st.executeQuery("SELECT * FROM Productos;");
         } catch (SQLException ex) {
 
         }
