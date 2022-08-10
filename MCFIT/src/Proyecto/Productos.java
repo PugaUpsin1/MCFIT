@@ -1,6 +1,7 @@
 
 package Proyecto;
 
+import Proyecto.Conexion;
 import java.awt.Color;
 import javax.swing.JFrame;
 import java.sql.*;
