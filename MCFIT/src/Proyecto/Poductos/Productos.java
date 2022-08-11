@@ -2,7 +2,6 @@
 package Proyecto.Poductos;
 
 import Proyecto.Conexion;
-import Proyecto.Conexion;
 import Proyecto.Principal;
 import java.awt.Color;
 import java.awt.Container;

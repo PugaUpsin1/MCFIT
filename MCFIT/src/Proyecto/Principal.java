@@ -36,8 +36,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnProductos = new javax.swing.JButton();
         btnMembresia = new javax.swing.JButton();
-        btnClientes = new javax.swing.JButton();
         btnVentas = new javax.swing.JButton();
+        btnClientes1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
 
@@ -79,17 +79,6 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 311, 230, 100));
 
-        btnClientes.setBackground(new java.awt.Color(242, 242, 242));
-        btnClientes.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/personas.png"))); // NOI18N
-        btnClientes.setText("Clientes");
-        btnClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 201, 230, 100));
-
         btnVentas.setBackground(new java.awt.Color(242, 242, 242));
         btnVentas.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/verificar (1).png"))); // NOI18N
@@ -101,6 +90,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 311, 230, 100));
+
+        btnClientes1.setBackground(new java.awt.Color(242, 242, 242));
+        btnClientes1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/personas.png"))); // NOI18N
+        btnClientes1.setText("Clientes");
+        btnClientes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientes1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 201, 230, 100));
 
         jMenu4.setText("Propiedades");
         jMenuBar1.add(jMenu4);
@@ -120,15 +120,16 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnMembresiaActionPerformed
 
-    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        Clientes Clien = new Clientes();
-        Clien.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnClientesActionPerformed
-
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVentasActionPerformed
+
+    private void btnClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes1ActionPerformed
+        // TODO add your handling code here:
+        Clientes Clien = new Clientes();
+        Clien.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnClientes1ActionPerformed
 
 
     public static void main(String args[]) {
@@ -164,7 +165,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JButton btnClientes;
+    javax.swing.JButton btnClientes1;
     javax.swing.JButton btnMembresia;
     javax.swing.JButton btnProductos;
     javax.swing.JButton btnVentas;
