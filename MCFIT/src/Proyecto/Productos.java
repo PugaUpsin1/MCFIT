@@ -3,6 +3,7 @@ package Proyecto;
 
 import Proyecto.Conexion;
 import java.awt.Color;
+import java.awt.Container;
 import javax.swing.JFrame;
 import java.sql.*;
 import javax.swing.JTable;
@@ -11,10 +12,10 @@ import javax.swing.table.DefaultTableModel;
 public class Productos extends javax.swing.JFrame {
     JTable Prod;
     ResultSet rs;
-
+    Container cont = this.getContentPane();
     public Productos() {
         initComponents();
-        this.setBackground(Color.yellow);
+        cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
         this.setTitle("Productos");
         
@@ -46,15 +47,18 @@ public class Productos extends javax.swing.JFrame {
         btnAgg = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btneli = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnRegre = new javax.swing.JButton();
         txtBus = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Productos");
+        setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
 
         ProdT.setModel(new javax.swing.table.DefaultTableModel(
@@ -70,99 +74,121 @@ public class Productos extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(ProdT);
 
-        btnAgg.setText("Agregar");
+        btnAgg.setBackground(new java.awt.Color(242, 242, 242));
+        btnAgg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/nuevo.png"))); // NOI18N
+        btnAgg.setOpaque(true);
 
-        btnEdit.setText("Editar");
+        btnEdit.setBackground(new java.awt.Color(242, 242, 242));
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/usuario.png"))); // NOI18N
+        btnEdit.setOpaque(true);
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
         btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/eliminar.png"))); // NOI18N
+        btneli.setOpaque(true);
 
-        jButton4.setText("Recargar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefresh.setOpaque(true);
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Buscar");
-        jButton5.setAutoscrolls(true);
+        btnBuscar.setBackground(new java.awt.Color(242, 242, 242));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/lupa.png"))); // NOI18N
+        btnBuscar.setAutoscrolls(true);
+        btnBuscar.setOpaque(true);
 
-        jButton6.setText("Atras");
+        btnRegre.setBackground(new java.awt.Color(242, 242, 242));
+        btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/regreso (1).png"))); // NOI18N
+        btnRegre.setOpaque(true);
+        btnRegre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegreActionPerformed(evt);
+            }
+        });
+
+        txtBus.setOpaque(true);
 
         jLabel1.setText("Buscar:");
+        jLabel1.setOpaque(true);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+
+        jMenu1.setText("Propiedades");
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(233, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220)
+                        .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(177, 177, 177)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAgg, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(138, 138, 138))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(137, 137, 137))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(btneli))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnAgg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btneli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnRefresh)))))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
                         .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton5))
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jLabel1))
+                    .addComponent(btnBuscar))
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                        .addGap(40, 40, 40)
                         .addComponent(btnAgg)
-                        .addGap(12, 12, 12)
+                        .addGap(20, 20, 20)
                         .addComponent(btnEdit)
-                        .addGap(101, 101, 101)
+                        .addGap(20, 20, 20)
                         .addComponent(btneli)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addComponent(btnRefresh))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnRegreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegreActionPerformed
+        Principal Prin = new Principal();
+        Prin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegreActionPerformed
 
 
     public static void main(String args[]) {
@@ -200,13 +226,15 @@ public class Productos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JTable ProdT;
     javax.swing.JButton btnAgg;
+    javax.swing.JButton btnBuscar;
     javax.swing.JButton btnEdit;
+    javax.swing.JButton btnRefresh;
+    javax.swing.JButton btnRegre;
     javax.swing.JButton btneli;
-    javax.swing.JButton jButton4;
-    javax.swing.JButton jButton5;
-    javax.swing.JButton jButton6;
     javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabel2;
+    javax.swing.JMenu jMenu1;
+    javax.swing.JMenuBar jMenuBar1;
     javax.swing.JScrollPane jScrollPane1;
     javax.swing.JTextField txtBus;
     // End of variables declaration//GEN-END:variables

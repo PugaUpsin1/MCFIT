@@ -36,4 +36,18 @@ public class Conexion {
         
     }
     
+    public ResultSet SelectClientes(){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Clientes;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+        
+    }
+    
 }

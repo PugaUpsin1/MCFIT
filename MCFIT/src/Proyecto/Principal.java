@@ -14,10 +14,10 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         cont.setBackground(Color.WHITE);
-        
         this.setLocationRelativeTo(null);
         this.setTitle("MCFIT");
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+  
         
         
     }
@@ -32,17 +32,12 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel2 = new javax.swing.JLabel();
-        btnCompras = new javax.swing.JButton();
-        btnNuevo3 = new javax.swing.JButton();
-        btnNuevo4 = new javax.swing.JButton();
+        btnProductos = new javax.swing.JButton();
+        btnMembresia = new javax.swing.JButton();
+        btnClientes = new javax.swing.JButton();
+        btnVentas = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        menuClientes = new javax.swing.JMenuItem();
-        menuProductos = new javax.swing.JMenuItem();
-        menuMembresias = new javax.swing.JMenuItem();
-        menuProveedores = new javax.swing.JMenuItem();
-        menuEmpleados = new javax.swing.JMenuItem();
-        menuHistorial = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("File");
         jMenuBar2.add(jMenu1);
@@ -52,140 +47,86 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
+        setPreferredSize(new java.awt.Dimension(1301, 700));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 6, -1, 512));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 51, -1, 83));
 
-        btnCompras.setBackground(new java.awt.Color(252, 207, 22));
-        btnCompras.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
-        btnCompras.setText("COMPRAS");
-        btnCompras.setBorderPainted(false);
-        btnCompras.addActionListener(new java.awt.event.ActionListener() {
+        btnProductos.setBackground(new java.awt.Color(242, 242, 242));
+        btnProductos.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/proteina.png"))); // NOI18N
+        btnProductos.setText("  Productos");
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprasActionPerformed(evt);
+                btnProductosActionPerformed(evt);
             }
         });
+        getContentPane().add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 201, 230, 100));
 
-        btnNuevo3.setBackground(new java.awt.Color(252, 207, 22));
-        btnNuevo3.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
-        btnNuevo3.setText("PAGO PRODUCTO");
-        btnNuevo3.setBorderPainted(false);
-        btnNuevo3.addActionListener(new java.awt.event.ActionListener() {
+        btnMembresia.setBackground(new java.awt.Color(242, 242, 242));
+        btnMembresia.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
+        btnMembresia.setText("Membresias");
+        btnMembresia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevo3ActionPerformed(evt);
+                btnMembresiaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 311, 230, 100));
 
-        btnNuevo4.setBackground(new java.awt.Color(252, 207, 22));
-        btnNuevo4.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
-        btnNuevo4.setText("PAGO MEMBRESÍA");
-        btnNuevo4.setBorderPainted(false);
-        btnNuevo4.addActionListener(new java.awt.event.ActionListener() {
+        btnClientes.setBackground(new java.awt.Color(242, 242, 242));
+        btnClientes.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/personas.png"))); // NOI18N
+        btnClientes.setText("Clientes");
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevo4ActionPerformed(evt);
+                btnClientesActionPerformed(evt);
             }
         });
+        getContentPane().add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 201, 230, 100));
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
-
-        jMenu2.setText("MCFIT");
-
-        menuClientes.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
-        menuClientes.setText("Clientes");
-        jMenu2.add(menuClientes);
-
-        menuProductos.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
-        menuProductos.setText("Productos");
-        jMenu2.add(menuProductos);
-
-        menuMembresias.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
-        menuMembresias.setText("Membresías");
-        menuMembresias.addActionListener(new java.awt.event.ActionListener() {
+        btnVentas.setBackground(new java.awt.Color(242, 242, 242));
+        btnVentas.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/verificar (1).png"))); // NOI18N
+        btnVentas.setText("    Ventas");
+        btnVentas.setActionCommand("  Ventas");
+        btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuMembresiasActionPerformed(evt);
+                btnVentasActionPerformed(evt);
             }
         });
-        jMenu2.add(menuMembresias);
+        getContentPane().add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 311, 230, 100));
 
-        menuProveedores.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
-        menuProveedores.setText("Proveedores");
-        jMenu2.add(menuProveedores);
-
-        menuEmpleados.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
-        menuEmpleados.setText("Empleados");
-        jMenu2.add(menuEmpleados);
-
-        menuHistorial.setFont(new java.awt.Font("Louis George Cafe", 0, 12)); // NOI18N
-        menuHistorial.setText("Historial");
-        menuHistorial.setToolTipText("");
-        jMenu2.add(menuHistorial);
-
-        jMenuBar1.add(jMenu2);
+        jMenu4.setText("Propiedades");
+        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(btnNuevo3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnNuevo4, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addComponent(jTabbedPane1)
-                .addGap(805, 805, 805)
-                .addComponent(jLabel2)
-                .addGap(23, 23, 23))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(btnNuevo4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnNuevo3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuMembresiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMembresiasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuMembresiasActionPerformed
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+        Productos Prod = new Productos();
+        Prod.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnProductosActionPerformed
 
-    private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprasActionPerformed
+    private void btnMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresiaActionPerformed
+        
+    }//GEN-LAST:event_btnMembresiaActionPerformed
 
-    private void btnNuevo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevo3ActionPerformed
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        Clientes Clien = new Clientes();
+        Clien.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnClientesActionPerformed
 
-    private void btnNuevo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo4ActionPerformed
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevo4ActionPerformed
+    }//GEN-LAST:event_btnVentasActionPerformed
 
 
     public static void main(String args[]) {
@@ -221,21 +162,16 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JButton btnCompras;
-    javax.swing.JButton btnNuevo3;
-    javax.swing.JButton btnNuevo4;
+    javax.swing.JButton btnClientes;
+    javax.swing.JButton btnMembresia;
+    javax.swing.JButton btnProductos;
+    javax.swing.JButton btnVentas;
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;
-    javax.swing.JMenu jMenu2;
     javax.swing.JMenu jMenu3;
+    javax.swing.JMenu jMenu4;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JMenuBar jMenuBar2;
     javax.swing.JTabbedPane jTabbedPane1;
-    javax.swing.JMenuItem menuClientes;
-    javax.swing.JMenuItem menuEmpleados;
-    javax.swing.JMenuItem menuHistorial;
-    javax.swing.JMenuItem menuMembresias;
-    javax.swing.JMenuItem menuProductos;
-    javax.swing.JMenuItem menuProveedores;
     // End of variables declaration//GEN-END:variables
 }
