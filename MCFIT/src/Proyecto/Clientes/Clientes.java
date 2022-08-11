@@ -199,7 +199,9 @@ public class Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegreActionPerformed
 
     private void btnAggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggActionPerformed
-
+        addClientes addC = new addClientes();
+        addC.setVisible(true);
+      //  this.setVisible(false);
     }//GEN-LAST:event_btnAggActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
