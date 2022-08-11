@@ -50,4 +50,18 @@ public class Conexion {
         
     }
     
+    public ResultSet SelectHistorial(){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Historial;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+        
+    }
+    
 }
