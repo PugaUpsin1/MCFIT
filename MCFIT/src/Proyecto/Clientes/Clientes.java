@@ -182,7 +182,7 @@ public class Clientes extends javax.swing.JFrame {
     private void btnAggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggActionPerformed
         addClientes addC = new addClientes();
         addC.setVisible(true);
-        this.setVisible(false);
+      //  this.setVisible(false);
     }//GEN-LAST:event_btnAggActionPerformed
 
     /**
