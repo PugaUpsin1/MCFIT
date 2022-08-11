@@ -5,20 +5,51 @@ Fecha: 26/06/2022.
  */
 package Proyecto;
 
+import Proyecto.Clientes.Clientes;
 import java.awt.Color;
-
+import javax.swing.JTable;
+import Proyecto.Conexion;
+import Proyecto.Principal;
+import java.awt.Color;
+import java.awt.Container;
+import javax.swing.JFrame;
+import java.sql.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author issacpuga
  */
 public class Historial extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Historial
-     */
+    JTable Hist;
+    ResultSet rs;
+    Container cont = this.getContentPane();
+       
     public Historial() {
         initComponents();
-        getContentPane().setBackground(new Color(139,150,216));
+        cont.setBackground(Color.WHITE);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Historial");
+        
+        
+        DefaultTableModel dfm = new DefaultTableModel();
+        Hist= this.tablaHistorial;
+        Hist.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","ALTURA","FECHA","PESO", "IDCLIENTE"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectHistorial();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idHistorial"),rs.getFloat("altura"),rs.getDate("fecha"),rs.getFloat("peso"),rs.getInt("idCliente")});
+            }
+        } catch (Exception e) {
+        }
+        
+        //initComponents();
+        //getContentPane().setBackground(new Color(139,150,216));
     }
 
     /**
@@ -163,8 +194,8 @@ public class Historial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarHistorialActionPerformed
-        Principal Prin = new Principal();
-        Prin.setVisible(true);
+        Clientes Client = new Clientes();
+        Client.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarHistorialActionPerformed
 
@@ -222,4 +253,6 @@ public class Historial extends javax.swing.JFrame {
     javax.swing.JTable tablaHistorial;
     javax.swing.JTextField txtBuscarH;
     // End of variables declaration//GEN-END:variables
+
+
 }
