@@ -21,10 +21,10 @@ public class Login extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUsuarios = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        pswContra = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -42,8 +42,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("INICIAR SESIÓN");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 30));
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 178, -1));
+        txtUsuarios.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(txtUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 178, -1));
 
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 178, -1));
+        getContentPane().add(pswContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 178, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Usuario");
@@ -132,9 +132,9 @@ public class Login extends javax.swing.JFrame {
     javax.swing.JLabel jLabel4;
     javax.swing.JLabel jLabel5;
     javax.swing.JLabel jLabel6;
-    javax.swing.JPasswordField jPasswordField1;
     javax.swing.JScrollPane jScrollPane1;
-    javax.swing.JTextField jTextField1;
     javax.swing.JTree jTree1;
+    javax.swing.JPasswordField pswContra;
+    javax.swing.JTextField txtUsuarios;
     // End of variables declaration//GEN-END:variables
 }

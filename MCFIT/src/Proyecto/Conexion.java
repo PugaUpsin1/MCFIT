@@ -64,4 +64,17 @@ public class Conexion {
         
     }
     
+    public void ingresar(){
+        Connection cn = null;
+        PreparedStatement pst = null;
+        Login lg = new Login();
+        String Usua = lg.txtUsuarios.getText();
+        String Pass = lg.pswContra.getText();
+        
+        if(Usua.equals("")||Usua.equals("")){
+            
+        }
+        
+    }
+    
 }
