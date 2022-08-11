@@ -1,6 +1,8 @@
 
 package Proyecto;
 
+import Proyecto.Poductos.Productos;
+import Proyecto.Clientes.Clientes;
 import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JFrame;

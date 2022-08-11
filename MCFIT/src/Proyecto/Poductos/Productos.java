@@ -1,7 +1,9 @@
 
-package Proyecto;
+package Proyecto.Poductos;
 
 import Proyecto.Conexion;
+import Proyecto.Conexion;
+import Proyecto.Principal;
 import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JFrame;
@@ -58,7 +60,6 @@ public class Productos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Productos");
-        setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
 
         ProdT.setModel(new javax.swing.table.DefaultTableModel(

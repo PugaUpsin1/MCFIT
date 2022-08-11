@@ -1,5 +1,8 @@
-package Proyecto;
+package Proyecto.Clientes;
 
+
+import Proyecto.Conexion;
+import Proyecto.Principal;
 import java.awt.Color;
 import java.awt.Container;
 import java.sql.ResultSet;
@@ -177,8 +180,7 @@ public class Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegreActionPerformed
 
     private void btnAggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggActionPerformed
-         AgregarClien Acli =new AgregarClien();
-         Acli.setVisible(true);
+
     }//GEN-LAST:event_btnAggActionPerformed
 
     /**

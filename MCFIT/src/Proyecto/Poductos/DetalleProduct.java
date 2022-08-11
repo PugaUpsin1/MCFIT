@@ -3,7 +3,7 @@ Descripcion: Realización de la tabla de Detalle Productos.
 Nombre: Issacn David Puga Vazquez
 Fecha: 26/06/2022.
  */
-package Proyecto;
+package Proyecto.Poductos;
 
 import java.awt.Color;
 

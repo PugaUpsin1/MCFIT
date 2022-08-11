@@ -3,7 +3,7 @@ Descripcion: Realización de la tabla de Pago Productos.
 Nombre: Lizbet Argelia Padilla Moreno.
 Fecha: 26/06/2022.
  */
-package Proyecto;
+package Proyecto.Poductos;
 import java.awt.Color;
 
 public class pago_prod extends javax.swing.JFrame {

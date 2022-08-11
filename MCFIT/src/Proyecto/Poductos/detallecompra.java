@@ -3,7 +3,7 @@ Descripción: Ventana para los detalles de compra de la BD
 Nombre: Víctor Uriel Juárez Lugo
 Fecha: 26-Junio-2022
  */
-package Proyecto;
+package Proyecto.Poductos;
 
 import java.awt.Color;
 
