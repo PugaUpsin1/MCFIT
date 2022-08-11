@@ -19,7 +19,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     
     public addClientes() {
         initComponents();
-        this.getContentPane().setBackground(new Color(139,150,216));
+        //this.getContentPane().setBackground(new Color(139,150,216));
+        this.getContentPane().setBackground(Color.WHITE);
         
         //---CODIGO PARA BOTONES DE FOTOS
         //Codigo para el FileChooser de la foto del Cliente
@@ -62,9 +63,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         txtTelefono = new javax.swing.JTextField();
         lblEdad = new javax.swing.JLabel();
         btnFotoCliente = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         txtEdad = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         lblSexo = new javax.swing.JLabel();
         cmbSexo = new javax.swing.JComboBox<>();
         lblEstadoCivil = new javax.swing.JLabel();
@@ -116,6 +117,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTelefono.setText("Teléfono:");
 
+        btnCuestionarioPrevio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/formulario.png"))); // NOI18N
         btnCuestionarioPrevio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         btnCuestionarioPrevio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,21 +130,27 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         lblEdad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEdad.setText("Edad:");
 
-        btnFotoCliente.setBackground(new java.awt.Color(102, 102, 102));
-        btnFotoCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        btnFotoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/foto.png"))); // NOI18N
+        btnFotoCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnFotoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFotoClienteActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Limpiar");
+        btnLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         txtEdad.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Guardar");
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/guadar.png"))); // NOI18N
+        btnGuardar.setText("Guardar");
 
         lblSexo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSexo.setText("Sexo:");
@@ -177,6 +185,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
 
         txtCorreoElectronico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
+        txtIdCliente.setEditable(false);
         txtIdCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblDireccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -266,13 +275,13 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                 .addComponent(txtCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnCancelar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3)
-                                .addGap(39, 39, 39)
-                                .addComponent(jButton4)
-                                .addGap(108, 108, 108)))))
+                                .addGap(42, 42, 42)
+                                .addComponent(btnLimpiar)
+                                .addGap(63, 63, 63)
+                                .addComponent(btnGuardar)
+                                .addGap(61, 61, 61)))))
                 .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
@@ -350,8 +359,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addComponent(btnCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
+                    .addComponent(btnLimpiar)
+                    .addComponent(btnGuardar)
                     .addComponent(btnCancelar))
                 .addGap(16, 16, 16))
         );
@@ -393,7 +402,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
             String ruta = fileSeleccionado.getAbsolutePath(); 
             this.txtCuestionarioPrevio.setText(ruta);
         }else if(respuesta == JFileChooser.CANCEL_OPTION){
-            System.out.println("No SelectFile");
+            //System.out.println("No SelectFile");
         }
         
     }//GEN-LAST:event_btnCuestionarioPrevioActionPerformed
@@ -405,6 +414,10 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -430,7 +443,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         }
         //</editor-fold>
         //</editor-fold>
-        new Clientes();
+        new addClientes();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -445,9 +458,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCuestionarioPrevio;
     private javax.swing.JButton btnFotoCliente;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JComboBox<String> cmbSexo;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel lblApellidos;
