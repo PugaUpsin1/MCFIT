@@ -54,7 +54,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 51, -1, 83));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, 83));
 
         btnProductos.setBackground(new java.awt.Color(242, 242, 242));
         btnProductos.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
@@ -101,13 +101,14 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 201, 230, 100));
 
-        btnconf.setText("Conf");
+        btnconf.setBackground(new java.awt.Color(242, 242, 242));
+        btnconf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/configuraciones.png"))); // NOI18N
         btnconf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnconfActionPerformed(evt);
             }
         });
-        getContentPane().add(btnconf, new org.netbeans.lib.awtextra.AbsoluteConstraints(1228, 10, 70, 60));
+        getContentPane().add(btnconf, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 10, 40, 30));
 
         jMenu4.setText("Propiedades");
         jMenuBar1.add(jMenu4);
@@ -139,7 +140,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientes1ActionPerformed
 
     private void btnconfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfActionPerformed
-        // TODO add your handling code here:
+        Configuracion Conf = new Configuracion();
+        Conf.setVisible(true);
     }//GEN-LAST:event_btnconfActionPerformed
 
 

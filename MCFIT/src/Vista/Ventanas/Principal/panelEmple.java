@@ -2,6 +2,10 @@
 package Vista.Ventanas.Principal;
 
 import Modelo.Conexion;
+import Modelo.Hash;
+import Modelo.Usuarios;
+import Modelo.sqlUsuarios;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -174,7 +178,35 @@ public class panelEmple extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    sqlUsuarios modSql = new sqlUsuarios();
+    
+        Usuarios mod = new Usuarios();
+        String pass = new String(txtPass.getPassword());
+        String passCon = new String(txtConfContra.getPassword());
         
+        
+        
+        if(pass.equals(passCon)){
+            String nuevoPass = Hash.sha1(pass);
+            mod.setUsuario(txtUsuario.getText());
+            mod.setPassword(nuevoPass);
+            mod.setNombre(txtnombre.getText());
+            mod.setApellido(txtapellido.getText());
+            mod.setCorreo(txtcorreo.getText());
+            int cel = Integer.valueOf(txtcelular.getText());
+            mod.setCelular(cel);
+            
+            if(modSql.registrar(mod)){
+             JOptionPane.showMessageDialog(null, "Registro guardado.");   
+            }else{
+             JOptionPane.showMessageDialog(null, "Error al Guardar.");
+            }
+            
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Las contraseñas no conciden");
+        }
         
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
