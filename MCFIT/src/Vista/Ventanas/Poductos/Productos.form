@@ -138,8 +138,10 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Vista/Ventanas/Icons/nuevo.png"/>
         </Property>
-        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAggActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEdit">
       <Properties>
@@ -149,7 +151,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Vista/Ventanas/Icons/usuario.png"/>
         </Property>
-        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btneli">
@@ -160,7 +161,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Vista/Ventanas/Icons/eliminar.png"/>
         </Property>
-        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnRefresh">
@@ -171,7 +171,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"/>
         </Property>
-        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshActionPerformed"/>
@@ -186,7 +185,6 @@
           <Image iconType="3" name="/Vista/Ventanas/Icons/lupa.png"/>
         </Property>
         <Property name="autoscrolls" type="boolean" value="true"/>
-        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnRegre">
@@ -197,16 +195,12 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Vista/Ventanas/Icons/regreso (1).png"/>
         </Property>
-        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegreActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtBus">
-      <Properties>
-        <Property name="opaque" type="boolean" value="true"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

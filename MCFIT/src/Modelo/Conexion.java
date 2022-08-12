@@ -64,5 +64,20 @@ public class Conexion {
         return rs;
         
     }
+
+    public boolean InsertarProducto(int IDproducto, String TipoProducto, double PrecioVenta,double PrecioCompra,int Existencia,String Foto,int IDproveedor){
+    
+    Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call InsertarProducto('"+IDproducto+"','"+TipoProducto+"','"+PrecioVenta+"','"+PrecioCompra+"','"+Existencia+"','"+Foto+"','"+IDproveedor +"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
  
 }

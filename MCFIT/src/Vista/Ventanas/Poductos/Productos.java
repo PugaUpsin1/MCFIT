@@ -77,19 +77,20 @@ public class Productos extends javax.swing.JFrame {
 
         btnAgg.setBackground(new java.awt.Color(242, 242, 242));
         btnAgg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
-        btnAgg.setOpaque(true);
+        btnAgg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAggActionPerformed(evt);
+            }
+        });
 
         btnEdit.setBackground(new java.awt.Color(242, 242, 242));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
-        btnEdit.setOpaque(true);
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
         btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
-        btneli.setOpaque(true);
 
         btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
-        btnRefresh.setOpaque(true);
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshActionPerformed(evt);
@@ -99,18 +100,14 @@ public class Productos extends javax.swing.JFrame {
         btnBuscar.setBackground(new java.awt.Color(242, 242, 242));
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscar.setAutoscrolls(true);
-        btnBuscar.setOpaque(true);
 
         btnRegre.setBackground(new java.awt.Color(242, 242, 242));
         btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
-        btnRegre.setOpaque(true);
         btnRegre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegreActionPerformed(evt);
             }
         });
-
-        txtBus.setOpaque(true);
 
         jLabel1.setText("Buscar:");
         jLabel1.setOpaque(true);
@@ -190,6 +187,12 @@ public class Productos extends javax.swing.JFrame {
         Prin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegreActionPerformed
+
+    private void btnAggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggActionPerformed
+        NuevoProducto prod = new NuevoProducto();
+        prod.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAggActionPerformed
 
 
     public static void main(String args[]) {
