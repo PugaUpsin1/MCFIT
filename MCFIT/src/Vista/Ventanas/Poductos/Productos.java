@@ -52,8 +52,8 @@ public class Productos extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnRegre = new javax.swing.JButton();
         txtBus = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblBuscarP = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
@@ -109,10 +109,10 @@ public class Productos extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Buscar:");
-        jLabel1.setOpaque(true);
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
+
+        lblBuscarP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblBuscarP.setText("Buscar: ");
 
         jMenu1.setText("Propiedades");
         jMenuBar1.add(jMenu1);
@@ -129,8 +129,8 @@ public class Productos extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel1)
+                        .addGap(159, 159, 159)
+                        .addComponent(lblBuscarP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
@@ -159,7 +159,7 @@ public class Productos extends javax.swing.JFrame {
                     .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1))
+                        .addComponent(lblBuscarP))
                     .addComponent(btnBuscar))
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,11 +235,11 @@ public class Productos extends javax.swing.JFrame {
     javax.swing.JButton btnRefresh;
     javax.swing.JButton btnRegre;
     javax.swing.JButton btneli;
-    javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JScrollPane jScrollPane1;
+    javax.swing.JLabel lblBuscarP;
     javax.swing.JTextField txtBus;
     // End of variables declaration//GEN-END:variables
 }
