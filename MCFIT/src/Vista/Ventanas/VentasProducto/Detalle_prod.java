@@ -1,16 +1,25 @@
-
+// detalle_prod pero es, detalle de las ventas.
 package Vista.Ventanas.VentasProducto;
 
+import Modelo.Conexion;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Detalle_prod extends javax.swing.JFrame implements Runnable{ 
    String hora, minutos, segundos; 
    Thread hilo; 
+   JTable DetaVent;
+   ResultSet rs;
+   Container cont = this.getContentPane();
     
     public Detalle_prod() {
         initComponents();
@@ -22,6 +31,27 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         hilo = new Thread(this);
         hilo.start();
         setVisible(true);
+        
+        cont.setBackground(Color.white);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Detalle Ventas");
+        
+        
+        DefaultTableModel dfm = new DefaultTableModel();
+        DetaVent= this.tablaDetalleVentas;
+        DetaVent.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"CANTIDAD","PRECIO","IDPRODUCTO","IDPAGOPROD"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectDetalleVentas();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("cantidad"),rs.getDouble("precio"),rs.getInt("idProducto"),rs.getInt("idPagoPr")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
+        }
     }
 
     /**
@@ -56,10 +86,11 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaDetalleVentas = new javax.swing.JTable();
         btnBuscarProd = new javax.swing.JButton();
         btnBuscarProd1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        btnRegresarV = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,24 +155,29 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         jLabel13.setForeground(java.awt.Color.red);
         jLabel13.setText("$ ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaDetalleVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tablaDetalleVentas);
 
         btnBuscarProd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
 
         btnBuscarProd1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarProd1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
+
+        btnRegresarV.setBackground(new java.awt.Color(242, 242, 242));
+        btnRegresarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
+        btnRegresarV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarVActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,7 +186,9 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
+                        .addGap(21, 21, 21)
+                        .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblDetalleProd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -222,8 +260,10 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblDetalleProd)
-                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDetalleProd)
+                    .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
@@ -280,6 +320,12 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarVActionPerformed
+        Venta Vent = new Venta();
+        Vent.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegresarVActionPerformed
     
     public static String fechaActual(){
         Date fecha = new Date(); 
@@ -345,6 +391,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarProd;
     private javax.swing.JButton btnBuscarProd1;
+    private javax.swing.JButton btnRegresarV;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
@@ -361,13 +408,13 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblDetalleProd;
     private javax.swing.JLabel lblDetalleProd1;
+    private javax.swing.JTable tablaDetalleVentas;
     private javax.swing.JTextField txtFechaHora;
     private javax.swing.JTextField txtHora;
     // End of variables declaration//GEN-END:variables

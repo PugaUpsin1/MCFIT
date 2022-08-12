@@ -33,8 +33,7 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
-        return rs;
-        
+        return rs;       
     }
     
     public ResultSet SelectClientes(){
@@ -47,8 +46,7 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
-        return rs;
-        
+        return rs;        
     }
     
     public ResultSet SelectHistorial(){
@@ -61,8 +59,33 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
+        return rs;       
+    }
+    
+    public ResultSet SelectVentas(){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Pago_prod;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+    }
+    
+    public ResultSet SelectDetalleVentas(){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Detalle_prod;");
+        } catch (SQLException ex) {
+
+        }
         return rs;
         
     }
- 
 }
