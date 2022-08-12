@@ -88,4 +88,18 @@ public class Conexion {
         return rs;
         
     }
+    public ResultSet SelectMembresias(){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Membresias;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+        
+    }
+
 }

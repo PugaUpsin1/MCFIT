@@ -4,6 +4,7 @@ package Vista.Ventanas.Principal;
 import Vista.Ventanas.Poductos.Productos;
 import Vista.Ventanas.Clientes.Clientes;
 import Vista.Ventanas.VentasProducto.Venta;
+import Vista.Ventanas.Membresias.Membresias;
 import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JFrame;
@@ -126,7 +127,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresiaActionPerformed
-        
+        Membresias Membre = new Membresias();
+        Membre.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMembresiaActionPerformed
 
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
