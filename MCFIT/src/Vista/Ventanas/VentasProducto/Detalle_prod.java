@@ -2,15 +2,11 @@
 package Vista.Ventanas.VentasProducto;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.awt.Toolkit;
 
 public class Detalle_prod extends javax.swing.JFrame implements Runnable{ 
    String hora, minutos, segundos; 
@@ -308,11 +304,6 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             hora();
             txtHora.setText(hora+":"+minutos+":"+segundos);
         }
-    }
-    
-    public class todaysDateTime{
-        LocalDate fechaActual = LocalDate.now(); 
-        LocalTime horaActual = LocalTime.now();
     }
     
     public static void main(String args[]) {
