@@ -62,19 +62,10 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="221" y="6" width="-1" height="512"/>
-        </Constraint>
-      </Constraints>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-    </Container>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/Imagen 3.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/Imagen 3.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -92,7 +83,7 @@
           <Font name="Helvetica Neue" size="20" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/proteina.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/proteina.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="  Productos"/>
       </Properties>
@@ -114,7 +105,7 @@
           <Font name="Helvetica Neue" size="20" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/tarjeta-de-membresia 2.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/tarjeta-de-membresia 2.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Membresias"/>
       </Properties>
@@ -136,7 +127,7 @@
           <Font name="Helvetica Neue" size="20" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/verificar (1).png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/verificar (1).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="    Ventas"/>
         <Property name="actionCommand" type="java.lang.String" value="  Ventas"/>
@@ -159,7 +150,7 @@
           <Font name="Helvetica Neue" size="20" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/personas.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/juventud (1).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Clientes"/>
       </Properties>

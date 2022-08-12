@@ -78,10 +78,10 @@ public class Historial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Historial");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
 
         btnRegresarHistorial.setBackground(new java.awt.Color(242, 242, 242));
-        btnRegresarHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/regreso (1).png"))); // NOI18N
+        btnRegresarHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
         btnRegresarHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarHistorialActionPerformed(evt);
@@ -92,20 +92,20 @@ public class Historial extends javax.swing.JFrame {
         lblBuscar.setOpaque(true);
 
         btnBuscarH.setBackground(new java.awt.Color(242, 242, 242));
-        btnBuscarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/lupa.png"))); // NOI18N
+        btnBuscarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscarH.setAutoscrolls(true);
 
         btnNuevoH.setBackground(new java.awt.Color(242, 242, 242));
-        btnNuevoH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/nuevo.png"))); // NOI18N
+        btnNuevoH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
 
         btnEditarH.setBackground(new java.awt.Color(242, 242, 242));
-        btnEditarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/usuario.png"))); // NOI18N
+        btnEditarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
 
         btnEliminarH.setBackground(new java.awt.Color(242, 242, 242));
-        btnEliminarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/eliminar.png"))); // NOI18N
+        btnEliminarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
 
         btnRefreshH.setBackground(new java.awt.Color(242, 242, 242));
-        btnRefreshH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefreshH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
         btnRefreshH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshHActionPerformed(evt);
@@ -161,7 +161,7 @@ public class Historial extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnRefreshH))))))
                     .addComponent(jLabel2))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

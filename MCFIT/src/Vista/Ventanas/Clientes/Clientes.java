@@ -58,10 +58,11 @@ public class Clientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
+        setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
 
         btnAgg.setBackground(new java.awt.Color(242, 242, 242));
-        btnAgg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/nuevo.png"))); // NOI18N
+        btnAgg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
         btnAgg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAggActionPerformed(evt);
@@ -69,24 +70,24 @@ public class Clientes extends javax.swing.JFrame {
         });
 
         btnEdit.setBackground(new java.awt.Color(242, 242, 242));
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/usuario.png"))); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
-        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/eliminar.png"))); // NOI18N
+        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
 
         btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
-        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshActionPerformed(evt);
             }
         });
 
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/lupa.png"))); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscar.setAutoscrolls(true);
 
         btnRegre.setBackground(new java.awt.Color(242, 242, 242));
-        btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/regreso (1).png"))); // NOI18N
+        btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
         btnRegre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegreActionPerformed(evt);
@@ -96,7 +97,7 @@ public class Clientes extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Buscar:");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
 
         ClienT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,7 +114,7 @@ public class Clientes extends javax.swing.JFrame {
 
         btnHistorial.setBackground(new java.awt.Color(242, 242, 242));
         btnHistorial.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/personas.png"))); // NOI18N
+        btnHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/personas.png"))); // NOI18N
         btnHistorial.setText("Historial");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +183,7 @@ public class Clientes extends javax.swing.JFrame {
                     .addComponent(btnAgg)
                     .addComponent(btnRefresh)
                     .addComponent(btnEdit))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();

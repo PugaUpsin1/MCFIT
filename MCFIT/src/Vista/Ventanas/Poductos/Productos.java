@@ -59,6 +59,7 @@ public class Productos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Productos");
+        setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
 
         ProdT.setModel(new javax.swing.table.DefaultTableModel(
@@ -75,19 +76,19 @@ public class Productos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(ProdT);
 
         btnAgg.setBackground(new java.awt.Color(242, 242, 242));
-        btnAgg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/nuevo.png"))); // NOI18N
+        btnAgg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
         btnAgg.setOpaque(true);
 
         btnEdit.setBackground(new java.awt.Color(242, 242, 242));
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/usuario.png"))); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
         btnEdit.setOpaque(true);
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
-        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/eliminar.png"))); // NOI18N
+        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
         btneli.setOpaque(true);
 
         btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
-        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
         btnRefresh.setOpaque(true);
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,12 +97,12 @@ public class Productos extends javax.swing.JFrame {
         });
 
         btnBuscar.setBackground(new java.awt.Color(242, 242, 242));
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/lupa.png"))); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscar.setAutoscrolls(true);
         btnBuscar.setOpaque(true);
 
         btnRegre.setBackground(new java.awt.Color(242, 242, 242));
-        btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/regreso (1).png"))); // NOI18N
+        btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
         btnRegre.setOpaque(true);
         btnRegre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +115,7 @@ public class Productos extends javax.swing.JFrame {
         jLabel1.setText("Buscar:");
         jLabel1.setOpaque(true);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
 
         jMenu1.setText("Propiedades");
         jMenuBar1.add(jMenu1);
@@ -149,7 +150,7 @@ public class Productos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(btnRefresh)))))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

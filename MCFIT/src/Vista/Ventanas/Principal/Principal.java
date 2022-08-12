@@ -32,7 +32,6 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel2 = new javax.swing.JLabel();
         btnProductos = new javax.swing.JButton();
         btnMembresia = new javax.swing.JButton();
@@ -53,14 +52,13 @@ public class Principal extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 6, -1, 512));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/Imagen 3.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 51, -1, 83));
 
         btnProductos.setBackground(new java.awt.Color(242, 242, 242));
         btnProductos.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/proteina.png"))); // NOI18N
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/proteina.png"))); // NOI18N
         btnProductos.setText("  Productos");
         btnProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +69,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnMembresia.setBackground(new java.awt.Color(242, 242, 242));
         btnMembresia.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
+        btnMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
         btnMembresia.setText("Membresias");
         btnMembresia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +80,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnVentas.setBackground(new java.awt.Color(242, 242, 242));
         btnVentas.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/verificar (1).png"))); // NOI18N
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/verificar (1).png"))); // NOI18N
         btnVentas.setText("    Ventas");
         btnVentas.setActionCommand("  Ventas");
         btnVentas.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnClientes1.setBackground(new java.awt.Color(242, 242, 242));
         btnClientes1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/personas.png"))); // NOI18N
+        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/juventud (1).png"))); // NOI18N
         btnClientes1.setText("Clientes");
         btnClientes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +187,5 @@ public class Principal extends javax.swing.JFrame {
     javax.swing.JMenu jMenu4;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JMenuBar jMenuBar2;
-    javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

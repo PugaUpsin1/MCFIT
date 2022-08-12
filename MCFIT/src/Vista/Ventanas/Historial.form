@@ -72,7 +72,7 @@
                   </Group>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="73" max="32767" attributes="0"/>
+              <EmptySpace pref="83" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -113,7 +113,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/Imagen 3.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/Imagen 3.png"/>
         </Property>
       </Properties>
     </Component>
@@ -123,7 +123,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/regreso (1).png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/regreso (1).png"/>
         </Property>
       </Properties>
       <Events>
@@ -144,7 +144,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/lupa.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/lupa.png"/>
         </Property>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
@@ -155,7 +155,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/nuevo.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/nuevo.png"/>
         </Property>
       </Properties>
     </Component>
@@ -165,7 +165,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/usuario.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/usuario.png"/>
         </Property>
       </Properties>
     </Component>
@@ -175,7 +175,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/eliminar.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/eliminar.png"/>
         </Property>
       </Properties>
     </Component>
@@ -185,7 +185,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/iconmonstr-synchronization-3-32.png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"/>
         </Property>
       </Properties>
       <Events>
