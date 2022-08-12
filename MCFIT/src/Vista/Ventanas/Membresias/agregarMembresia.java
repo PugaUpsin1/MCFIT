@@ -4,17 +4,17 @@
  */
 package Vista.Ventanas.Membresias;
 
-/**
- *
- * @author Lizbe
- */
-public class agregarMembresia extends javax.swing.JFrame {
+import java.awt.Color;
+import java.awt.Container;
 
-    /**
-     * Creates new form agregarMembresia
-     */
+
+public class agregarMembresia extends javax.swing.JFrame {
+    Container cont = this.getContentPane();
     public agregarMembresia() {
         initComponents();
+        cont.setBackground(Color.white);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Agregar Membresias");
     }
 
     /**
