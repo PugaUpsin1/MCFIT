@@ -209,13 +209,14 @@ public class NuevoProducto extends javax.swing.JFrame {
 
         int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
         String TipoProducto = this.txtTipoProducto.getText();
+        String Descripcion = this.txtDescripción.getText();
         double precioVenta = Double.parseDouble(this.txtPrecioVenta.getText());
         double precioCompra = Double.parseDouble(this.txtPrecioCompra.getText());
         int existencia = Integer.parseInt(this.txtExistencia.getText());
         String foto = this.txtFoto.getText();
         int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
 
-        
+        ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
         
         Principal cerr = new Principal();
         this.setVisible(false);
