@@ -29,18 +29,28 @@ public class Conexion {
         ResultSet rs = null;
         
         try {
-            
             st = cn.createStatement();
            // rs = st.executeQuery("select * from Productos where tipoProducto = 'Jugo (Licuado de leche de avena, fresa y banana)';");
-            rs = st.executeQuery("select * from Productos where tipoProducto ='"+TipoProducto+"';");
-            
-            
+            rs = st.executeQuery("select * from Productos where tipoProducto ='"+TipoProducto+"';");            
         } catch (SQLException ex) {
-
+            
         }
         return rs;
-        
     }
+     
+     public ResultSet BuscarClientes(String Nombre){
+         Connection cn = Conectar();
+         Statement st; 
+         ResultSet rs = null;
+         
+         try{
+             st = cn.createStatement();
+             rs = st.executeQuery("Select * from Clientes where nombre='"+Nombre+"';");
+         } catch (SQLException ex) {
+            //java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        return rs; 
+     }
     
     public boolean InsertarProducto(int IDproducto, String TipoProducto, String Descripcion, double PrecioVenta,double PrecioCompra,int Existencia,String Foto,int IDproveedor){
     

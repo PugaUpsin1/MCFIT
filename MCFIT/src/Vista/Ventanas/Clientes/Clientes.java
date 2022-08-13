@@ -6,6 +6,7 @@ import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Container;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -90,6 +91,11 @@ public class Clientes extends javax.swing.JFrame {
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscar.setAutoscrolls(true);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         btnRegre.setBackground(new java.awt.Color(242, 242, 242));
         btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
@@ -219,6 +225,28 @@ public class Clientes extends javax.swing.JFrame {
     private void btneliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliActionPerformed
         
     }//GEN-LAST:event_btneliActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Conexion cn = new Conexion();
+        String Nombre = this.txtBus.getText();
+               
+        DefaultTableModel dfm = new DefaultTableModel();
+        Client = this.ClienT;
+        Client.setModel(dfm);
+        
+        //dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD","SEXO","ESTADO CIVIL","FECHA DE NACIMIENTO","OCUPACION","CORREO","DIRECCION","FECHA DE INSCRIPCION","CUESTIONARIO","FOTO","MEMBRESIA"});
+        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD", "CORREO"});
+        
+        rs = cn.BuscarClientes(Nombre);
+        try {
+            while(rs.next()){
+                //dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE"),rs.getInt("sexo"),rs.getString("estadoCivil"), rs.getString("fechaNacimiento"),rs.getString("ocupacion"),rs.getString("correoE"), rs.getString("direccion"), rs.getString("fechaInscripcion"), rs.getString("rutaCuestionario"), rs.getString("foto"), rs.getInt("idMembresia")});
+                dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se encontró el cliente o no esta registrado");
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
