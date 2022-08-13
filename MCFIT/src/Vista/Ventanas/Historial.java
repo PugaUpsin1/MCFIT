@@ -97,6 +97,11 @@ public class Historial extends javax.swing.JFrame {
 
         btnNuevoH.setBackground(new java.awt.Color(242, 242, 242));
         btnNuevoH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
+        btnNuevoH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoHActionPerformed(evt);
+            }
+        });
 
         btnEditarH.setBackground(new java.awt.Color(242, 242, 242));
         btnEditarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
@@ -202,6 +207,15 @@ public class Historial extends javax.swing.JFrame {
     private void btnRefreshHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshHActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRefreshHActionPerformed
+
+    private void btnNuevoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoHActionPerformed
+        
+        AgregarHistorial ah= new AgregarHistorial();
+        ah.setVisible(true);
+        this.setVisible(false);
+        
+        
+    }//GEN-LAST:event_btnNuevoHActionPerformed
 
     /**
      * @param args the command line arguments
