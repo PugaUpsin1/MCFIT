@@ -74,6 +74,11 @@ public class Clientes extends javax.swing.JFrame {
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
         btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
+        btneli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
@@ -211,6 +216,10 @@ public class Clientes extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnHistorialActionPerformed
 
+    private void btneliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliActionPerformed
+        
+    }//GEN-LAST:event_btneliActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -238,9 +247,6 @@ public class Clientes extends javax.swing.JFrame {
         }
         //</editor-fold>
         
-
-        
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

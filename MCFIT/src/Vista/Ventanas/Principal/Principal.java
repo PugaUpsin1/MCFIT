@@ -9,9 +9,6 @@ import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JFrame;
 
-
-
-
 public class Principal extends javax.swing.JFrame {
     Container cont = this.getContentPane();
  
@@ -20,10 +17,6 @@ public class Principal extends javax.swing.JFrame {
         cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
         this.setTitle("MCFIT");
-
-  
-        
-        
     }
 
 
