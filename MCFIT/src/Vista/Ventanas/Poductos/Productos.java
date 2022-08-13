@@ -100,6 +100,11 @@ public class Productos extends javax.swing.JFrame {
         btnBuscar.setBackground(new java.awt.Color(242, 242, 242));
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscar.setAutoscrolls(true);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         btnRegre.setBackground(new java.awt.Color(242, 242, 242));
         btnRegre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
@@ -179,7 +184,26 @@ public class Productos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        // TODO add your handling code here:
+        
+        DefaultTableModel dfm = new DefaultTableModel();
+        Prod= this.ProdT;
+        Prod.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","PRODUCTO","DESCRIPCION","PV","PC","EXISTENCIA", "PROVEDOR"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectProductos();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idProducto"),rs.getString("tipoProducto"),rs.getString("descripcion"),rs.getDouble("precioVenta"),rs.getDouble("precioCompra"),rs.getInt("existencia"),rs.getInt("idProveedor")});
+            }
+        } catch (Exception e) {
+        }
+        
+        this.txtBus.setText("");
+        
+        
+        
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnRegreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegreActionPerformed
@@ -193,6 +217,31 @@ public class Productos extends javax.swing.JFrame {
         prod.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnAggActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        
+        
+        Conexion cn = new Conexion();
+        String TipoProducto = this.txtBus.getText();
+        
+               
+        DefaultTableModel dfm = new DefaultTableModel();
+        Prod= this.ProdT;
+        Prod.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","PRODUCTO","DESCRIPCION","PV","PC","EXISTENCIA", "PROVEDOR"});
+        
+        
+        rs = cn.BuscarProductos(TipoProducto);
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idProducto"),rs.getString("tipoProducto"),rs.getString("descripcion"),rs.getDouble("precioVenta"),rs.getDouble("precioCompra"),rs.getInt("existencia"),rs.getInt("idProveedor")});
+            }
+        } catch (Exception e) {
+        }
+        
+        
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     public static void main(String args[]) {

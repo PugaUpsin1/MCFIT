@@ -23,6 +23,45 @@ public class Conexion {
         return cn; 
     }
     
+     public ResultSet BuscarProductos(String TipoProducto){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        
+        try {
+            
+            st = cn.createStatement();
+           // rs = st.executeQuery("select * from Productos where tipoProducto = 'Jugo (Licuado de leche de avena, fresa y banana)';");
+            rs = st.executeQuery("select * from Productos where tipoProducto ='"+TipoProducto+"';");
+            
+            
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+        
+    }
+    
+    public boolean InsertarProducto(int IDproducto, String TipoProducto, String Descripcion, double PrecioVenta,double PrecioCompra,int Existencia,String Foto,int IDproveedor){
+    
+    Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call InsertarProducto('"+IDproducto+"','"+TipoProducto+"','"+Descripcion+"','"+PrecioVenta+"','"+PrecioCompra+"','"+Existencia+"','"+Foto+"','"+IDproveedor +"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+        
+        
+    
+    }
+    
+    
+    
     public ResultSet SelectProductos(){
         Connection cn = Conectar();
         Statement st;
