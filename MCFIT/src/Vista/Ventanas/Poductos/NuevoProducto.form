@@ -230,7 +230,7 @@
           <Color blue="f2" green="f2" red="f2" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Proyecto/Icons/regreso (1).png"/>
+          <Image iconType="3" name="/Vista/Ventanas/Icons/regreso (1).png"/>
         </Property>
       </Properties>
       <Events>

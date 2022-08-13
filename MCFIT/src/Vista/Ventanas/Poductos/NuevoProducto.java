@@ -88,7 +88,7 @@ public class NuevoProducto extends javax.swing.JFrame {
         lblIdProveedor.setText("Id Proveedor:");
 
         btnRegresar.setBackground(new java.awt.Color(242, 242, 242));
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Icons/regreso (1).png"))); // NOI18N
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
