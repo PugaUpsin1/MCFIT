@@ -21,8 +21,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class addClientes extends javax.swing.JFrame implements ActionListener {
     JButton botonFotoCliente;
     
-    String membresias[]={"General","Personalizada"}; 
-    String sexo[]={"Mujer","Hombre","Otro"};
+    //String membresias[]={"General","Personalizada"}; 
+    //String sexo[]={"Mujer","Hombre","Otro"};
             
     public addClientes() {
         initComponents();

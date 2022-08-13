@@ -235,7 +235,7 @@ public class Clientes extends javax.swing.JFrame {
         Client.setModel(dfm);
         
         //dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD","SEXO","ESTADO CIVIL","FECHA DE NACIMIENTO","OCUPACION","CORREO","DIRECCION","FECHA DE INSCRIPCION","CUESTIONARIO","FOTO","MEMBRESIA"});
-        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD", "CORREO"});
+        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","T ELEFONO","EDAD", "CORREO"});
         
         rs = cn.BuscarClientes(Nombre);
         try {
