@@ -84,8 +84,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         txtDireccion = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         lblCuestionarioPrevio = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDateChooser1 = new org.netbeans.modules.form.InvalidComponent();
+        jDateChooser2 = new org.netbeans.modules.form.InvalidComponent();
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -472,8 +472,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JComboBox<String> cmbSexo;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private org.netbeans.modules.form.InvalidComponent jDateChooser1;
+    private org.netbeans.modules.form.InvalidComponent jDateChooser2;
     private javax.swing.JLabel lblApellidos;
     private javax.swing.JLabel lblCelular;
     private javax.swing.JLabel lblCorreoElectronico;
