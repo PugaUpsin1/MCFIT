@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class NuevoProducto extends javax.swing.JFrame {
@@ -252,7 +253,6 @@ public class NuevoProducto extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         //Para ejecutar la instrucción
-
         Conexion ne = new Conexion();
 
         int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
@@ -265,6 +265,8 @@ public class NuevoProducto extends javax.swing.JFrame {
         int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
 
         ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
+        
+        JOptionPane.showMessageDialog(null, "Producto agregado con éxito");
         
         Principal cerr = new Principal();
         this.setVisible(false);
