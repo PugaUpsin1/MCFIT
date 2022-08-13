@@ -25,13 +25,13 @@ public class Productos extends javax.swing.JFrame {
         Prod= this.ProdT;
         Prod.setModel(dfm);
         
-        dfm.setColumnIdentifiers(new Object[]{"ID","PRODUCTO","PV","PC","EXISTENCIA", "PROVEDOR"});
+        dfm.setColumnIdentifiers(new Object[]{"ID","PRODUCTO","DESCRIPCION","PV","PC","EXISTENCIA", "PROVEDOR"});
         
         Conexion cn = new Conexion();
         rs = cn.SelectProductos();
         try {
             while(rs.next()){
-                dfm.addRow(new Object[]{rs.getInt("idProducto"),rs.getString("tipoProducto"),rs.getDouble("precioVenta"),rs.getDouble("precioCompra"),rs.getInt("existencia"),rs.getInt("idProveedor")});
+                dfm.addRow(new Object[]{rs.getInt("idProducto"),rs.getString("tipoProducto"),rs.getString("descripcion"),rs.getDouble("precioVenta"),rs.getDouble("precioCompra"),rs.getInt("existencia"),rs.getInt("idProveedor")});
             }
         } catch (Exception e) {
         }
