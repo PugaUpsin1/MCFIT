@@ -82,7 +82,7 @@
                           <Component id="txtEdad" alignment="0" pref="168" max="32767" attributes="0"/>
                           <Component id="txtCelular" alignment="0" pref="168" max="32767" attributes="0"/>
                           <Component id="txtApellidos" alignment="0" pref="168" max="32767" attributes="0"/>
-                          <Component id="jDateFechaN" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jDateFechaN" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="53" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -166,8 +166,8 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jDateFechaN" min="-2" max="-2" attributes="0"/>
                           <Component id="lblFechaNacimiento" min="-2" max="-2" attributes="0"/>
+                          <Component id="jDateFechaN" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -209,7 +209,7 @@
                   <Component id="txtMembresia" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
