@@ -303,7 +303,7 @@ public class NuevoProducto extends javax.swing.JFrame {
             this.lblFotoProd.setIcon(ResizeImage(path));
             this.txtFotoProd.setText(path);
         }else if(resultFtCliente == JFileChooser.CANCEL_OPTION){
-            //System.out.println("No Select File");
+            JOptionPane.showMessageDialog(null, "Debes agregar la foto del producto");
         }
     }//GEN-LAST:event_btnFotoClienteActionPerformed
 

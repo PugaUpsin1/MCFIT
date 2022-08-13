@@ -421,7 +421,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
             this.lblFotoCliente.setIcon(ResizeImage(path));
             this.txtFotoCliente.setText(path);
         }else if(resultFtCliente == JFileChooser.CANCEL_OPTION){
-            //System.out.println("No Select File");
+            JOptionPane.showMessageDialog(null, "Debes agregar la foto del cliente");
         }
     }//GEN-LAST:event_btnFotoClienteActionPerformed
 
@@ -439,7 +439,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
             String ruta = fileSeleccionado.getAbsolutePath(); 
             this.txtCuestionarioPrevio.setText(ruta);
         }else if(respuesta == JFileChooser.CANCEL_OPTION){
-            //System.out.println("No SelectFile");
+            JOptionPane.showMessageDialog(null, "Debes agregar la foto del cuestionario");
         }
         
     }//GEN-LAST:event_btnCuestionarioPrevioActionPerformed
