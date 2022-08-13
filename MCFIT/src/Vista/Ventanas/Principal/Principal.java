@@ -40,7 +40,6 @@ public class Principal extends javax.swing.JFrame {
         btnVentas = new javax.swing.JButton();
         btnClientes1 = new javax.swing.JButton();
         btnconf = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
 
@@ -112,9 +111,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnconf, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 10, 40, 30));
-
-        jButton1.setText("HOLA");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 480, -1, -1));
 
         jMenu4.setText("Propiedades");
         jMenuBar1.add(jMenu4);
@@ -193,7 +189,6 @@ public class Principal extends javax.swing.JFrame {
     javax.swing.JButton btnProductos;
     javax.swing.JButton btnVentas;
     javax.swing.JButton btnconf;
-    javax.swing.JButton jButton1;
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;
     javax.swing.JMenu jMenu3;
