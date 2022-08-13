@@ -183,7 +183,7 @@ public class Clientes extends javax.swing.JFrame {
                     .addComponent(btnAgg)
                     .addComponent(btnRefresh)
                     .addComponent(btnEdit))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         pack();
