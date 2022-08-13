@@ -104,12 +104,14 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         setTitle("Clientes");
 
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblNombre.setText("Nombre:");
 
         txtCuestionarioPrevio.setEditable(false);
         txtCuestionarioPrevio.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblApellidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblApellidos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblApellidos.setText("Apellido(s):");
 
         lblFotoCliente.setBackground(new java.awt.Color(204, 204, 204));
@@ -127,6 +129,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         });
 
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelefono.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTelefono.setText("Celular: ");
 
         btnCuestionarioPrevio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/formulario.png"))); // NOI18N
@@ -140,6 +143,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         txtCelular.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblEdad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblEdad.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEdad.setText("Edad:");
 
         btnFotoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/foto.png"))); // NOI18N
@@ -171,6 +175,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         });
 
         lblSexo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblSexo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSexo.setText("Sexo:");
 
         cmbSexo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -178,11 +183,13 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. Mujer", "2. Hombre", "3. Otro" }));
 
         lblEstadoCivil.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblEstadoCivil.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblEstadoCivil.setText("Estado Civil:");
 
         txtEstadoCivil.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblOcupacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblOcupacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblOcupacion.setText("Ocupación:");
 
         txtOcupacion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -190,12 +197,15 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         txtFechaInscripcion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblFechaInscripcion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblFechaInscripcion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblFechaInscripcion.setText("Fecha de inscripción:");
 
         lblFechaNacimiento.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblFechaNacimiento.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblFechaNacimiento.setText("Fecha de nacimiento: ");
 
         lblCorreoElectronico.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCorreoElectronico.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblCorreoElectronico.setText("Correo electrónico: ");
 
         txtCorreoElectronico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -203,9 +213,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         txtIdCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblDireccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblDireccion.setText("Dirección: ");
 
         lblIdCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIdCliente.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblIdCliente.setText("Id Cliente:");
 
         txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -218,6 +230,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         txtNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblCuestionarioPrevio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCuestionarioPrevio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblCuestionarioPrevio.setText("Cuestionario previo: ");
 
         btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -230,6 +243,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Membresía: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,114 +251,123 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(153, 153, 153)
-                                .addComponent(btnCancelar)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnLimpiar)
-                                .addGap(51, 51, 51)
-                                .addComponent(btnGuardar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTelefono)
-                                    .addComponent(lblApellidos)
-                                    .addComponent(lblEdad)
-                                    .addComponent(lblNombre)
-                                    .addComponent(lblIdCliente)
-                                    .addComponent(lblOcupacion)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblFechaNacimiento, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lblEstadoCivil))
-                                    .addComponent(lblFechaInscripcion)
-                                    .addComponent(lblSexo))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txtIdCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txtOcupacion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txtFechaInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txtEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(cmbSexo, 0, 168, Short.MAX_VALUE)
-                                    .addComponent(txtEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txtApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(jDateFechaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(117, 117, 117))
+                        .addGap(174, 174, 174)
+                        .addComponent(btnCancelar)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnLimpiar)
+                        .addGap(51, 51, 51)
+                        .addComponent(btnGuardar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblDireccion)
-                                    .addGap(65, 65, 65))
-                                .addComponent(lblCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(lblCuestionarioPrevio)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblFechaInscripcion)
+                                        .addGap(11, 11, 11))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblFechaNacimiento)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblOcupacion)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblSexo)
+                                            .addComponent(lblEstadoCivil)
+                                            .addComponent(lblEdad))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTelefono, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblApellidos, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblIdCliente, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtIdCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtOcupacion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtFechaInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtEstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(cmbSexo, 0, 168, Short.MAX_VALUE)
+                            .addComponent(txtEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(jDateFechaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(102, Short.MAX_VALUE))
-                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(117, 117, 117))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCuestionarioPrevio)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(lblCorreoElectronico, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblDireccion, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(102, Short.MAX_VALUE))
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFotoCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblIdCliente)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(lblNombre)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(lblApellidos)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(lblTelefono)
-                                    .addGap(8, 8, 8)
-                                    .addComponent(lblEdad)
-                                    .addGap(11, 11, 11)
-                                    .addComponent(lblSexo))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblEstadoCivil))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblFechaNacimiento))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lblOcupacion)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblIdCliente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNombre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblApellidos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTelefono))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEdad))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSexo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEstadoCivil))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFechaNacimiento))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblOcupacion)))
+                    .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -352,7 +375,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addComponent(txtFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblFechaInscripcion)
                     .addComponent(btnFotoCliente))
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCorreoElectronico))
@@ -367,10 +390,10 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addComponent(txtCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblCuestionarioPrevio)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
                     .addComponent(btnGuardar)
@@ -438,24 +461,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        /*
-        Conexion ne = new Conexion();
-
-        int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
-        String TipoProducto = this.txtTipoProducto.getText();
-        String Descripcion = this.txtDescripción.getText();
-        double precioVenta = Double.parseDouble(this.txtPrecioVenta.getText());
-        double precioCompra = Double.parseDouble(this.txtPrecioCompra.getText());
-        int existencia = Integer.parseInt(this.txtExistencia.getText());
-        String foto = this.txtFoto.getText();
-        int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
-
-        ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
         
-        Principal cerr = new Principal();
-        this.setVisible(false);
-        cerr.setVisible(true);
-        */
         Conexion con = new Conexion(); 
         
         int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
@@ -476,9 +482,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         
         con.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
         
-        Principal cerr = new Principal();
-        this.setVisible(false);
-        cerr.setVisible(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
 
