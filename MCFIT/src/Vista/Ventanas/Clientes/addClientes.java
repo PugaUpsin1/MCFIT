@@ -21,8 +21,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class addClientes extends javax.swing.JFrame implements ActionListener {
     JButton botonFotoCliente;
     
+    String membresias[]={"General","Personalizada"}; 
+    String sexo[]={"Mujer","Hombre","Otro"};
+            
     public addClientes() {
         initComponents();
+ 
         //this.getContentPane().setBackground(new Color(139,150,216));
         this.getContentPane().setBackground(Color.WHITE);
         
@@ -471,7 +475,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         int Edad = Integer.parseInt(this.txtEdad.getText());
         int Sexo = this.cmbSexo.getSelectedIndex();
         String EstadoCivil = this.txtEstadoCivil.getText();
-        String FechaNacimiento = this.jDateFechaN.getDateFormatString();
+        String FechaNacimiento = this.jDateFechaN.getDateFormatString();// getDate().toString();
         String Ocupacion = this.txtOcupacion.getText();
         String Direccion = this.txtDireccion.getText();
         String FechaInscripcion = this.txtFechaInscripcion.getText();
@@ -482,6 +486,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         
         con.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
         
+        Principal cerr = new Principal();
+        this.setVisible(false);
+        cerr.setVisible(true);
+        
+        System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"FechaNa:"+FechaNacimiento);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
 
