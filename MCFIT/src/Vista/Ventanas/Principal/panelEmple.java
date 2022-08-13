@@ -195,6 +195,7 @@ public class panelEmple extends javax.swing.JPanel {
             mod.setCorreo(txtcorreo.getText());
             int cel = Integer.valueOf(txtcelular.getText());
             mod.setCelular(cel);
+            mod.setFoto(txtfoto.getText());
             
             if(modSql.registrar(mod)){
              JOptionPane.showMessageDialog(null, "Registro guardado.");   
