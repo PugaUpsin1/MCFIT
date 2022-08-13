@@ -5,6 +5,8 @@
  */
 package Vista.Ventanas.Clientes;
 
+import Modelo.Conexion;
+import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.*;
@@ -162,13 +164,18 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/guadar.png"))); // NOI18N
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         lblSexo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSexo.setText("Sexo:");
 
         cmbSexo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbSexo.setMaximumRowCount(3);
-        cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mujer", "Hombre", "Otro", "Item 4" }));
+        cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. Mujer", "2. Hombre", "3. Otro" }));
 
         lblEstadoCivil.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEstadoCivil.setText("Estado Civil:");
@@ -246,14 +253,14 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                     .addComponent(lblTelefono)
                                     .addComponent(lblApellidos)
                                     .addComponent(lblEdad)
-                                    .addComponent(lblSexo)
                                     .addComponent(lblNombre)
                                     .addComponent(lblIdCliente)
                                     .addComponent(lblOcupacion)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lblFechaNacimiento, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(lblEstadoCivil))
-                                    .addComponent(lblFechaInscripcion))
+                                    .addComponent(lblFechaInscripcion)
+                                    .addComponent(lblSexo))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
@@ -304,20 +311,17 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
                                     .addComponent(lblIdCliente)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblNombre)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblApellidos)
-                                    .addGap(13, 13, 13)
-                                    .addComponent(lblTelefono)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblEdad)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(lblSexo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblEstadoCivil))
+                                    .addComponent(lblNombre)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(lblApellidos)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(lblTelefono)
+                                    .addGap(8, 8, 8)
+                                    .addComponent(lblEdad)
+                                    .addGap(11, 11, 11)
+                                    .addComponent(lblSexo))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -331,7 +335,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblEstadoCivil))))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -430,6 +436,50 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        /*
+        Conexion ne = new Conexion();
+
+        int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
+        String TipoProducto = this.txtTipoProducto.getText();
+        String Descripcion = this.txtDescripción.getText();
+        double precioVenta = Double.parseDouble(this.txtPrecioVenta.getText());
+        double precioCompra = Double.parseDouble(this.txtPrecioCompra.getText());
+        int existencia = Integer.parseInt(this.txtExistencia.getText());
+        String foto = this.txtFoto.getText();
+        int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
+
+        ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
+        
+        Principal cerr = new Principal();
+        this.setVisible(false);
+        cerr.setVisible(true);
+        */
+        Conexion con = new Conexion(); 
+        
+        int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
+        String Nombre = this.txtNombre.getText();
+        String Apellidos = this.txtApellidos.getText(); 
+        String Celular = this.txtCelular.getText();
+        int Edad = Integer.parseInt(this.txtEdad.getText());
+        int Sexo = this.cmbSexo.getSelectedIndex();
+        String EstadoCivil = this.txtEstadoCivil.getText();
+        String FechaNacimiento = this.jDateFechaN.getDateFormatString();
+        String Ocupacion = this.txtOcupacion.getText();
+        String Direccion = this.txtDireccion.getText();
+        String FechaInscripcion = this.txtFechaInscripcion.getText();
+        String CorreoE = this.txtCorreoElectronico.getText();
+        String RutaCuestionario = this.txtCuestionarioPrevio.getText();
+        String Foto = this.txtFotoCliente.getText();
+        int IDMembresia = Integer.parseInt(this.txtMembresia.getText());
+        
+        con.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
+        
+        Principal cerr = new Principal();
+        this.setVisible(false);
+        cerr.setVisible(true);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     public static void main(String args[]) {
