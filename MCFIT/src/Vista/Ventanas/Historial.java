@@ -213,8 +213,7 @@ public class Historial extends javax.swing.JFrame {
         AgregarHistorial ah= new AgregarHistorial();
         ah.setVisible(true);
         this.setVisible(false);
-        
-        
+                
     }//GEN-LAST:event_btnNuevoHActionPerformed
 
     /**

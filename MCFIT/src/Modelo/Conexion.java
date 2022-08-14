@@ -36,6 +36,24 @@ public class Conexion {
         }
         return rs; 
      }
+     
+     public boolean InsertarHistorial(int IDHistorial, float Altura, String Fecha, float Peso, int IDcliente){
+         Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call InsertarHistorial('"+IDHistorial+"','"+Altura+"','"+Fecha+"','"+Peso+"','"+IDcliente+"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+     }
+     
+     
+     
     public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, String Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
         Connection cn = Conectar();
         Statement st; 
