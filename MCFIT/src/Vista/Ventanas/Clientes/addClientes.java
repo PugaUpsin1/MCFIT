@@ -22,8 +22,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class addClientes extends javax.swing.JFrame implements ActionListener {
     JButton botonFotoCliente;
     Container cont = this.getContentPane();
-    //String membresias[]={"General","Personalizada"}; 
-    //String sexo[]={"Mujer","Hombre","Otro"};
             
     public addClientes() {
         initComponents();
@@ -455,9 +453,26 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
 
-
+    public void Limpiar(){
+        this.txtIdCliente.setText("");
+        this.txtNombre.setText("");
+        this.txtApellidos.setText("");
+        this.txtCelular.setText("");
+        this.txtEdad.setText("");
+        this.cmbSexo.setSelectedIndex(0);
+        this.txtEstadoCivil.setText("");
+        this.jDateFechaN.setDateFormatString("");
+        this.txtOcupacion.setText("");
+        this.txtDireccion.setText("");
+        this.txtFechaInscripcion.setText(fechaActual());
+        this.txtCorreoElectronico.setText("");
+        this.txtCuestionarioPrevio.setText("");
+        this.txtFotoCliente.setText("");
+        this.txtMembresia.setText("");
+    }
+    
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
+        this.Limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -467,7 +482,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
         Conexion cn = new Conexion(); 
         
         int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
@@ -488,9 +502,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         
         cn.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
         
-        Principal cerr = new Principal();
-        //this.setVisible(false);
-        //cerr.setVisible(true);
+        this.Limpiar();
         
 
         //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
@@ -498,7 +510,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         //System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"\nFechaNa:"+FechaNacimiento);
 
         //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");        
-
     }//GEN-LAST:event_btnGuardarActionPerformed
 
 
