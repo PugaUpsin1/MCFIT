@@ -44,8 +44,9 @@ public class Membresias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cbxTipoMem = new javax.swing.JComboBox<>();
+        btnMembresia = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        txtBuscarM = new javax.swing.JTextField();
         btnBuscarM = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaMembre = new javax.swing.JTable();
@@ -55,6 +56,21 @@ public class Membresias extends javax.swing.JFrame {
         btnEditarM = new javax.swing.JButton();
         btnEliminarM = new javax.swing.JButton();
         btnRefreshM = new javax.swing.JButton();
+        cbxTipoMem2 = new javax.swing.JComboBox<>();
+        btnMembresia1 = new javax.swing.JButton();
+
+        cbxTipoMem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbxTipoMem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción", "General", "Personalizado" }));
+
+        btnMembresia.setBackground(new java.awt.Color(242, 242, 242));
+        btnMembresia.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
+        btnMembresia.setText("Membresias");
+        btnMembresia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMembresiaActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Membresías");
@@ -62,12 +78,15 @@ public class Membresias extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Buscar: ");
 
-        txtBuscarM.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
         btnBuscarM.setBackground(new java.awt.Color(89, 88, 93));
         btnBuscarM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarM.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
+        btnBuscarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarMActionPerformed(evt);
+            }
+        });
 
         tablaMembre.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -111,6 +130,24 @@ public class Membresias extends javax.swing.JFrame {
             }
         });
 
+        cbxTipoMem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbxTipoMem2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción", "General", "Personalizado" }));
+        cbxTipoMem2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxTipoMem2ItemStateChanged(evt);
+            }
+        });
+
+        btnMembresia1.setBackground(new java.awt.Color(242, 242, 242));
+        btnMembresia1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnMembresia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
+        btnMembresia1.setText("Pago Membresias");
+        btnMembresia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMembresia1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -134,29 +171,36 @@ public class Membresias extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnMembresia1)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(cbxTipoMem2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(btnBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(99, 99, 99))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2)
-                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(btnMembresia1)))
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnBuscarM)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
+                        .addComponent(jLabel5)
+                        .addComponent(cbxTipoMem2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +208,7 @@ public class Membresias extends javax.swing.JFrame {
                     .addComponent(btnRefreshM)
                     .addComponent(btnEditarM)
                     .addComponent(btnEliminarM))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,6 +228,43 @@ public class Membresias extends javax.swing.JFrame {
     private void btnRefreshMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRefreshMActionPerformed
+
+    private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
+        Conexion cn = new Conexion();
+        String TipoMembresia = (String)this.cbxTipoMem2.getSelectedItem();
+        
+               
+        DefaultTableModel dfm = new DefaultTableModel();
+        Membre= this.Membre;
+        Membre.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"IDMembresia","Plazo","Costo","TipoMembresia"});
+        
+        
+        rs = cn.BuscarMembresia(TipoMembresia);
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idMembresia"),rs.getString("plazo"),rs.getFloat("costo"),rs.getString("tipoMembresia")});
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_btnBuscarMActionPerformed
+
+    private void cbxTipoMem2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxTipoMem2ItemStateChanged
+        
+    }//GEN-LAST:event_cbxTipoMem2ItemStateChanged
+
+    private void btnMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresiaActionPerformed
+        Membresias Membre = new Membresias();
+        Membre.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnMembresiaActionPerformed
+
+    private void btnMembresia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresia1ActionPerformed
+        PagoMembresia pago = new PagoMembresia();
+        pago.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnMembresia1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,13 +305,16 @@ public class Membresias extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarM;
     private javax.swing.JButton btnEditarM;
     private javax.swing.JButton btnEliminarM;
+    private javax.swing.JButton btnMembresia;
+    private javax.swing.JButton btnMembresia1;
     private javax.swing.JButton btnNuevoM;
     private javax.swing.JButton btnRefreshM;
     private javax.swing.JButton btnRegresarM;
+    private javax.swing.JComboBox<String> cbxTipoMem;
+    private javax.swing.JComboBox<String> cbxTipoMem2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaMembre;
-    private javax.swing.JTextField txtBuscarM;
     // End of variables declaration//GEN-END:variables
 }

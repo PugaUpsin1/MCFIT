@@ -4,6 +4,11 @@
  */
 package Vista.Ventanas;
 
+import Modelo.Conexion;
+import Vista.Ventanas.Principal.Principal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Lizbe
@@ -14,7 +19,9 @@ public class AgregarHistorial extends javax.swing.JFrame {
      * Creates new form AgregarHistorial
      */
     public AgregarHistorial() {
+        
         initComponents();
+        this.txtFecha.setText(fechaActual());
     }
 
     /**
@@ -26,22 +33,22 @@ public class AgregarHistorial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField3 = new javax.swing.JTextField();
+        txtPeso = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtFecha = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        txtAltura = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtIdClientes = new javax.swing.JTextField();
+        txtIdHistorial = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField3.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtPeso.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
         jLabel1.setText("Id Clientes:");
@@ -52,7 +59,13 @@ public class AgregarHistorial extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
         jLabel3.setText("Altura:");
 
-        jTextField6.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtFecha.setEditable(false);
+        txtFecha.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
         jLabel4.setText("Peso:");
@@ -60,21 +73,26 @@ public class AgregarHistorial extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
         jLabel6.setText("Fecha");
 
-        jTextField4.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtAltura.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
 
-        jButton3.setBackground(new java.awt.Color(89, 88, 93));
-        jButton3.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Guardar");
+        btnGuardar.setBackground(new java.awt.Color(89, 88, 93));
+        btnGuardar.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(89, 88, 93));
         jButton4.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Limpiar");
 
-        jTextField1.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtIdClientes.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtIdHistorial.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,15 +109,15 @@ public class AgregarHistorial extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -109,34 +127,65 @@ public class AgregarHistorial extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIdHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(jButton3)
+                        .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+     public static String fechaActual(){
+        Date fecha = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY/MM/dd");
+        return formatoFecha.format(fecha);
+    }
+    
+    
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        
+        Conexion ne = new Conexion(); 
+        int IDHistorial = Integer.parseInt(this.txtIdHistorial.getText()); 
+        float Altura = Float.parseFloat(this.txtAltura.getText());
+        String Fecha = this.txtFecha.getText();
+        float Peso = Float.parseFloat(this.txtPeso.getText());
+        int IDcliente = Integer.parseInt(this.txtIdClientes.getText());
+        
+
+        ne.InsertarHistorial(IDHistorial, Altura, Fecha, Peso, IDcliente);
+        
+        Principal cerr = new Principal();
+        this.setVisible(false);
+        cerr.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,17 +223,17 @@ public class AgregarHistorial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtAltura;
+    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtIdClientes;
+    private javax.swing.JTextField txtIdHistorial;
+    private javax.swing.JTextField txtPeso;
     // End of variables declaration//GEN-END:variables
 }

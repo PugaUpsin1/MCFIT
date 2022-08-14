@@ -94,6 +94,11 @@ public class Historial extends javax.swing.JFrame {
         btnBuscarH.setBackground(new java.awt.Color(242, 242, 242));
         btnBuscarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscarH.setAutoscrolls(true);
+        btnBuscarH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarHActionPerformed(evt);
+            }
+        });
 
         btnNuevoH.setBackground(new java.awt.Color(242, 242, 242));
         btnNuevoH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
@@ -205,7 +210,25 @@ public class Historial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarHistorialActionPerformed
 
     private void btnRefreshHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshHActionPerformed
-        // TODO add your handling code here:
+        
+        
+        DefaultTableModel dfm = new DefaultTableModel();
+        Hist= this.tablaHistorial;
+        Hist.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","ALTURA","FECHA","PESO", "IDCLIENTE"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectHistorial();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idHistorial"),rs.getFloat("altura"),rs.getDate("fecha"),rs.getFloat("peso"),rs.getInt("idCliente")});
+            }
+        } catch (Exception e) {
+        }
+        
+        
+        
     }//GEN-LAST:event_btnRefreshHActionPerformed
 
     private void btnNuevoHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoHActionPerformed
@@ -213,9 +236,36 @@ public class Historial extends javax.swing.JFrame {
         AgregarHistorial ah= new AgregarHistorial();
         ah.setVisible(true);
         this.setVisible(false);
-        
-        
+                
     }//GEN-LAST:event_btnNuevoHActionPerformed
+
+    private void btnBuscarHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarHActionPerformed
+        
+              
+        DefaultTableModel dfm = new DefaultTableModel();
+        int IDcliente = Integer.parseInt(this.txtBuscarH.getText());
+        
+        
+        Hist= this.tablaHistorial;
+        Hist.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","ALTURA","FECHA","PESO", "IDCLIENTE"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.BuscarHistorial(IDcliente);
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idHistorial"),rs.getFloat("altura"),rs.getDate("fecha"),rs.getFloat("peso"),rs.getInt("idCliente")});
+            }
+        } catch (Exception e) {
+        }
+       
+        this.txtBuscarH.setText("");
+        
+        
+        
+        
+    }//GEN-LAST:event_btnBuscarHActionPerformed
 
     /**
      * @param args the command line arguments
