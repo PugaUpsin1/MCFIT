@@ -85,6 +85,11 @@ public class agregarMembresia extends javax.swing.JFrame {
         btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/limpiar.png"))); // NOI18N
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         cbxTipoMem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbxTipoMem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción", "General", "Personalizado" }));
@@ -189,7 +194,15 @@ public class agregarMembresia extends javax.swing.JFrame {
         Membresias mem = new Membresias();
         mem.setVisible(true);
         this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        this.txtIdMembresia.setText("");
+        this.cbxTipoMem.setSelectedItem("");
+        this.txtCosto.setText("");
+        this.txtPlazo.setText("");
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments

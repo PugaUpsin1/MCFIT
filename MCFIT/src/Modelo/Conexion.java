@@ -156,7 +156,20 @@ public class Conexion {
         }
         return rs; 
      }
-     
+     public boolean InsertarPagoMembre(int IDPagoMem, String MetodoPago, String FechaPago, String Hora,int IDCliente,int IDEmpleado,int IDMembresia){
+    
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggPagoMembre('"+IDPagoMem+"','"+MetodoPago+"','"+FechaPago+"','"+Hora+"','"+IDCliente+"','"+IDEmpleado+"','"+IDMembresia+"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
     
     public ResultSet SelectProductos(){
         Connection cn = Conectar();

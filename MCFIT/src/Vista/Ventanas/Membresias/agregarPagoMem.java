@@ -1,10 +1,13 @@
 
 package Vista.Ventanas.Membresias;
 
+import Modelo.Conexion;
 import java.awt.Color;
 import java.awt.Container;
 import java.sql.ResultSet;
 import javax.swing.JTable;
+import Vista.Ventanas.Principal.Principal;
+import javax.swing.JOptionPane;
 
 public class agregarPagoMem extends javax.swing.JFrame {
     JTable PagoM;
@@ -238,42 +241,42 @@ public class agregarPagoMem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
         //Para ejecutar la instrucción
-        //Conexion ne = new Conexion();
+        Conexion cn = new Conexion();
+        int IDPagoMem = Integer.parseInt(this.txtIdPagoMem.getText());
+        String MetodoPago = this.txtMetodoPago.getText();
+        String FechaPago = this.txtFechaPago.getText();
+        String Hora = this.txtHora.getText();
+        int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
+        int IDEmpleado = Integer.parseInt(this.txtIdEmpleado.getText());
+        int IDMembresia = Integer.parseInt(this.txtIdMembresia.getText());
 
-        int IDProducto = Integer.parseInt(this.txtIdProducto.getText());
-        String TipoProducto = this.txtTipoProducto.getText();
-        String Descripcion = this.txtDescripción.getText();
-        double precioVenta = Double.parseDouble(this.txtPrecioVenta.getText());
-        double precioCompra = Double.parseDouble(this.txtPrecioCompra.getText());
-        int existencia = Integer.parseInt(this.txtExistencia.getText());
-        //String foto = this.txtFotoProd.getText();
-        int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
+        cn.InsertarPagoMembre( IDPagoMem,  MetodoPago,  FechaPago,  Hora, IDCliente,IDEmpleado, IDMembresia);
 
-        //ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
+        JOptionPane.showMessageDialog(null, "Pago membresia agregado con éxito");
 
-        //JOptionPane.showMessageDialog(null, "Producto agregado con éxito");
-
-        //Principal cerr = new Principal();
-        //this.setVisible(false);
-        //cerr.setVisible(true);
+        PagoMembresia pagM = new PagoMembresia();
+        this.setVisible(false);
+        pagM.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        this.txtIdProducto.setText("");
-        this.txtTipoProducto.setText("");
-        this.txtDescripción.setText("");
-        this.txtPrecioVenta.setText("");
-        this.txtPrecioCompra.setText("");
-        this.txtExistencia.setText("");
-        //this.txtFotoProd.setText("");
-        this.txtIdProveedor.setText("");
+        this.txtIdPagoMem.setText("");
+        this.txtMetodoPago.setText("");
+        this.txtFechaPago.setText("");
+        this.txtHora.setText("");
+        this.txtIdCliente.setText("");
+        this.txtIdEmpleado.setText("");
+        this.txtIdMembresia.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        //Productos Prin = new Productos();
-        //Prin.setVisible(true);
-        //this.setVisible(false);
+        PagoMembresia pagM = new PagoMembresia();
+        pagM.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtTipoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoProductoActionPerformed
