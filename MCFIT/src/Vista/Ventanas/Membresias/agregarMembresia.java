@@ -186,9 +186,9 @@ public class agregarMembresia extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxTipoMemActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        Membresias Membre = new Membresias();
+        Membresias mem = new Membresias();
+        mem.setVisible(true);
         this.setVisible(false);
-        Membre.setVisible(true);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

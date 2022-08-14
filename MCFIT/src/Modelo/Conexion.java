@@ -104,10 +104,20 @@ public class Conexion {
         }
         return rs; 
      }
-    
-    
-    
-    
+    public ResultSet BuscarPagoMem(String Nombre){
+         Connection cn = Conectar();
+         Statement st; 
+         ResultSet rs = null;
+         
+         try{
+             st = cn.createStatement();
+             rs = st.executeQuery("Select * from Pago_mem inner join Clientes on Pago_mem.idCliente = Clientes.idCliente where nombre='"+Nombre+"';");
+         } catch (SQLException ex) {
+            //java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        return rs; 
+     }
+     
     
     public ResultSet SelectProductos(){
         Connection cn = Conectar();
@@ -172,7 +182,7 @@ public class Conexion {
 
         }
         return rs;
-        
+       
     }
     public ResultSet SelectMembresias(){
         Connection cn = Conectar();
@@ -185,6 +195,18 @@ public class Conexion {
 
         }
         return rs;
+    }
+    public ResultSet SelectPagoMembresia(){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Pago_mem;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;       
     }
 
 }

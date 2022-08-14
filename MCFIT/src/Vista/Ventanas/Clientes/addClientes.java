@@ -8,6 +8,7 @@ package Vista.Ventanas.Clientes;
 import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Image;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +21,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class addClientes extends javax.swing.JFrame implements ActionListener {
     JButton botonFotoCliente;
-    
+    Container cont = this.getContentPane();
     //String membresias[]={"General","Personalizada"}; 
     //String sexo[]={"Mujer","Hombre","Otro"};
             
@@ -458,6 +459,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        Clientes addC = new Clientes();
+        addC.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
@@ -487,7 +490,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         this.setVisible(false);
         cerr.setVisible(true);
         
-        JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
+        //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
         
         //System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"\nFechaNa:"+FechaNacimiento);
     }//GEN-LAST:event_btnGuardarActionPerformed
