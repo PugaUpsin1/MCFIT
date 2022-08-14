@@ -46,8 +46,6 @@ public class panelEmple extends javax.swing.JPanel {
         txtapellido = new javax.swing.JTextField();
         txtcorreo = new javax.swing.JTextField();
         txtcelular = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtfoto = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -89,8 +87,6 @@ public class panelEmple extends javax.swing.JPanel {
 
         jLabel7.setText("Celular:");
 
-        jLabel8.setText("Foto:");
-
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,8 +112,7 @@ public class panelEmple extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
+                            .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -125,11 +120,10 @@ public class panelEmple extends javax.swing.JPanel {
                                 .addComponent(txtPass)
                                 .addComponent(txtnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
                             .addComponent(txtcorreo)
-                            .addComponent(txtcelular)
-                            .addComponent(txtfoto))))
-                .addGap(56, 56, 56)
+                            .addComponent(txtcelular))))
+                .addGap(18, 18, 18)
                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addGap(87, 87, 87))
             .addGroup(layout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(jLabel5)
@@ -167,12 +161,9 @@ public class panelEmple extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrar))
+                    .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtfoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnRegistrar)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -193,9 +184,7 @@ public class panelEmple extends javax.swing.JPanel {
             mod.setNombre(txtnombre.getText());
             mod.setApellido(txtapellido.getText());
             mod.setCorreo(txtcorreo.getText());
-            int cel = Integer.valueOf(txtcelular.getText());
-            mod.setCelular(cel);
-            mod.setFoto(txtfoto.getText());
+            mod.setCelular(txtcelular.getText());
             
             if(modSql.registrar(mod)){
              JOptionPane.showMessageDialog(null, "Registro guardado.");   
@@ -224,14 +213,12 @@ public class panelEmple extends javax.swing.JPanel {
     javax.swing.JLabel jLabel5;
     javax.swing.JLabel jLabel6;
     javax.swing.JLabel jLabel7;
-    javax.swing.JLabel jLabel8;
     javax.swing.JPasswordField txtConfContra;
     javax.swing.JPasswordField txtPass;
     javax.swing.JTextField txtUsuario;
     javax.swing.JTextField txtapellido;
     javax.swing.JTextField txtcelular;
     javax.swing.JTextField txtcorreo;
-    javax.swing.JTextField txtfoto;
     javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

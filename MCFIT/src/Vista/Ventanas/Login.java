@@ -2,6 +2,10 @@
 package Vista.Ventanas;
 
 
+import Modelo.Hash;
+import Modelo.Usuarios;
+import Modelo.sqlUsuarios;
+import Vista.Ventanas.Principal.Principal;
 import java.awt.Container;
 import java.awt.Color;
 import java.sql.Connection;
@@ -29,7 +33,7 @@ public class Login extends javax.swing.JFrame {
         txtUsuarios = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        pswContra = new javax.swing.JPasswordField();
+        txtPass = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -71,13 +75,13 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
-        pswContra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pswContra.addActionListener(new java.awt.event.ActionListener() {
+        txtPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pswContraActionPerformed(evt);
+                txtPassActionPerformed(evt);
             }
         });
-        getContentPane().add(pswContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 178, -1));
+        getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 178, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Usuario");
@@ -101,6 +105,27 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        sqlUsuarios modSql = new sqlUsuarios();
+        Usuarios mod = new Usuarios();
+        
+        String pass = new String(txtPass.getPassword());
+        
+        if(!txtUsuarios.equals("") && !txtPass.equals("")){
+            String nuevopass = Hash.sha1(pass);
+            
+            mod.setUsuario(txtUsuarios.getText());
+            mod.setPassword(nuevopass);
+            
+            if(modSql.login(mod)){
+                this.dispose();
+                Principal prin = new Principal();
+                prin.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "Datos Incorrectos");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe ingresar los datos");
+        }
         
     }//GEN-LAST:event_btnAceptarActionPerformed
 
@@ -112,10 +137,11 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtUsuariosActionPerformed
 
-    private void pswContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswContraActionPerformed
+    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
 
-    }//GEN-LAST:event_pswContraActionPerformed
+    }//GEN-LAST:event_txtPassActionPerformed
 
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -159,7 +185,7 @@ public class Login extends javax.swing.JFrame {
     javax.swing.JLabel jLabel6;
     javax.swing.JScrollPane jScrollPane1;
     javax.swing.JTree jTree1;
-    javax.swing.JPasswordField pswContra;
+    javax.swing.JPasswordField txtPass;
     javax.swing.JTextField txtUsuarios;
     // End of variables declaration//GEN-END:variables
 }

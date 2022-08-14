@@ -11,8 +11,7 @@ public class Usuarios {
         private String Apellido;
         private String password;
         private String correo;
-        private int celular;
-        private String foto;
+        private String celular;
 
         public int getId() {
             return id;
@@ -62,21 +61,14 @@ public class Usuarios {
             this.correo = correo;
         }
 
-        public int getCelular() {
+        public String getCelular() {
             return celular;
         }
 
-        public void setCelular(int celular) {
+        public void setCelular(String celular) {
             this.celular = celular;
         }
 
-        public String getFoto() {
-            return foto;
-        }
-
-        public void setFoto(String foto) {
-            this.foto = foto;
-        }
         
         
         
