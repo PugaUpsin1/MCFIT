@@ -36,7 +36,7 @@ public class Conexion {
         }
         return rs; 
      }
-    public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, int Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
+    public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, String Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
         Connection cn = Conectar();
         Statement st; 
         ResultSet rs = null; 

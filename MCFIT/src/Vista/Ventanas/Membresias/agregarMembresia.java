@@ -58,6 +58,11 @@ public class agregarMembresia extends javax.swing.JFrame {
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Plazo:");
@@ -179,6 +184,12 @@ public class agregarMembresia extends javax.swing.JFrame {
     private void cbxTipoMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoMemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxTipoMemActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        Membresias Membre = new Membresias();
+        this.setVisible(false);
+        Membre.setVisible(true);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
