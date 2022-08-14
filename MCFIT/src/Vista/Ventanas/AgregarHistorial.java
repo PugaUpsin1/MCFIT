@@ -61,6 +61,11 @@ public class AgregarHistorial extends javax.swing.JFrame {
 
         txtFecha.setEditable(false);
         txtFecha.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
         jLabel4.setText("Peso:");
@@ -177,6 +182,10 @@ public class AgregarHistorial extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaActionPerformed
 
     /**
      * @param args the command line arguments
