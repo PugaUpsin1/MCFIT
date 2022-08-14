@@ -66,6 +66,20 @@ public class Conexion {
             return false;
         }
     }
+    public boolean InsertarMembresia(int IDMembresia, String Plazo, float Costo, int TipoMembresia){
+    
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggMembresia('"+IDMembresia+"','"+Plazo+"','"+Costo+"','"+TipoMembresia+"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
     
     public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, int Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
         Connection cn = Conectar();

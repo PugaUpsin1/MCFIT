@@ -66,6 +66,11 @@ public class AgregarHistorial extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Guardar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(89, 88, 93));
         jButton4.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
@@ -137,6 +142,10 @@ public class AgregarHistorial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
