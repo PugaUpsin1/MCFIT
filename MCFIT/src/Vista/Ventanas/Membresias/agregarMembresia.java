@@ -18,6 +18,7 @@ public class agregarMembresia extends javax.swing.JFrame {
         cont.setBackground(Color.white);
         this.setLocationRelativeTo(null);
         this.setTitle("Agregar Membresias");
+        
     }
 
     /**
@@ -82,6 +83,11 @@ public class agregarMembresia extends javax.swing.JFrame {
 
         cbxTipoMem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbxTipoMem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción", "General", "Personalizado" }));
+        cbxTipoMem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTipoMemActionPerformed(evt);
+            }
+        });
 
         txtCosto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -156,7 +162,8 @@ public class agregarMembresia extends javax.swing.JFrame {
 
         int IDMembresia = Integer.parseInt(this.txtIdMembresia.getText()); 
         String Plazo = this.txtPlazo.getText();
-        int TipoMembresia = this.cbxTipoMem.getSelectedIndex();
+        String TipoMembresia = (String)cbxTipoMem.getSelectedItem();
+        //String TipoMembresia = this.cbxTipoMem.getSelectedIndex();
         float Costo = Float.parseFloat(this.txtCosto.getText());
         
 
@@ -168,6 +175,10 @@ public class agregarMembresia extends javax.swing.JFrame {
         this.setVisible(false);
         cerr.setVisible(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void cbxTipoMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoMemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxTipoMemActionPerformed
 
     /**
      * @param args the command line arguments

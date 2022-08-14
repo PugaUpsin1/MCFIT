@@ -22,21 +22,6 @@ public class Conexion {
         }
         return cn; 
     }
-    
-     public ResultSet BuscarProductos(String TipoProducto){
-        Connection cn = Conectar();
-        Statement st;
-        ResultSet rs = null;
-        
-        try {
-            st = cn.createStatement();
-           // rs = st.executeQuery("select * from Productos where tipoProducto = 'Jugo (Licuado de leche de avena, fresa y banana)';");
-            rs = st.executeQuery("select * from Productos where tipoProducto ='"+TipoProducto+"';");            
-        } catch (SQLException ex) {
-            
-        }
-        return rs;
-    }
      
      public ResultSet BuscarClientes(String Nombre){
          Connection cn = Conectar();
@@ -51,7 +36,19 @@ public class Conexion {
         }
         return rs; 
      }
-    
+    public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, int Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
+        Connection cn = Conectar();
+        Statement st; 
+        ResultSet rs = null; 
+        try{
+            st = cn.createStatement(); 
+            String cadenaSQL = "call InsertarCliente('"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        }catch(SQLException ex){
+            return false; 
+        }
+    }
     public boolean InsertarProducto(int IDproducto, String TipoProducto, String Descripcion, double PrecioVenta,double PrecioCompra,int Existencia,String Foto,int IDproveedor){
     
         Connection cn = Conectar();
@@ -66,7 +63,21 @@ public class Conexion {
             return false;
         }
     }
-    public boolean InsertarMembresia(int IDMembresia, String Plazo, float Costo, int TipoMembresia){
+    public ResultSet BuscarProductos(String TipoProducto){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        
+        try {
+            st = cn.createStatement();
+           // rs = st.executeQuery("select * from Productos where tipoProducto = 'Jugo (Licuado de leche de avena, fresa y banana)';");
+            rs = st.executeQuery("select * from Productos where tipoProducto ='"+TipoProducto+"';");            
+        } catch (SQLException ex) {
+            
+        }
+        return rs;
+    }
+    public boolean InsertarMembresia(int IDMembresia, String Plazo, float Costo, String TipoMembresia){
     
         Connection cn = Conectar();
         Statement st;
@@ -80,20 +91,21 @@ public class Conexion {
             return false;
         }
     }
-    
-    public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, int Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
-        Connection cn = Conectar();
-        Statement st; 
-        ResultSet rs = null; 
-        try{
-            st = cn.createStatement(); 
-            String cadenaSQL = "call InsertarCliente('"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');";
-            int registro = st.executeUpdate(cadenaSQL);
-            return true;
-        }catch(SQLException ex){
-            return false; 
+     public ResultSet BuscarMembresia(String TipoMembresia){
+         Connection cn = Conectar();
+         Statement st; 
+         ResultSet rs = null;
+         
+         try{
+             st = cn.createStatement();
+             rs = st.executeQuery("Select * from Membresias where tipoMembresia='"+TipoMembresia+"';");
+         } catch (SQLException ex) {
+            
         }
-    }
+        return rs; 
+     }
+    
+    
     
     
     
