@@ -83,6 +83,25 @@ public class Conexion {
             return false;
         }
     }
+    
+    
+    public ResultSet BuscarHistorial(int IDcliente){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        
+        try {
+           st = cn.createStatement();
+          
+           rs = st.executeQuery("select * from Historial where idCliente ='"+IDcliente+"';");     
+        }catch (SQLException ex) {
+            
+        }
+        return rs;
+        
+    }
+    
+    
     public ResultSet BuscarProductos(String TipoProducto){
         Connection cn = Conectar();
         Statement st;
