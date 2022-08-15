@@ -90,6 +90,11 @@ public class Venta extends javax.swing.JFrame {
 
         btnBuscarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
         btnBuscarV.setAutoscrolls(true);
+        btnBuscarV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarVActionPerformed(evt);
+            }
+        });
 
         btnNuevoV.setBackground(new java.awt.Color(242, 242, 242));
         btnNuevoV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
@@ -177,7 +182,6 @@ public class Venta extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,6 +216,10 @@ public class Venta extends javax.swing.JFrame {
         DetaVent.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnVentasActionPerformed
+
+    private void btnBuscarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarVActionPerformed
 
     /**
      * @param args the command line arguments
