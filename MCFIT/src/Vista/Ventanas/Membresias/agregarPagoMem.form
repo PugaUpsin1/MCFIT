@@ -302,6 +302,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHora">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHoraActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTipoProducto1">
       <Properties>

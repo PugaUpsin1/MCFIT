@@ -7,21 +7,53 @@ import java.awt.Container;
 import java.sql.ResultSet;
 import javax.swing.JTable;
 import Vista.Ventanas.Principal.Principal;
+import static Vista.Ventanas.VentasProducto.Detalle_prod.fechaActual;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
-public class agregarPagoMem extends javax.swing.JFrame {
+public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
+    String hora, minutos, segundos; 
+    Thread hilo; 
     JTable PagoM;
     ResultSet rs;
     Container cont = this.getContentPane();
+    
+    //Codigo para 
+        
  
     public agregarPagoMem() {
         initComponents();
+        this.txtHora.setText(fechaActual());
+        hilo = new Thread(this);
+        hilo.start();
+        setVisible(true);     
+        
         cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
         this.setTitle("Agregar Pago membresia");
         
+        
+        
     }
-
+    public void hora(){
+        Calendar calendario = new GregorianCalendar(); 
+        Date horaActual = new Date(); 
+        calendario.setTime(horaActual);
+        hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+    }
+    
+    public void run() {
+        Thread current = Thread.currentThread();
+        
+        while(current == hilo){
+            hora();
+            txtHora.setText(hora+":"+minutos+":"+segundos);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -138,6 +170,12 @@ public class agregarPagoMem extends javax.swing.JFrame {
         lblIdProducto1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIdProducto1.setText("Id Pago Membresia:");
 
+        txtHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHoraActionPerformed(evt);
+            }
+        });
+
         lblTipoProducto1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTipoProducto1.setText("Método Pago:");
 
@@ -241,7 +279,7 @@ public class agregarPagoMem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
+   
         //Para ejecutar la instrucción
         Conexion cn = new Conexion();
         int IDPagoMem = Integer.parseInt(this.txtIdPagoMem.getText());
@@ -286,6 +324,10 @@ public class agregarPagoMem extends javax.swing.JFrame {
     private void txtMetodoPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMetodoPagoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMetodoPagoActionPerformed
+
+    private void txtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoraActionPerformed
 
     /**
      * @param args the command line arguments

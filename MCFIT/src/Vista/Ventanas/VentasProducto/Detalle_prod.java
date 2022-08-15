@@ -150,6 +150,11 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         txtFechaHora.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         txtHora.setEditable(false);
+        txtHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHoraActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setForeground(java.awt.Color.red);
@@ -326,6 +331,10 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         Vent.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarVActionPerformed
+
+    private void txtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoraActionPerformed
     
     public static String fechaActual(){
         Date fecha = new Date(); 
