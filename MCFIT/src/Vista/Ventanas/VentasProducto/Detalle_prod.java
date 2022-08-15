@@ -173,6 +173,11 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
 
         btnBuscarProd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
+        btnBuscarProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarProdActionPerformed(evt);
+            }
+        });
 
         btnRegresarV.setBackground(new java.awt.Color(242, 242, 242));
         btnRegresarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
@@ -345,6 +350,10 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
     private void txtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHoraActionPerformed
+
+    private void btnBuscarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarProdActionPerformed
     
     public static String fechaActual(){
         Date fecha = new Date(); 

@@ -25,6 +25,7 @@ public class Clientes extends javax.swing.JFrame {
         Client= this.ClienT;
         Client.setModel(dfm);
         
+        //dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD","SEXO","ESTADO CIVIL","FECHA DE NACIMIENTO","OCUPACION","CORREO","DIRECCION","FECHA DE INSCRIPCION","CUESTIONARIO","FOTO","MEMBRESIA"});
         dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD", "CORREO"});
         
         Conexion cn = new Conexion();
@@ -32,6 +33,7 @@ public class Clientes extends javax.swing.JFrame {
         try {
             while(rs.next()){
                 dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE")});
+                //dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE"),rs.getString("sexo"),rs.getString("estadoCivil"), rs.getString("fechaNacimiento"),rs.getString("ocupacion"),rs.getString("correoE"), rs.getString("direccion"), rs.getString("fechaInscripcion"), rs.getString("rutaCuestionario"), rs.getString("foto"), rs.getInt("idMembresia")});
             }
         } catch (Exception e) {
         }
