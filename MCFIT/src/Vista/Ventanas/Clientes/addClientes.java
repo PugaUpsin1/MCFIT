@@ -6,6 +6,7 @@
 package Vista.Ventanas.Clientes;
 
 import Modelo.Clientes.sqlClientes;
+import Modelo.Clientes.Clientes1;
 import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
@@ -24,7 +25,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
 
     JButton botonFotoCliente;
     Container cont = this.getContentPane();
-
+    JComboBox cbmSexo;
+    //Clientes clients = new Clientes(); 
+    
     public addClientes() {
         initComponents();
 
@@ -46,7 +49,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
 
     public static String fechaActual() {
         Date fecha = new Date();
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY/MM/dd");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY-MM-dd");
         return formatoFecha.format(fecha);
     }
 
@@ -102,6 +105,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         jLabel1 = new javax.swing.JLabel();
         txtMembresia = new javax.swing.JTextField();
         jDateFechaN = new com.toedter.calendar.JDateChooser();
+        txtSexoo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
@@ -247,6 +251,12 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Membresía: ");
 
+        txtSexoo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSexooActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -284,7 +294,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                             .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(txtSexoo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +339,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -361,7 +374,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblSexo)
-                            .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtSexoo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -483,10 +496,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        Conexion cn = new Conexion(); 
+        //Conexion cn = new Conexion();
+            
         sqlClientes sqlC = new sqlClientes();
-
-        int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
+        Clientes1 clients = new Clientes1(); 
+        /*
         String Nombre = this.txtNombre.getText();
         String Apellidos = this.txtApellidos.getText();
         String Celular = this.txtCelular.getText();
@@ -500,17 +514,47 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         String CorreoE = this.txtCorreoElectronico.getText();
         String RutaCuestionario = this.txtCuestionarioPrevio.getText();
         String Foto = this.txtFotoCliente.getText();
-        int IDMembresia = Integer.parseInt(this.txtMembresia.getText());
-
+        int IDMembresia = Integer.parseInt(this.txtMembresia.getText());*/
+        
+        clients.setNombre(txtNombre.getText());
+        clients.setApellido(txtApellidos.getText());
+        clients.setCelular(txtCelular.getText()); 
+        String edad = new String(txtEdad.getText());
+        clients.setEdad(Integer.valueOf(edad));
+        // client.setSexo(this.cmbSexo.getSelectedItem().toString());
+        clients.setSexo(txtSexoo.getText());
+        clients.setEstadoCivil(txtEstadoCivil.getText());
+      //  client.setFechaNacimiento(jDateFechaN.getDate().toString());
+        clients.setFechaNacimiento("2022-08-15");
+        clients.setOcupacion(txtOcupacion.getText());
+        clients.setDireccion(txtDireccion.getText());
+        clients.setFechaInscripcion("2022-08-15");
+        clients.setCorreoE(txtCorreoElectronico.getText());
+        clients.setRutaCuestionario(txtCuestionarioPrevio.getText());
+        clients.setFoto(txtFotoCliente.getText());
+        String idM = new String(txtMembresia.getText());
+        clients.setIdMembresia(Integer.valueOf(idM));
+        
+        
+        if(sqlC.registrar(clients)){            
+            JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al guardar");
+        }
+           
         //cn.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
-        sqlC.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
+        //.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
 
-        this.Limpiar();
+       // this.Limpiar();
 
-        JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
+        //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
 
         //System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"\nFechaNa:"+FechaNacimiento);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txtSexooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSexooActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSexooActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -526,13 +570,13 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -583,6 +627,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JTextField txtMembresia;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtOcupacion;
+    private javax.swing.JTextField txtSexoo;
     // End of variables declaration//GEN-END:variables
 
     @Override

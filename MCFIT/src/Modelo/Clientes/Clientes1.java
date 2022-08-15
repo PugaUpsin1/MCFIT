@@ -1,6 +1,6 @@
 package Modelo.Clientes;
 
-public class Clientes {
+public class Clientes1 {
     private int idCliente;
     private String nombre; 
     private String apellido; 
