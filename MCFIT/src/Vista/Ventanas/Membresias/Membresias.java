@@ -132,6 +132,7 @@ public class Membresias extends javax.swing.JFrame {
 
         cbxTipoMem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbxTipoMem2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción", "General", "Personalizado" }));
+        cbxTipoMem2.setSelectedIndex(-1);
         cbxTipoMem2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbxTipoMem2ItemStateChanged(evt);
@@ -226,7 +227,23 @@ public class Membresias extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNuevoMActionPerformed
 
     private void btnRefreshMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshMActionPerformed
-        // TODO add your handling code here:
+        Conexion cn = new Conexion();
+        String TipoMembresia = (String)this.cbxTipoMem2.getSelectedItem();
+        
+        DefaultTableModel dfm = new DefaultTableModel();
+        Membre= this.Membre;
+        Membre.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"IDMembresia","Plazo","Costo","TipoMembresia"});
+        
+        
+        rs = cn.SelectMembresias();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idMembresia"),rs.getString("plazo"),rs.getFloat("costo"),rs.getString("tipoMembresia")});
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btnRefreshMActionPerformed
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
