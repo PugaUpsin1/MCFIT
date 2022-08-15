@@ -127,6 +127,12 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ProdTMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="ProdT = new JTable()&#xa;{&#xa;    public boolean isCellEditable(int row,int column)&#xa;    {&#xa;        for(int i=0;i&lt;ProdT.getRowCount();i++)&#xa;        {&#xa;            if(row == i)&#xa;            {&#xa;                return false;&#xa;            }&#xa;        }&#xa;        return true;&#xa;    }&#xa;};"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -152,6 +158,9 @@
           <Image iconType="3" name="/Vista/Ventanas/Icons/usuario.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btneli">
       <Properties>

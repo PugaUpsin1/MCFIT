@@ -5,12 +5,13 @@ import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Container;
-import javax.swing.JFrame;
 import java.sql.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class Productos extends javax.swing.JFrame {
+    public String codigo;
+    public int fila;
     JTable Prod;
     ResultSet rs;
     Container cont = this.getContentPane();
@@ -38,7 +39,6 @@ public class Productos extends javax.swing.JFrame {
 
     }
 
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -62,6 +62,20 @@ public class Productos extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
 
+        ProdT = new JTable()
+        {
+            public boolean isCellEditable(int row,int column)
+            {
+                for(int i=0;i<ProdT.getRowCount();i++)
+                {
+                    if(row == i)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        };
         ProdT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -73,6 +87,11 @@ public class Productos extends javax.swing.JFrame {
 
             }
         ));
+        ProdT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProdTMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(ProdT);
 
         btnAgg.setBackground(new java.awt.Color(242, 242, 242));
@@ -85,6 +104,11 @@ public class Productos extends javax.swing.JFrame {
 
         btnEdit.setBackground(new java.awt.Color(242, 242, 242));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
         btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
@@ -242,6 +266,48 @@ public class Productos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void ProdTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProdTMouseClicked
+
+
+     PreparedStatement ps = null;
+         ResultSet rs= null;
+         VerProducto vPro = new VerProducto();
+         
+          try {
+              Conexion objCon= new Conexion();
+              Connection con = objCon.Conectar();
+              
+              int fila = ProdT.getSelectedRow();
+              String idProducto = ProdT.getValueAt(fila, 0).toString();
+              
+              ps=con.prepareStatement("SELECT idProducto,tipoProducto,descripcion,precioVenta,precioCompra, existencia, foto, idProveedor FROM Productos WHERE idProducto= ?");
+              ps.setString(1, idProducto);
+              rs = ps.executeQuery();
+              
+              while(rs.next()){
+                  
+                  
+                  VerProducto.txtIdProducto.setText(rs.getString("idProducto"));
+                  VerProducto.txtTipoProducto.setText(rs.getString("tipoProducto"));
+                  VerProducto.txtdescripcion.setText(rs.getString("descripcion"));
+                  VerProducto.txtPrecioVenta.setText(rs.getString("precioVenta"));
+                  VerProducto.txtPrecioCompra.setText(rs.getString("precioCompra"));
+                  VerProducto.txtExistencia.setText(rs.getString("existencia"));
+                  VerProducto.txtFotoProd.setText(rs.getString("foto"));
+                  VerProducto.txtIdProveedor.setText(rs.getString("idProveedor"));
+                  
+                  vPro.setVisible(true);
+              }
+              
+          } catch (SQLException e) {
+          }
+    }//GEN-LAST:event_ProdTMouseClicked
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+       
+    }//GEN-LAST:event_btnEditActionPerformed
+
 
 
     public static void main(String args[]) {
