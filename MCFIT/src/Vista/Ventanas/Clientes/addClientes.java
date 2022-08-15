@@ -533,7 +533,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
        // this.Limpiar();
         
 
-        //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
+        JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
         
         //System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"\nFechaNa:"+FechaNacimiento);
 
@@ -541,10 +541,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnMostrarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarRutasActionPerformed
-       
-        System.out.println(this.jDateFechaN.getDate().toString());
-        
-        
+
+        System.out.println((String)this.cmbSexo.getSelectedItem());
+
     }//GEN-LAST:event_btnMostrarRutasActionPerformed
 
 
