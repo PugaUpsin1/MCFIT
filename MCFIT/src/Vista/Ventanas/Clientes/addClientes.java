@@ -26,7 +26,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     public addClientes() {
         initComponents();
  
-        //this.getContentPane().setBackground(new Color(139,150,216));
         this.getContentPane().setBackground(Color.WHITE);
         
         //---CODIGO PARA BOTONES DE FOTOS
@@ -102,8 +101,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         jLabel1 = new javax.swing.JLabel();
         txtMembresia = new javax.swing.JTextField();
         jDateFechaN = new com.toedter.calendar.JDateChooser();
-        btnMostrarRutas = new javax.swing.JButton();
-        txtFechaNacimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
@@ -249,15 +246,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Membresía: ");
 
-        btnMostrarRutas.setText("jButton1");
-        btnMostrarRutas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarRutasActionPerformed(evt);
-            }
-        });
-
-        txtFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -295,8 +283,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                             .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,10 +304,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCuestionarioPrevio)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(btnMostrarRutas)))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,9 +326,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -383,10 +365,10 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblFechaNacimiento)
-                            .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jDateFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -414,16 +396,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                     .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnLimpiar)
-                            .addComponent(btnCancelar)
-                            .addComponent(btnGuardar))
-                        .addGap(31, 31, 31))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnMostrarRutas)
-                        .addGap(20, 20, 20))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimpiar)
+                    .addComponent(btnCancelar)
+                    .addComponent(btnGuardar))
+                .addGap(31, 31, 31))
         );
 
         pack();
@@ -505,9 +482,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     
-    
-    
-    
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         Conexion cn = new Conexion(); 
         
@@ -518,8 +492,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         int Edad = Integer.parseInt(this.txtEdad.getText());
         String Sexo = (String)this.cmbSexo.getSelectedItem();
         String EstadoCivil = this.txtEstadoCivil.getText();
-        //String FechaNacimiento = this.jDateFechaN.getDate().toString();
-        String FechaNacimiento = this.txtFechaNacimiento.getText();
+        String FechaNacimiento = this.jDateFechaN.getDate().toString();
+        //String FechaNacimiento = this.txtFechaNacimiento.getText();
         String Ocupacion = this.txtOcupacion.getText();
         String Direccion = this.txtDireccion.getText();
         String FechaInscripcion = this.txtFechaInscripcion.getText();
@@ -530,21 +504,15 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         
         cn.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
         
-       // this.Limpiar();
-        
-
+        this.Limpiar();
+        //System.out.println((String)this.cmbSexo.getSelectedItem());
+       
         JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
         
         //System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"\nFechaNa:"+FechaNacimiento);
 
         //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");        
     }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnMostrarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarRutasActionPerformed
-
-        System.out.println((String)this.cmbSexo.getSelectedItem());
-
-    }//GEN-LAST:event_btnMostrarRutasActionPerformed
 
 
     public static void main(String args[]) {
@@ -588,7 +556,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton btnFotoCliente;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnMostrarRutas;
     private javax.swing.JComboBox<String> cmbSexo;
     private com.toedter.calendar.JDateChooser jDateFechaN;
     private javax.swing.JLabel jLabel1;
@@ -614,7 +581,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtEstadoCivil;
     private javax.swing.JTextField txtFechaInscripcion;
-    private javax.swing.JTextField txtFechaNacimiento;
     private javax.swing.JTextField txtFotoCliente;
     private javax.swing.JTextField txtIdCliente;
     private javax.swing.JTextField txtMembresia;
