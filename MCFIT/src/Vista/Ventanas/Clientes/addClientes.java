@@ -21,36 +21,37 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class addClientes extends javax.swing.JFrame implements ActionListener {
+
     JButton botonFotoCliente;
     Container cont = this.getContentPane();
-            
+
     public addClientes() {
         initComponents();
- 
+
         this.getContentPane().setBackground(Color.WHITE);
-        
+
         //---CODIGO PARA BOTONES DE FOTOS
         //Codigo para el FileChooser de la foto del Cliente
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.btnFotoCliente.addActionListener(this);
         //this.lblFotoCliente.setBounds(500,400,10,10);
-        
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        
+
         //Codigo para el FileChooser de la foto del formulario
         this.btnCuestionarioPrevio.addActionListener(this);
-        
+
         this.txtFechaInscripcion.setText(fechaActual());
     }
-    
-    public static String fechaActual(){
-        Date fecha = new Date(); 
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY/MM/dd"); 
-        return formatoFecha.format(fecha); 
+
+    public static String fechaActual() {
+        Date fecha = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY/MM/dd");
+        return formatoFecha.format(fecha);
     }
-        
-    public ImageIcon ResizeImage(String ImagePath){
+
+    public ImageIcon ResizeImage(String ImagePath) {
         ImageIcon MyImage = new ImageIcon(ImagePath);
         Image img = MyImage.getImage();
         Image newImg = img.getScaledInstance(this.lblFotoCliente.getWidth(), this.lblFotoCliente.getHeight(), Image.SCALE_SMOOTH);
@@ -408,42 +409,42 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoClienteActionPerformed
-        JFileChooser fileCliente = new JFileChooser(); 
+        JFileChooser fileCliente = new JFileChooser();
         fileCliente.setCurrentDirectory(new File(System.getProperty("user.home"))); //user.home, user.dir
-        
+
         //Filtro de archivos para las fotos del cliente
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg","png");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg", "png");
         fileCliente.addChoosableFileFilter(filter);
 
         int resultFtCliente = fileCliente.showSaveDialog(null);
-        
-        if(resultFtCliente==JFileChooser.APPROVE_OPTION){
+
+        if (resultFtCliente == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileCliente.getSelectedFile();
             String path = selectedFile.getAbsolutePath();
             this.lblFotoCliente.setIcon(ResizeImage(path));
             this.txtFotoCliente.setText(path);
-        }else if(resultFtCliente == JFileChooser.CANCEL_OPTION){
+        } else if (resultFtCliente == JFileChooser.CANCEL_OPTION) {
             JOptionPane.showMessageDialog(null, "Debes agregar la foto del cliente");
         }
     }//GEN-LAST:event_btnFotoClienteActionPerformed
 
     private void btnCuestionarioPrevioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuestionarioPrevioActionPerformed
-        JFileChooser fileCustionario = new JFileChooser(); 
+        JFileChooser fileCustionario = new JFileChooser();
         fileCustionario.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.Images", "jpg","png");
+
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.Images", "jpg", "png");
         fileCustionario.addChoosableFileFilter(filtro);
-        
+
         int respuesta = fileCustionario.showSaveDialog(null);
-        
-        if(respuesta == JFileChooser.APPROVE_OPTION){
+
+        if (respuesta == JFileChooser.APPROVE_OPTION) {
             File fileSeleccionado = fileCustionario.getSelectedFile();
-            String ruta = fileSeleccionado.getAbsolutePath(); 
+            String ruta = fileSeleccionado.getAbsolutePath();
             this.txtCuestionarioPrevio.setText(ruta);
-        }else if(respuesta == JFileChooser.CANCEL_OPTION){
+        } else if (respuesta == JFileChooser.CANCEL_OPTION) {
             JOptionPane.showMessageDialog(null, "Debes agregar la foto del cuestionario");
         }
-        
+
     }//GEN-LAST:event_btnCuestionarioPrevioActionPerformed
 
     private void txtFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFotoClienteActionPerformed
@@ -454,7 +455,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
 
-    public void Limpiar(){
+    public void Limpiar() {
         this.txtIdCliente.setText("");
         this.txtNombre.setText("");
         this.txtApellidos.setText("");
@@ -471,7 +472,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         this.txtFotoCliente.setText("");
         this.txtMembresia.setText("");
     }
-    
+
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         this.Limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
@@ -482,17 +483,17 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    
+
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        //Conexion cn = new Conexion(); 
+        Conexion cn = new Conexion(); 
         sqlClientes sqlC = new sqlClientes();
-        
+
         int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
         String Nombre = this.txtNombre.getText();
-        String Apellidos = this.txtApellidos.getText(); 
+        String Apellidos = this.txtApellidos.getText();
         String Celular = this.txtCelular.getText();
         int Edad = Integer.parseInt(this.txtEdad.getText());
-        String Sexo = (String)this.cmbSexo.getSelectedItem();
+        String Sexo = (String) this.cmbSexo.getSelectedItem();
         String EstadoCivil = this.txtEstadoCivil.getText();
         String FechaNacimiento = this.jDateFechaN.getDate().toString();
         String Ocupacion = this.txtOcupacion.getText();
@@ -502,20 +503,16 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         String RutaCuestionario = this.txtCuestionarioPrevio.getText();
         String Foto = this.txtFotoCliente.getText();
         int IDMembresia = Integer.parseInt(this.txtMembresia.getText());
-        
+
         //cn.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
-        
         sqlC.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
-        
+
         this.Limpiar();
-       
+
         JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
-        
+
         //System.out.println("Id:"+IDCliente+"\nNombre:"+Nombre+"\nFechaNa:"+FechaNacimiento);
-
-        //JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");        
     }//GEN-LAST:event_btnGuardarActionPerformed
-
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -591,7 +588,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void actionPerformed(ActionEvent e) {    
-        
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

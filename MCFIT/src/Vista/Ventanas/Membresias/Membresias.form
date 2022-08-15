@@ -264,6 +264,7 @@
             <StringItem index="2" value="Personalizado"/>
           </StringArray>
         </Property>
+        <Property name="selectedIndex" type="int" value="-1"/>
       </Properties>
       <Events>
         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbxTipoMem2ItemStateChanged"/>
