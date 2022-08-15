@@ -5,6 +5,7 @@
  */
 package Vista.Ventanas.Clientes;
 
+import Modelo.Clientes.sqlClientes;
 import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
@@ -483,7 +484,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
 
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        Conexion cn = new Conexion(); 
+        //Conexion cn = new Conexion(); 
+        sqlClientes sqlC = new sqlClientes();
         
         int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
         String Nombre = this.txtNombre.getText();
@@ -493,7 +495,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         String Sexo = (String)this.cmbSexo.getSelectedItem();
         String EstadoCivil = this.txtEstadoCivil.getText();
         String FechaNacimiento = this.jDateFechaN.getDate().toString();
-        //String FechaNacimiento = this.txtFechaNacimiento.getText();
         String Ocupacion = this.txtOcupacion.getText();
         String Direccion = this.txtDireccion.getText();
         String FechaInscripcion = this.txtFechaInscripcion.getText();
@@ -502,10 +503,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         String Foto = this.txtFotoCliente.getText();
         int IDMembresia = Integer.parseInt(this.txtMembresia.getText());
         
-        cn.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
+        //cn.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
+        
+        sqlC.InsertarCliente(IDCliente, Nombre, Apellidos, Celular, Edad, Sexo, EstadoCivil, FechaNacimiento, Ocupacion, CorreoE, Direccion, FechaInscripcion, RutaCuestionario, Foto, IDMembresia);
         
         this.Limpiar();
-        //System.out.println((String)this.cmbSexo.getSelectedItem());
        
         JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
         

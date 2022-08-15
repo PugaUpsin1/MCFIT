@@ -238,23 +238,24 @@ public class NuevoProducto extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         //Para ejecutar la instrucción
         Conexion ne = new Conexion();
-
-        int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
-        String TipoProducto = this.txtTipoProducto.getText();
-        String Descripcion = this.txtDescripción.getText();
-        double precioVenta = Double.parseDouble(this.txtPrecioVenta.getText());
-        double precioCompra = Double.parseDouble(this.txtPrecioCompra.getText());
-        int existencia = Integer.parseInt(this.txtExistencia.getText());
-        String foto = this.txtFotoProd.getText();
-        int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
-
-        ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
+        try{
+            int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
+            String TipoProducto = this.txtTipoProducto.getText();
+            String Descripcion = this.txtDescripción.getText();
+            double precioVenta = Double.parseDouble(this.txtPrecioVenta.getText());
+            double precioCompra = Double.parseDouble(this.txtPrecioCompra.getText());
+            int existencia = Integer.parseInt(this.txtExistencia.getText());
+            String foto = this.txtFotoProd.getText();
+            int idProveedor = Integer.parseInt(this.txtIdProveedor.getText());
+                
+            ne.InsertarProducto(IDProducto, TipoProducto,Descripcion, precioVenta, precioCompra, existencia, foto, idProveedor);
         
-        JOptionPane.showMessageDialog(null, "Producto agregado con éxito");
+            JOptionPane.showMessageDialog(null, "Producto agregado con éxito");  
+            this.Limpiar();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Falta ingresar campos del producto");
+        }
         
-        Principal cerr = new Principal();
-        this.setVisible(false);
-        cerr.setVisible(true); 
     }//GEN-LAST:event_btnGuardarActionPerformed
     
     public ImageIcon ResizeImage(String ImagePath){
@@ -290,8 +291,8 @@ public class NuevoProducto extends javax.swing.JFrame {
         Prin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    
+    public void Limpiar(){
         this.txtIdProducto.setText("");
         this.txtTipoProducto.setText("");
         this.txtDescripción.setText("");
@@ -300,6 +301,10 @@ public class NuevoProducto extends javax.swing.JFrame {
         this.txtExistencia.setText("");
         this.txtFotoProd.setText("");
         this.txtIdProveedor.setText("");
+    }
+    
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        this.Limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     public static void main(String args[]) {
