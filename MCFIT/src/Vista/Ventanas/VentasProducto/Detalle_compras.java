@@ -71,7 +71,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         cbxMetodoPago = new javax.swing.JComboBox<>();
         txtIdEmpleado = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        btnAgregar = new javax.swing.JButton();
+        btnAgregarC = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         lblDetalleComp = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -82,13 +82,12 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         jLabel14 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaDetalleCompras = new javax.swing.JTable();
-        btnBuscarProd = new javax.swing.JButton();
         txtIdCompra = new javax.swing.JTextField();
         btnRegresarV = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         txtIdProducto = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        btnGuardarC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,10 +119,10 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel10.setText("Total Compra:");
 
-        btnAgregar.setText("+");
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarC.setText("+");
+        btnAgregarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
+                btnAgregarCActionPerformed(evt);
             }
         });
 
@@ -170,9 +169,6 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         ));
         jScrollPane2.setViewportView(tablaDetalleCompras);
 
-        btnBuscarProd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnBuscarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
-
         btnRegresarV.setBackground(new java.awt.Color(242, 242, 242));
         btnRegresarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/regreso (1).png"))); // NOI18N
         btnRegresarV.addActionListener(new java.awt.event.ActionListener() {
@@ -191,10 +187,11 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        btnGuardar.setText("Guardar la Venta");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarC.setText("Guardar la Compra");
+        btnGuardarC.setToolTipText("");
+        btnGuardarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnGuardarCActionPerformed(evt);
             }
         });
 
@@ -210,8 +207,6 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                         .addGap(34, 34, 34))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(277, 277, 277)
-                        .addComponent(btnBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -234,7 +229,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCalcular)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnAgregar)))
+                                .addComponent(btnAgregarC)))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -242,35 +237,33 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(lblDetalleComp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(45, 45, 45))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbxMetodoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)
-                                .addComponent(btnGuardar))
-                            .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnGuardarC))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(lblDetalleComp, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtIdEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                                     .addComponent(txtIdCompra))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(152, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 879, Short.MAX_VALUE))
@@ -309,7 +302,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(cbxMetodoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGuardarC, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,14 +321,12 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                                     .addComponent(spnCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6)
                                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAgregarC, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(lblDetalleProd1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(btnBuscarProd, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)))
+                        .addGap(59, 106, Short.MAX_VALUE)))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -354,8 +345,8 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarVActionPerformed
-        Venta Vent = new Venta();
-        Vent.setVisible(true);
+        Compras com = new Compras();
+        com.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarVActionPerformed
 
@@ -363,7 +354,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHoraActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+    private void btnAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCActionPerformed
          //Para ejecutar la instrucción
         Conexion ne = new Conexion();
         
@@ -375,18 +366,18 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
 
         ne.InsertarDetalleCompra(Cantidad, Precio, IDProducto,IDCompra);
         
-        //JOptionPane.showMessageDialog(null, "DetallaCompra agregada con éxito");
+        //JOptionPane.showMessageDialog(null, "DetalleCompra agregada con éxito");
         
         //Compras com = new Compras();
         //this.setVisible(false);
         //com.setVisible(true);
-    }//GEN-LAST:event_btnAgregarActionPerformed
+    }//GEN-LAST:event_btnAgregarCActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btnGuardarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCActionPerformed
         //Para ejecutar la instrucción
         Conexion ne = new Conexion();
 
@@ -404,7 +395,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         Compras com = new Compras();
         this.setVisible(false);
         com.setVisible(true);
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btnGuardarCActionPerformed
     
     public static String fechaActual(){
         Date fecha = new Date(); 
@@ -480,10 +471,9 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnBuscarProd;
+    private javax.swing.JButton btnAgregarC;
     private javax.swing.JButton btnCalcular;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardarC;
     private javax.swing.JButton btnRegresarV;
     private javax.swing.JComboBox<String> cbxMetodoPago;
     private javax.swing.JLabel jLabel10;

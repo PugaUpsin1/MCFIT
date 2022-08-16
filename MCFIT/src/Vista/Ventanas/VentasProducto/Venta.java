@@ -53,7 +53,6 @@ public class Venta extends javax.swing.JFrame {
         txtBuscarV = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btnBuscarV = new javax.swing.JButton();
-        btnNuevoV = new javax.swing.JButton();
         btnEditarV = new javax.swing.JButton();
         btnEliminarV = new javax.swing.JButton();
         btnRefreshV = new javax.swing.JButton();
@@ -96,14 +95,6 @@ public class Venta extends javax.swing.JFrame {
             }
         });
 
-        btnNuevoV.setBackground(new java.awt.Color(242, 242, 242));
-        btnNuevoV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
-        btnNuevoV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoVActionPerformed(evt);
-            }
-        });
-
         btnEditarV.setBackground(new java.awt.Color(242, 242, 242));
         btnEditarV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
 
@@ -140,16 +131,13 @@ public class Venta extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(175, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnRefreshV)
-                            .addGap(343, 343, 343)
-                            .addComponent(btnEliminarV)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnEditarV)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnNuevoV))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRefreshV)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarV)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditarV))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -182,12 +170,10 @@ public class Venta extends javax.swing.JFrame {
                         .addGap(3, 3, 3)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNuevoV, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnEliminarV)
-                        .addComponent(btnEditarV)
-                        .addComponent(btnRefreshV, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnEliminarV)
+                    .addComponent(btnEditarV)
+                    .addComponent(btnRefreshV, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
 
@@ -199,11 +185,6 @@ public class Venta extends javax.swing.JFrame {
         Prin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarVActionPerformed
-
-    private void btnNuevoVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoVActionPerformed
-        
-        //  this.setVisible(false);
-    }//GEN-LAST:event_btnNuevoVActionPerformed
 
     private void btnRefreshVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshVActionPerformed
         // TODO add your handling code here:
@@ -258,7 +239,6 @@ public class Venta extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarV;
     private javax.swing.JButton btnEditarV;
     private javax.swing.JButton btnEliminarV;
-    private javax.swing.JButton btnNuevoV;
     private javax.swing.JButton btnRefreshV;
     private javax.swing.JButton btnRegresarV;
     private javax.swing.JButton btnVentas;
