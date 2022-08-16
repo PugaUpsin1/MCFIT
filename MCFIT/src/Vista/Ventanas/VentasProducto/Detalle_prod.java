@@ -90,7 +90,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         jLabel9 = new javax.swing.JLabel();
         txtIdProducto = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        btnRealizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,10 +196,10 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        btnGuardar.setText("Guardar la Venta");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnRealizar.setText("Realizar la Venta");
+        btnRealizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnRealizarActionPerformed(evt);
             }
         });
 
@@ -239,7 +239,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCalcular)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnAgregar)))
+                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -267,7 +267,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)
-                                .addComponent(btnGuardar))
+                                .addComponent(btnRealizar))
                             .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,7 +321,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRealizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,9 +399,9 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btnRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btnRealizarActionPerformed
     
     public static String fechaActual(){
         Date fecha = new Date(); 
@@ -480,7 +480,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBuscarProd;
     private javax.swing.JButton btnCalcular;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnRealizar;
     private javax.swing.JButton btnRegresarV;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;

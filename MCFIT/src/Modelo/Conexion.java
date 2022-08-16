@@ -189,6 +189,8 @@ public class Conexion {
         try {
             st = cn.createStatement();
             String cadenaSQL = "call aggCompras('" + IDCompra + "','" + TotalCompra + "','" + Hora + "','" + FechaCompra + "','" + MetodoPago + "','" + IDEmpleado + "');";
+            st.toString();
+            System.out.println(st);
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {
@@ -203,6 +205,8 @@ public class Conexion {
         try {
             st = cn.createStatement();
             String cadenaSQL = "call aggDetalleCompras('" + Cantidad + "','" + Precio + "','" + IDProducto + "','" +  IDCompra + "');";
+            
+            System.out.println(cadenaSQL);
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {

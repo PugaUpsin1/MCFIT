@@ -60,6 +60,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnRefreshC = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -88,6 +89,15 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         txtIdProducto = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
         btnGuardarC = new javax.swing.JButton();
+        btnRefreshC1 = new javax.swing.JButton();
+
+        btnRefreshC.setBackground(new java.awt.Color(242, 242, 242));
+        btnRefreshC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefreshC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshCActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,11 +197,19 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        btnGuardarC.setText("Guardar la Compra");
+        btnGuardarC.setText("Realizar la Compra");
         btnGuardarC.setToolTipText("");
         btnGuardarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCActionPerformed(evt);
+            }
+        });
+
+        btnRefreshC1.setBackground(new java.awt.Color(242, 242, 242));
+        btnRefreshC1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefreshC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshC1ActionPerformed(evt);
             }
         });
 
@@ -214,10 +232,13 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTotalCompra))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblTotalCompra))
+                                    .addComponent(btnRefreshC1)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -328,11 +349,14 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                         .addComponent(lblDetalleProd1)
                         .addGap(59, 106, Short.MAX_VALUE)))
                 .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel10)
-                        .addComponent(lblTotalCompra)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(lblTotalCompra))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRefreshC1))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -396,6 +420,31 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         this.setVisible(false);
         com.setVisible(true);
     }//GEN-LAST:event_btnGuardarCActionPerformed
+
+    private void btnRefreshCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefreshCActionPerformed
+
+    private void btnRefreshC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshC1ActionPerformed
+        DefaultTableModel dfm = new DefaultTableModel();
+        DetaCom= this.tablaDetalleCompras;
+        DetaCom.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"CANTIDAD","PRECIO","IDPRODUCTO","IDCOMPRA"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectDetalleCompras();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("cantidad"),rs.getDouble("precio"),rs.getInt("idProducto"), rs.getInt("idCompra")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnRefreshC1ActionPerformed
     
     public static String fechaActual(){
         Date fecha = new Date(); 
@@ -474,6 +523,8 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     private javax.swing.JButton btnAgregarC;
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnGuardarC;
+    private javax.swing.JButton btnRefreshC;
+    private javax.swing.JButton btnRefreshC1;
     private javax.swing.JButton btnRegresarV;
     private javax.swing.JComboBox<String> cbxMetodoPago;
     private javax.swing.JLabel jLabel10;
