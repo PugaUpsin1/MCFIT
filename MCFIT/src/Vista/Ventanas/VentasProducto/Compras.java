@@ -45,14 +45,14 @@ public class Compras extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnRegresarC = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtBuscarV = new javax.swing.JTextField();
+        txtBuscarC = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCompras = new javax.swing.JTable();
         btnBuscarC = new javax.swing.JButton();
         btnCompras = new javax.swing.JButton();
-        btnNuevoC = new javax.swing.JButton();
         btnEditarC = new javax.swing.JButton();
         btnEliminarC = new javax.swing.JButton();
+        btnRefreshC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Compras");
@@ -102,19 +102,19 @@ public class Compras extends javax.swing.JFrame {
             }
         });
 
-        btnNuevoC.setBackground(new java.awt.Color(242, 242, 242));
-        btnNuevoC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/nuevo.png"))); // NOI18N
-        btnNuevoC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoCActionPerformed(evt);
-            }
-        });
-
         btnEditarC.setBackground(new java.awt.Color(242, 242, 242));
         btnEditarC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
 
         btnEliminarC.setBackground(new java.awt.Color(242, 242, 242));
         btnEliminarC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
+
+        btnRefreshC.setBackground(new java.awt.Color(242, 242, 242));
+        btnRefreshC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefreshC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,21 +127,19 @@ public class Compras extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(408, 408, 408)
-                            .addComponent(btnEliminarC)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnEditarC)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnNuevoC))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRefreshC)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarC)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditarC))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnRegresarC, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtBuscarV, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscarC, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,7 +164,7 @@ public class Compras extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnBuscarC)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBuscarV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBuscarC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegresarC, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,9 +172,9 @@ public class Compras extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNuevoC, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnEliminarC, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEditarC, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(btnEditarC, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRefreshC)))
         );
 
         pack();
@@ -189,19 +187,35 @@ public class Compras extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarCActionPerformed
 
     private void btnBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCActionPerformed
-        // TODO add your handling code here:
+        Conexion cn = new Conexion();
+        String FechaCompra = this.txtBuscarC.getText();
+               
+        DefaultTableModel dfm = new DefaultTableModel();
+        Comp = this.Comp;
+        Comp.setModel(dfm);
+        
+       
+        dfm.setColumnIdentifiers(new Object[]{"ID","TOTAL COMPRA","HORA","FECHA COMPRA","METODO PAGO", "IDEMPLEADO"});
+        
+        rs = cn.BuscarCompra(FechaCompra);
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idCompra"),rs.getDouble("totalCompra"),rs.getString("hora"),rs.getString("fechaCompra"),rs.getString("metodoPago"),rs.getInt("idEmpleado")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se encontró la compra o no esta registrado");
+        }
     }//GEN-LAST:event_btnBuscarCActionPerformed
 
     private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
-        //Detalle_prod DetaVent = new Detalle_prod();
-        //DetaVent.setVisible(true);
-        //this.setVisible(false);
+        Detalle_compras DetaComp = new Detalle_compras();
+        DetaComp.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnComprasActionPerformed
 
-    private void btnNuevoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoCActionPerformed
-
-        //  this.setVisible(false);
-    }//GEN-LAST:event_btnNuevoCActionPerformed
+    private void btnRefreshCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefreshCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,12 +257,12 @@ public class Compras extends javax.swing.JFrame {
     private javax.swing.JButton btnCompras;
     private javax.swing.JButton btnEditarC;
     private javax.swing.JButton btnEliminarC;
-    private javax.swing.JButton btnNuevoC;
+    private javax.swing.JButton btnRefreshC;
     private javax.swing.JButton btnRegresarC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaCompras;
-    private javax.swing.JTextField txtBuscarV;
+    private javax.swing.JTextField txtBuscarC;
     // End of variables declaration//GEN-END:variables
 }

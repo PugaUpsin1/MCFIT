@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import javax.swing.JTable;
 import Vista.Ventanas.Principal.Principal;
 import static Vista.Ventanas.VentasProducto.Detalle_prod.fechaActual;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -20,9 +21,6 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     ResultSet rs;
     Container cont = this.getContentPane();
     
-    //Codigo para 
-        
- 
     public agregarPagoMem() {
         initComponents();
         this.txtHora.setText(fechaActual());
@@ -34,9 +32,15 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
         this.setLocationRelativeTo(null);
         this.setTitle("Agregar Pago membresia");
         
-        
-        
+        this.txtFechaPago.setText(fechaActual());
     }
+    
+    public static String fechaActual() {
+        Date fecha = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY-MM-dd");
+        return formatoFecha.format(fecha);
+    }
+    
     public void hora(){
         Calendar calendario = new GregorianCalendar(); 
         Date horaActual = new Date(); 
@@ -48,11 +52,10 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     
     public void run() {
         Thread current = Thread.currentThread();
-        
         while(current == hilo){
             hora();
             txtHora.setText(hora+":"+minutos+":"+segundos);
-        }
+        }        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,7 +85,6 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
         btnCancelar = new javax.swing.JButton();
         txtIdPagoMem = new javax.swing.JTextField();
         lblPrecioCompra1 = new javax.swing.JLabel();
-        txtMetodoPago = new javax.swing.JTextField();
         lblPrecioVenta1 = new javax.swing.JLabel();
         txtIdCliente = new javax.swing.JTextField();
         lblExistencia1 = new javax.swing.JLabel();
@@ -94,6 +96,8 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
         txtIdMembresia = new javax.swing.JTextField();
         lblDescripcion1 = new javax.swing.JLabel();
         txtFechaPago = new javax.swing.JTextField();
+        cmbBoxMetodoPago = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         lblPrecioCompra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPrecioCompra.setText("Precio de compra:");
@@ -152,24 +156,26 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
             }
         });
 
+        txtIdPagoMem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         lblPrecioCompra1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPrecioCompra1.setText("Id Cliente:");
-
-        txtMetodoPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMetodoPagoActionPerformed(evt);
-            }
-        });
 
         lblPrecioVenta1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPrecioVenta1.setText("Hora:");
 
+        txtIdCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         lblExistencia1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblExistencia1.setText("Id Empleado:");
+
+        txtIdEmpleado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblIdProducto1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIdProducto1.setText("Id Pago Membresia:");
 
+        txtHora.setEditable(false);
+        txtHora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHoraActionPerformed(evt);
@@ -182,97 +188,96 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
         lblIdProveedor1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIdProveedor1.setText("Id Membresia:");
 
+        txtIdMembresia.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         lblDescripcion1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblDescripcion1.setText("Fecha de Pago:");
+        lblDescripcion1.setText("Fecha:");
+
+        txtFechaPago.setEditable(false);
+        txtFechaPago.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        cmbBoxMetodoPago.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cmbBoxMetodoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EFECTIVO", "TRANSFERENCIA", "DEPOSITO ", "OTRO" }));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("----------------------------------------------------------------------------------------------");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(btnGuardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnLimpiar))
+                        .addComponent(lblExistencia1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtIdEmpleado))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblIdProducto1)
-                                    .addComponent(lblTipoProducto1)
-                                    .addComponent(lblDescripcion1))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtMetodoPago, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                                            .addComponent(txtIdPagoMem)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                                        .addComponent(txtFechaPago, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblExistencia1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblPrecioCompra1)
-                                        .addComponent(lblIdProveedor1)
-                                        .addComponent(lblPrecioVenta1))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(61, 61, 61)
-                                            .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtIdCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtIdMembresia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))))))
-                .addContainerGap(72, Short.MAX_VALUE))
+                            .addComponent(lblIdProducto1)
+                            .addComponent(lblTipoProducto1)
+                            .addComponent(lblPrecioCompra1)
+                            .addComponent(lblIdProveedor1)
+                            .addComponent(btnCancelar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbBoxMetodoPago, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIdCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIdMembresia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnLimpiar)
+                                .addGap(28, 28, 28)
+                                .addComponent(btnGuardar))
+                            .addComponent(txtIdPagoMem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblDescripcion1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFechaPago, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblPrecioVenta1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHora))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDescripcion1)
+                    .addComponent(txtFechaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrecioVenta1)
+                    .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblExistencia1)
+                    .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIdProducto1)
                     .addComponent(txtIdPagoMem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTipoProducto1)
-                    .addComponent(txtMetodoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDescripcion1)
-                    .addComponent(txtFechaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPrecioVenta1)
-                    .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbBoxMetodoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblPrecioCompra1)
                     .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblExistencia1)
-                    .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIdMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblIdProveedor1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
                     .addComponent(btnCancelar)
+                    .addComponent(btnGuardar)
                     .addComponent(btnLimpiar))
-                .addGap(30, 30, 30))
+                .addGap(56, 56, 56))
         );
 
         pack();
@@ -283,7 +288,7 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
         //Para ejecutar la instrucción
         Conexion cn = new Conexion();
         int IDPagoMem = Integer.parseInt(this.txtIdPagoMem.getText());
-        String MetodoPago = this.txtMetodoPago.getText();
+        String MetodoPago = this.cmbBoxMetodoPago.getSelectedItem().toString();
         String FechaPago = this.txtFechaPago.getText();
         String Hora = this.txtHora.getText();
         int IDCliente = Integer.parseInt(this.txtIdCliente.getText());
@@ -302,7 +307,7 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         this.txtIdPagoMem.setText("");
-        this.txtMetodoPago.setText("");
+        this.cmbBoxMetodoPago.setSelectedItem(0);
         this.txtFechaPago.setText("");
         this.txtHora.setText("");
         this.txtIdCliente.setText("");
@@ -320,10 +325,6 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     private void txtTipoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoProductoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipoProductoActionPerformed
-
-    private void txtMetodoPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMetodoPagoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMetodoPagoActionPerformed
 
     private void txtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActionPerformed
         // TODO add your handling code here:
@@ -368,6 +369,8 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JComboBox<String> cmbBoxMetodoPago;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDescripcion;
     private javax.swing.JLabel lblDescripcion1;
     private javax.swing.JLabel lblExistencia;
@@ -392,7 +395,6 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     private javax.swing.JTextField txtIdPagoMem;
     private javax.swing.JTextField txtIdProducto;
     private javax.swing.JTextField txtIdProveedor;
-    private javax.swing.JTextField txtMetodoPago;
     private javax.swing.JTextField txtPrecioCompra;
     private javax.swing.JTextField txtPrecioVenta;
     private javax.swing.JTextField txtTipoProducto;

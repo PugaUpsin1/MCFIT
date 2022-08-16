@@ -139,7 +139,20 @@ public class Conexion {
         }
         return rs;
     }
+    public ResultSet BuscarCompra(String FechaCompra) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
 
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from Compras where fechaCompra='" + FechaCompra + "';");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+    }
+    
     public ResultSet BuscarPagoMem(String Nombre) {
         Connection cn = Conectar();
         Statement st;
@@ -168,7 +181,50 @@ public class Conexion {
             return false;
         }
     }
+    public boolean InsertarCompra(int IDCompra, double TotalCompra, String Hora, String FechaCompra, String MetodoPago, int IDEmpleado) {
 
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggCompras('" + IDCompra + "','" + TotalCompra + "','" + Hora + "','" + FechaCompra + "','" + MetodoPago + "','" + IDEmpleado + "');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    public boolean InsertarDetalleCompra(int Cantidad,double Precio,int IDProducto,int IDCompra) {
+
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggDetalleCompras('" + Cantidad + "','" + Precio + "','" + IDProducto + "','" +  IDCompra + "');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
+    public boolean InsertarVenta(int IDPagoPr, double TotalVenta, String FechaPago,String Hora, String MetodoPago, int IDEmpleado, int IDCliente){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggVentas('" + IDPagoPr + "','" + TotalVenta + "','" + FechaPago + "','" + Hora + "','" + MetodoPago + "','" + IDEmpleado + "','" + IDCliente+"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
+    
     public ResultSet SelectProductos() {
         Connection cn = Conectar();
         Statement st;
@@ -228,6 +284,19 @@ public class Conexion {
         try {
             st = cn.createStatement();
             rs = st.executeQuery("SELECT * FROM Detalle_prod;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+
+    }
+    public ResultSet SelectDetalleCompras() {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM detalleCompra;");
         } catch (SQLException ex) {
 
         }
