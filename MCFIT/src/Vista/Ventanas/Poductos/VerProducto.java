@@ -5,6 +5,8 @@
  */
 package Vista.Ventanas.Poductos;
 
+import Modelo.ActProducto.Productos1;
+import Modelo.ActProducto.sqlProductos;
 import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
 import com.mysql.jdbc.Connection;
@@ -55,7 +57,6 @@ public class VerProducto extends javax.swing.JFrame {
         lblExistencia = new javax.swing.JLabel();
         txtExistencia = new javax.swing.JTextField();
         lblIdProveedor = new javax.swing.JLabel();
-        txtFotoProd = new javax.swing.JTextField();
         txtIdProveedor = new javax.swing.JTextField();
         lblDescripcion = new javax.swing.JLabel();
         lblFotoProd = new javax.swing.JLabel();
@@ -63,6 +64,7 @@ public class VerProducto extends javax.swing.JFrame {
         txtdescripcion = new javax.swing.JTextPane();
         btnCerrar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
+        txtFotoProd = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo Producto");
@@ -91,8 +93,6 @@ public class VerProducto extends javax.swing.JFrame {
 
         lblIdProveedor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIdProveedor.setText("Id Proveedor:");
-
-        txtFotoProd.setEditable(false);
 
         lblDescripcion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDescripcion.setText("Descripción:");
@@ -123,9 +123,9 @@ public class VerProducto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFotoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFotoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblFotoProd, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                    .addComponent(txtFotoProd))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -189,8 +189,9 @@ public class VerProducto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblFotoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(txtFotoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFotoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -209,29 +210,29 @@ public class VerProducto extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPrecioVenta)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(lblPrecioVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(lblPrecioVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(lblPrecioCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(txtPrecioCompra))
+                            .addComponent(txtPrecioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(lblExistencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(txtExistencia))
+                            .addComponent(txtExistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(lblIdProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(txtIdProveedor))))
+                            .addComponent(txtIdProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCerrar)
@@ -251,18 +252,29 @@ public class VerProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-       PreparedStatement ps = null;
-       ResultSet rs = null;
-       
-        try {
-            Conexion objCon = new Conexion();
-            Connection con = (Connection) objCon.Conectar();
-            
-            String sql = "UPDATE Productos SET tipoProducto,descripcion,precioVenta,precioCompra, existencia, foto, idProveedor VALUES(?,?,?,?,?,?,?)";
-            
-            
-        } catch (Exception e) {
-        }
+        sqlProductos objSql = new sqlProductos();
+        Productos1 mod = new Productos1();
+        
+        mod.setTipoProducto(txtTipoProducto.getText());
+        mod.setDescripcion(txtdescripcion.getText());
+        String pV = new String(txtPrecioVenta.getText());
+        mod.setPrecioVenta(Integer.valueOf(pV));
+        String pC = new String(txtPrecioCompra.getText());
+        mod.setPrecioCompra(Integer.valueOf(pC));
+        String ex = new String(txtExistencia.getText());
+        mod.setExistencia(Integer.valueOf(ex));
+        mod.setFoto(txtFotoProd.getText());
+        String idPv = new String(txtIdProveedor.getText());
+        mod.setIdProveedor(Integer.valueOf(idPv));
+        String idPr = new String(txtIdProducto.getText());
+        mod.setIdProductos(Integer.valueOf(idPr));
+        
+            if(objSql.Modificar(mod)){
+             JOptionPane.showMessageDialog(null, "Registro Modificado.");   
+            }else{
+             JOptionPane.showMessageDialog(null, "Error al Guardar.");
+            }
+
     }//GEN-LAST:event_btnModificarActionPerformed
     
     public ImageIcon ResizeImage(String ImagePath){

@@ -175,6 +175,9 @@
           <Image iconType="3" name="/Vista/Ventanas/Icons/eliminar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneliActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnRefresh">
       <Properties>
