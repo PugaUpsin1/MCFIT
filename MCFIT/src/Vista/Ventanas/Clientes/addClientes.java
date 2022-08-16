@@ -17,15 +17,12 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.*;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class addClientes extends javax.swing.JFrame implements ActionListener {
     
-    JButton botonFotoCliente;
+    //JButton botonFotoCliente;
     Container cont = this.getContentPane();
-    
-    addClientes fecha = new addClientes(); 
     
     public addClientes() {
         initComponents();

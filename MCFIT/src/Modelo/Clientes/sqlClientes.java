@@ -14,7 +14,6 @@ public class sqlClientes extends Conexion{
             
             try {
                 ps= con.prepareStatement(sql);
-                //ps.setInt(1, client.getIdCliente());
                 ps.setString(1, clients.getNombre());
                 ps.setString(2, clients.getApellido());
                 ps.setString(3, clients.getCelular());
