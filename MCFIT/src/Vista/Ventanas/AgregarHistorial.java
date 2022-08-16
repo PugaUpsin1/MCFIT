@@ -42,43 +42,42 @@ public class AgregarHistorial extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtAltura = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         txtIdClientes = new javax.swing.JTextField();
         txtIdHistorial = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtPeso.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtPeso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Id Clientes:");
 
-        jLabel2.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("ID Historial:");
 
-        jLabel3.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Altura:");
 
         txtFecha.setEditable(false);
-        txtFecha.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtFecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFechaActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Peso:");
 
-        jLabel6.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Fecha");
 
-        txtAltura.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtAltura.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnGuardar.setBackground(new java.awt.Color(89, 88, 93));
-        btnGuardar.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
-        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/guadar.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,18 +85,21 @@ public class AgregarHistorial extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(89, 88, 93));
-        jButton4.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Limpiar");
+        btnLimpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/limpiar.png"))); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
-        txtIdClientes.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtIdClientes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        txtIdHistorial.setFont(new java.awt.Font("Louis George Cafe", 0, 14)); // NOI18N
+        txtIdHistorial.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnCancelar.setBackground(new java.awt.Color(89, 88, 93));
-        btnCancelar.setFont(new java.awt.Font("Keep Calm Med", 0, 12)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,19 +127,24 @@ public class AgregarHistorial extends javax.swing.JFrame {
                     .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(btnCancelar))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCancelar)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGuardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpiar)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtIdClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,15 +164,8 @@ public class AgregarHistorial extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnCancelar)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                            .addComponent(jLabel6))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,8 +179,6 @@ public class AgregarHistorial extends javax.swing.JFrame {
     
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
-        
         Conexion ne = new Conexion(); 
         int IDHistorial = Integer.parseInt(this.txtIdHistorial.getText()); 
         float Altura = Float.parseFloat(this.txtAltura.getText());
@@ -190,12 +188,11 @@ public class AgregarHistorial extends javax.swing.JFrame {
         
 
         ne.InsertarHistorial(IDHistorial, Altura, Fecha, Peso, IDcliente);
+        this.Limpiar();
         
         Principal cerr = new Principal();
         this.setVisible(false);
         cerr.setVisible(true);
-        
-        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
@@ -208,6 +205,17 @@ public class AgregarHistorial extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+       this.Limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+    
+    public void Limpiar(){
+        this.txtIdClientes.setText("");
+        this.txtIdHistorial.setText("");
+        this.txtPeso.setText("");
+        this.txtAltura.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -246,7 +254,7 @@ public class AgregarHistorial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
