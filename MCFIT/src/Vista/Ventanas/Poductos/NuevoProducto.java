@@ -57,7 +57,7 @@ public class NuevoProducto extends javax.swing.JFrame {
         btnFotoCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nuevo Producto");
+        setTitle("Productos");
         setResizable(false);
 
         lblIdProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -65,8 +65,6 @@ public class NuevoProducto extends javax.swing.JFrame {
 
         lblTipoProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTipoProducto.setText("Producto:");
-
-        txtIdProducto.setEditable(false);
 
         lblPrecioCompra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPrecioCompra.setText("Precio de compra:");
