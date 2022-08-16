@@ -42,17 +42,17 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         DetaVent= this.tablaDetalleVentas;
         DetaVent.setModel(dfm);
         
-        dfm.setColumnIdentifiers(new Object[]{"CANTIDAD","PRECIO","IDPRODUCTO"});
-        
-        Conexion cn = new Conexion();
-        rs = cn.SelectDetalleVentas();
-        try {
-            while(rs.next()){
-                dfm.addRow(new Object[]{rs.getInt("cantidad"),rs.getDouble("precio"),rs.getInt("idProducto")});
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
-        }
+//        dfm.setColumnIdentifiers(new Object[]{"CANTIDAD","PRECIO","IDPRODUCTO"});
+//        
+//        Conexion cn = new Conexion();
+//        rs = cn.SelectDetalleVentas();
+//        try {
+//            while(rs.next()){
+//                dfm.addRow(new Object[]{rs.getInt("cantidad"),rs.getDouble("precio"),rs.getInt("idProducto")});
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
+//        }
     }
 
     /**
