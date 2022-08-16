@@ -116,26 +116,26 @@ public class Principal extends javax.swing.JFrame {
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
         Productos Prod = new Productos();
         Prod.setVisible(true);
-        this.setVisible(false);
+       this.dispose();
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresiaActionPerformed
         Membresias Membre = new Membresias();
         Membre.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnMembresiaActionPerformed
 
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         Venta Vent = new Venta();
         Vent.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnVentasActionPerformed
 
     private void btnClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes1ActionPerformed
         // TODO add your handling code here:
         Clientes Clien = new Clientes();
         Clien.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnClientes1ActionPerformed
 
     private void btnconfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfActionPerformed

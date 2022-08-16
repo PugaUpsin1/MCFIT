@@ -174,7 +174,7 @@ public class panelEmple extends javax.swing.JPanel {
         Usuarios mod = new Usuarios();
         String pass = new String(txtPass.getPassword());
         String passCon = new String(txtConfContra.getPassword());
-        
+         
         
         
         if(pass.equals(passCon)){

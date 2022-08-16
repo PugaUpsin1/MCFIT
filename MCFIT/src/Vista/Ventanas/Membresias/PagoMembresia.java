@@ -51,13 +51,11 @@ public class PagoMembresia extends javax.swing.JFrame {
         tablaPagoM = new javax.swing.JTable();
         btnBuscarPM = new javax.swing.JButton();
         btnAggPM = new javax.swing.JButton();
-        btnEdittarPM = new javax.swing.JButton();
         btnEliminarPM = new javax.swing.JButton();
         btnRefreshPM = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1301, 700));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Imagen 3.png"))); // NOI18N
 
@@ -102,9 +100,6 @@ public class PagoMembresia extends javax.swing.JFrame {
             }
         });
 
-        btnEdittarPM.setBackground(new java.awt.Color(242, 242, 242));
-        btnEdittarPM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
-
         btnEliminarPM.setBackground(new java.awt.Color(242, 242, 242));
         btnEliminarPM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
 
@@ -116,70 +111,59 @@ public class PagoMembresia extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("Propiedades");
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegresarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(159, 159, 159)
-                        .addComponent(lblBuscarP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(btnBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnAggPM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnEdittarPM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnEliminarPM)))
+                                .addComponent(btnRegresarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(201, 201, 201)
+                                .addComponent(lblBuscarP)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1078, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnRefreshPM)))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAggPM)
+                                    .addComponent(btnRefreshPM)
+                                    .addComponent(btnEliminarPM))))))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegresarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblBuscarP))
-                    .addComponent(btnBuscarPM))
+                    .addComponent(btnBuscarPM)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblBuscarP)
+                                .addComponent(txtBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnRegresarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
                         .addComponent(btnAggPM)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnEdittarPM)
-                        .addGap(20, 20, 20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminarPM)
-                        .addGap(72, 72, 72)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                         .addComponent(btnRefreshPM))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -215,7 +199,7 @@ public class PagoMembresia extends javax.swing.JFrame {
     private void btnAggPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggPMActionPerformed
         agregarPagoMem aggPM = new agregarPagoMem();
         aggPM.setVisible(true);
-        this.setVisible(false);
+       
     }//GEN-LAST:event_btnAggPMActionPerformed
 
     private void btnRefreshPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshPMActionPerformed
@@ -261,13 +245,10 @@ public class PagoMembresia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAggPM;
     private javax.swing.JButton btnBuscarPM;
-    private javax.swing.JButton btnEdittarPM;
     private javax.swing.JButton btnEliminarPM;
     private javax.swing.JButton btnRefreshPM;
     private javax.swing.JButton btnRegresarPM;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBuscarP;
     private javax.swing.JTable tablaPagoM;

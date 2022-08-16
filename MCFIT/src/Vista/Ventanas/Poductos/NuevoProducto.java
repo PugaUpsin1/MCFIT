@@ -22,6 +22,7 @@ public class NuevoProducto extends javax.swing.JFrame {
         initComponents();
         //this.getContentPane().setBackground(new Color(139,150,216));
         this.getContentPane().setBackground(Color.white);
+        this.setLocationRelativeTo(null);
     }
     
     
@@ -57,6 +58,7 @@ public class NuevoProducto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo Producto");
+        setResizable(false);
 
         lblIdProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIdProducto.setText("Id Producto:");
@@ -288,8 +290,8 @@ public class NuevoProducto extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         Productos Prin = new Productos();
-        Prin.setVisible(true);
-        this.setVisible(false);
+       //  Prin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
     
     public void Limpiar(){
