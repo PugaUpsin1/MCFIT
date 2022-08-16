@@ -65,7 +65,7 @@ public class Principal extends javax.swing.JFrame {
         btnMembresia.setBackground(new java.awt.Color(242, 242, 242));
         btnMembresia.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         btnMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
-        btnMembresia.setText("Membresias");
+        btnMembresia.setText("Membresías");
         btnMembresia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMembresiaActionPerformed(evt);
