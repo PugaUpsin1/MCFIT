@@ -238,12 +238,12 @@ public class Clientes extends javax.swing.JFrame {
         Client.setModel(dfm);
         
         //dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD","SEXO","ESTADO CIVIL","FECHA DE NACIMIENTO","OCUPACION","CORREO","DIRECCION","FECHA DE INSCRIPCION","CUESTIONARIO","FOTO","MEMBRESIA"});
-        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","T ELEFONO","EDAD", "CORREO"});
+        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD", "CORREO"});
         
         rs = cn.BuscarClientes(Nombre);
         try {
             while(rs.next()){
-                //dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE"),rs.getInt("sexo"),rs.getString("estadoCivil"), rs.getString("fechaNacimiento"),rs.getString("ocupacion"),rs.getString("correoE"), rs.getString("direccion"), rs.getString("fechaInscripcion"), rs.getString("rutaCuestionario"), rs.getString("foto"), rs.getInt("idMembresia")});
+                //dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE"),rs.getString("sexo"),rs.getString("estadoCivil"), rs.getString("fechaNacimiento"),rs.getString("ocupacion"),rs.getString("correoE"), rs.getString("direccion"), rs.getString("fechaInscripcion"), rs.getString("rutaCuestionario"), rs.getString("foto"), rs.getInt("idMembresia")});
                 dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE")});
             }
         } catch (Exception e) {
@@ -251,9 +251,6 @@ public class Clientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -280,6 +277,7 @@ public class Clientes extends javax.swing.JFrame {
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Clientes().setVisible(true);
             }

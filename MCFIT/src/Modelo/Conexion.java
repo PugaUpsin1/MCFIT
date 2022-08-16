@@ -32,7 +32,7 @@ public class Conexion {
              st = cn.createStatement();
              rs = st.executeQuery("Select * from Clientes where nombre='"+Nombre+"';");
          } catch (SQLException ex) {
-            //java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            //return false;
         }
         return rs; 
      }
@@ -62,7 +62,6 @@ public class Conexion {
             st = cn.createStatement();
             rs = st.executeQuery("call InsertarCliente('"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');");
             
-            //String cadenaSQL = "insert into Clientes(idCliente, nombre, apellido,celular, edad, sexo, estadoCivil,fechaNacimiento, ocupacion, correoE, direccion, fechaIncripcion,rutaCuestionario, foto, idMembresia)values'"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');";
             //String cadenaSQL = "call InsertarCliente('"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');";
             //int registroClientes = st.executeUpdate(cadenaSQL);
             return true;
