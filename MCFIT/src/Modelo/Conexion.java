@@ -1,177 +1,175 @@
-
 package Modelo;
-
 
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-
 public class Conexion {
-    
-    public Connection Conectar(){
+
+    public Connection Conectar() {
         Connection cn = null;
         try {
             Driver driver = new com.mysql.jdbc.Driver();
             DriverManager.registerDriver(driver);
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/Gym","root","");
-            
+            cn = DriverManager.getConnection("jdbc:mysql://localhost/Gym", "root", "");
+
         } catch (Exception e) {
-            
+
         }
-        return cn; 
+        return cn;
     }
-     
-     public ResultSet BuscarClientes(String Nombre){
-         Connection cn = Conectar();
-         Statement st; 
-         ResultSet rs = null;
-         
-         try{
-             st = cn.createStatement();
-             rs = st.executeQuery("Select * from Clientes where nombre='"+Nombre+"';");
-         } catch (SQLException ex) {
-            //return false;
-        }
-        return rs; 
-     }
-     
-     public boolean InsertarHistorial(int IDHistorial, float Altura, String Fecha, float Peso, int IDcliente){
-         Connection cn = Conectar();
+
+    public ResultSet BuscarClientes(String Nombre) {
+        Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
-        
+
         try {
             st = cn.createStatement();
-            String cadenaSQL = "call InsertarHistorial('"+IDHistorial+"','"+Altura+"','"+Fecha+"','"+Peso+"','"+IDcliente+"');";
+            rs = st.executeQuery("Select * from Clientes where nombre='" + Nombre + "';");
+        } catch (SQLException ex) {
+            //return false;
+        }
+        return rs;
+    }
+
+    public boolean InsertarHistorial(int IDHistorial, float Altura, String Fecha, float Peso, int IDcliente) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call InsertarHistorial('" + IDHistorial + "','" + Altura + "','" + Fecha + "','" + Peso + "','" + IDcliente + "');";
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {
             return false;
         }
-     }
-     
-     
-     
-    public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, String Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia){
+    }
+
+    public boolean InsertarCliente(int IDCliente, String Nombre, String Apellidos, String Celular, int Edad, String Sexo, String EstadoCivil, String FechaNacimiento, String Ocupacion, String CorreoE, String Direccion, String FechaInscripcion, String RutaCuestionario, String Foto, int IDMembresia) {
         Connection cn = Conectar();
-        Statement st; 
-        ResultSet rs = null; 
-        try{ 
+        Statement st;
+        ResultSet rs = null;
+        try {
             st = cn.createStatement();
-            rs = st.executeQuery("call InsertarCliente('"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');");
-            
+            rs = st.executeQuery("call InsertarCliente('" + IDCliente + "','" + Nombre + "','" + Apellidos + "','" + Celular + "','" + Edad + "','" + Sexo + "','" + EstadoCivil + "','" + FechaNacimiento + "','" + Ocupacion + "','" + CorreoE + "','" + Direccion + "','" + FechaInscripcion + "','" + RutaCuestionario + "','" + Foto + "','" + IDMembresia + "');");
+
             //String cadenaSQL = "call InsertarCliente('"+IDCliente+"','"+Nombre+"','"+Apellidos+"','"+Celular+"','"+Edad+"','"+Sexo+"','"+EstadoCivil+"','"+FechaNacimiento+"','"+Ocupacion+"','"+CorreoE+"','"+Direccion+"','"+FechaInscripcion+"','"+RutaCuestionario+"','"+Foto+"','"+IDMembresia+"');";
             //int registroClientes = st.executeUpdate(cadenaSQL);
             return true;
-        }catch(SQLException ex){
-            return false; 
+        } catch (SQLException ex) {
+            return false;
         }
     }
-    public boolean InsertarProducto(int IDproducto, String TipoProducto, String Descripcion, double PrecioVenta,double PrecioCompra,int Existencia,String Foto,int IDproveedor){
-    
+
+    public boolean InsertarProducto(int IDproducto, String TipoProducto, String Descripcion, double PrecioVenta, double PrecioCompra, int Existencia, String Foto, int IDproveedor) {
+
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
         try {
             st = cn.createStatement();
-            String cadenaSQL = "call InsertarProducto('"+IDproducto+"','"+TipoProducto+"','"+Descripcion+"','"+PrecioVenta+"','"+PrecioCompra+"','"+Existencia+"','"+Foto+"','"+IDproveedor +"');";
+            String cadenaSQL = "call InsertarProducto('" + IDproducto + "','" + TipoProducto + "','" + Descripcion + "','" + PrecioVenta + "','" + PrecioCompra + "','" + Existencia + "','" + Foto + "','" + IDproveedor + "');";
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {
             return false;
         }
     }
-    
-    
-    public ResultSet BuscarHistorial(int IDcliente){
+
+    public ResultSet BuscarHistorial(int IDcliente) {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
-        
-        try {
-           st = cn.createStatement();
-          
-           rs = st.executeQuery("select * from Historial where idCliente ='"+IDcliente+"';");     
-        }catch (SQLException ex) {
-            
-        }
-        return rs;
-        
-    }
-    
-    
-    public ResultSet BuscarProductos(String TipoProducto){
-        Connection cn = Conectar();
-        Statement st;
-        ResultSet rs = null;
-        
+
         try {
             st = cn.createStatement();
-           // rs = st.executeQuery("select * from Productos where tipoProducto = 'Jugo (Licuado de leche de avena, fresa y banana)';");
-            rs = st.executeQuery("select * from Productos where tipoProducto ='"+TipoProducto+"';");            
+
+            rs = st.executeQuery("select * from Historial where idCliente ='" + IDcliente + "';");
         } catch (SQLException ex) {
-            
+
+        }
+        return rs;
+
+    }
+
+    public ResultSet BuscarProductos(String TipoProducto) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+
+        try {
+            st = cn.createStatement();
+            // rs = st.executeQuery("select * from Productos where tipoProducto = 'Jugo (Licuado de leche de avena, fresa y banana)';");
+            rs = st.executeQuery("select * from Productos where tipoProducto ='" + TipoProducto + "';");
+        } catch (SQLException ex) {
+
         }
         return rs;
     }
-    public boolean InsertarMembresia(int IDMembresia, String Plazo, float Costo, String TipoMembresia){
-    
+
+    public boolean InsertarMembresia(int IDMembresia, String Plazo, float Costo, String TipoMembresia) {
+
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
         try {
             st = cn.createStatement();
-            String cadenaSQL = "call aggMembresia('"+IDMembresia+"','"+Plazo+"','"+Costo+"','"+TipoMembresia+"');";
+            String cadenaSQL = "call aggMembresia('" + IDMembresia + "','" + Plazo + "','" + Costo + "','" + TipoMembresia + "');";
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {
             return false;
         }
     }
-     public ResultSet BuscarMembresia(String TipoMembresia){
-         Connection cn = Conectar();
-         Statement st; 
-         ResultSet rs = null;
-         
-         try{
-             st = cn.createStatement();
-             rs = st.executeQuery("Select * from Membresias where tipoMembresia='"+TipoMembresia+"';");
-         } catch (SQLException ex) {
-            
+
+    public ResultSet BuscarMembresia(String TipoMembresia) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from Membresias where tipoMembresia='" + TipoMembresia + "';");
+        } catch (SQLException ex) {
+
         }
-        return rs; 
-     }
-    public ResultSet BuscarPagoMem(String Nombre){
-         Connection cn = Conectar();
-         Statement st; 
-         ResultSet rs = null;
-         
-         try{
-             st = cn.createStatement();
-             rs = st.executeQuery("Select * from Pago_mem inner join Clientes on Pago_mem.idCliente = Clientes.idCliente where nombre='"+Nombre+"';");
-         } catch (SQLException ex) {
+        return rs;
+    }
+
+    public ResultSet BuscarPagoMem(String Nombre) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from Pago_mem inner join Clientes on Pago_mem.idCliente = Clientes.idCliente where nombre='" + Nombre + "';");
+        } catch (SQLException ex) {
             //java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        return rs; 
-     }
-     public boolean InsertarPagoMembre(int IDPagoMem, String MetodoPago, String FechaPago, String Hora,int IDCliente,int IDEmpleado,int IDMembresia){
-    
+        return rs;
+    }
+
+    public boolean InsertarPagoMembre(int IDPagoMem, String MetodoPago, String FechaPago, String Hora, int IDCliente, int IDEmpleado, int IDMembresia) {
+
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
         try {
             st = cn.createStatement();
-            String cadenaSQL = "call aggPagoMembre('"+IDPagoMem+"','"+MetodoPago+"','"+FechaPago+"','"+Hora+"','"+IDCliente+"','"+IDEmpleado+"','"+IDMembresia+"');";
+            String cadenaSQL = "call aggPagoMembre('" + IDPagoMem + "','" + MetodoPago + "','" + FechaPago + "','" + Hora + "','" + IDCliente + "','" + IDEmpleado + "','" + IDMembresia + "');";
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {
             return false;
         }
     }
-    
-    public ResultSet SelectProductos(){
+
+    public ResultSet SelectProductos() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -181,10 +179,10 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
-        return rs;       
+        return rs;
     }
-    
-    public ResultSet SelectClientes(){
+
+    public ResultSet SelectClientes() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -194,10 +192,10 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
-        return rs;        
+        return rs;
     }
-    
-    public ResultSet SelectHistorial(){
+
+    public ResultSet SelectHistorial() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -207,10 +205,10 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
-        return rs;       
+        return rs;
     }
-    
-    public ResultSet SelectVentas(){
+
+    public ResultSet SelectVentas() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -222,8 +220,8 @@ public class Conexion {
         }
         return rs;
     }
-    
-    public ResultSet SelectDetalleVentas(){
+
+    public ResultSet SelectDetalleVentas() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -234,9 +232,10 @@ public class Conexion {
 
         }
         return rs;
-       
+
     }
-    public ResultSet SelectMembresias(){
+
+    public ResultSet SelectMembresias() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -248,7 +247,8 @@ public class Conexion {
         }
         return rs;
     }
-    public ResultSet SelectPagoMembresia(){
+
+    public ResultSet SelectPagoMembresia() {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -258,7 +258,34 @@ public class Conexion {
         } catch (SQLException ex) {
 
         }
-        return rs;       
+        return rs;
     }
 
+    public ResultSet SelectProveedores() {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Proveedores;");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error en consulta");
+        }
+        return rs;
+    }
+
+    public ResultSet BuscarPreoveedores(String nombreP) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+
+        try {
+            st = cn.createStatement();
+
+            rs = st.executeQuery("Select * from Proveedores where nombreP='" + nombreP + "';");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+    }
 }
