@@ -52,6 +52,7 @@ public class Compras extends javax.swing.JFrame {
         btnCompras = new javax.swing.JButton();
         btnEditarC = new javax.swing.JButton();
         btnEliminarC = new javax.swing.JButton();
+        btnRefreshC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Compras");
@@ -107,6 +108,14 @@ public class Compras extends javax.swing.JFrame {
         btnEliminarC.setBackground(new java.awt.Color(242, 242, 242));
         btnEliminarC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
 
+        btnRefreshC.setBackground(new java.awt.Color(242, 242, 242));
+        btnRefreshC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
+        btnRefreshC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,6 +128,8 @@ public class Compras extends javax.swing.JFrame {
                 .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRefreshC)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEliminarC)
                         .addGap(18, 18, 18)
                         .addComponent(btnEditarC))
@@ -162,7 +173,8 @@ public class Compras extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEliminarC, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEditarC, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(btnEditarC, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRefreshC)))
         );
 
         pack();
@@ -200,6 +212,10 @@ public class Compras extends javax.swing.JFrame {
         DetaComp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnComprasActionPerformed
+
+    private void btnRefreshCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefreshCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,6 +257,7 @@ public class Compras extends javax.swing.JFrame {
     private javax.swing.JButton btnCompras;
     private javax.swing.JButton btnEditarC;
     private javax.swing.JButton btnEliminarC;
+    private javax.swing.JButton btnRefreshC;
     private javax.swing.JButton btnRegresarC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
