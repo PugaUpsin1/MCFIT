@@ -273,6 +273,18 @@ public class Conexion {
         }
         return rs;
     }
+    public ResultSet SelectCompras() {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM Compras;");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error en consulta");
+        }
+        return rs;
+    }
 
     public ResultSet BuscarPreoveedores(String nombreP) {
         Connection cn = Conectar();
