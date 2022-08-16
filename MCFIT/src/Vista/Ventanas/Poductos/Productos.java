@@ -2,10 +2,13 @@
 package Vista.Ventanas.Poductos;
 
 import Modelo.Conexion;
+import Modelo.sqlUsuarios;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Container;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -111,6 +114,11 @@ public class Productos extends javax.swing.JFrame {
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
         btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
+        btneli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
@@ -320,8 +328,34 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedoresActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnProveedoresActionPerformed
+
+    private void btneliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliActionPerformed
+               PreparedStatement ps = null;
+         ResultSet rs= null;
+         VerProducto vPro = new VerProducto();
+         
+          try {
+              Conexion objCon= new Conexion();
+              Connection con = objCon.Conectar();
+              
+              int fila = ProdT.getSelectedRow();
+              String idProducto = ProdT.getValueAt(fila, 0).toString();
+              
+              ps=con.prepareStatement("DELETE FROM Productos WHERE idProducto = ?;");
+              ps.setString(1, idProducto);
+              ps.toString();
+              System.out.println(ps);
+              ps.executeUpdate();
+              
+              
+    
+              
+          } catch (SQLException e) {
+              Logger.getLogger(sqlUsuarios.class.getName()).log(Level.SEVERE, null, e);
+          } 
+    }//GEN-LAST:event_btneliActionPerformed
 
 
 
