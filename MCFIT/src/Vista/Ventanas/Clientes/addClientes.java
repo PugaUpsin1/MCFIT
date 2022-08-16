@@ -451,7 +451,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         this.txtEdad.setText("");
         this.cmbSexo.setSelectedIndex(0);
         this.txtEstadoCivil.setText("");
-        //this.jDateFechaN.setDateFormatString("");
         this.txtFechaN.setText("");
         this.txtOcupacion.setText("");
         this.txtDireccion.setText("");
@@ -473,31 +472,35 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        sqlClientes sqlC = new sqlClientes();
-        Clientes1 clients = new Clientes1(); 
-        
-        clients.setNombre(txtNombre.getText());
-        clients.setApellido(txtApellidos.getText());
-        clients.setCelular(txtCelular.getText()); 
-        String edad = new String(txtEdad.getText());
-        clients.setEdad(Integer.valueOf(edad));
-        clients.setSexo(this.cmbSexo.getSelectedItem().toString());
-        clients.setEstadoCivil(txtEstadoCivil.getText());
-        clients.setFechaNacimiento(this.txtFechaN.getText());
-        clients.setOcupacion(txtOcupacion.getText());
-        clients.setDireccion(txtDireccion.getText());
-        clients.setFechaInscripcion(this.txtFechaInscripcion.getText().toString());
-        clients.setCorreoE(txtCorreoElectronico.getText());
-        clients.setRutaCuestionario(txtCuestionarioPrevio.getText());
-        clients.setFoto(txtFotoCliente.getText());
-        String idM = new String(txtMembresia.getText());
-        clients.setIdMembresia(Integer.valueOf(idM));
-        
-        if(sqlC.registrar(clients)){            
-            JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
-            this.Limpiar();
+        if(this.txtNombre.getText().isEmpty()||this.txtApellidos.getText().isEmpty()||this.txtCelular.getText().isEmpty()||this.txtEdad.getText().isEmpty()||this.txtEstadoCivil.getText().isEmpty()|| this.txtFechaN.getText().isEmpty()||this.txtOcupacion.getText().isEmpty()||this.txtCorreoElectronico.getText().isEmpty()||this.txtCuestionarioPrevio.getText().isEmpty()||this.txtFotoCliente.getText().isEmpty()||this.txtMembresia.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Falta ingresar campos");
         }else{
-            JOptionPane.showMessageDialog(null, "Error al guardar");
+            sqlClientes sqlC = new sqlClientes();
+            Clientes1 clients = new Clientes1(); 
+        
+            clients.setNombre(txtNombre.getText());
+            clients.setApellido(txtApellidos.getText());
+            clients.setCelular(txtCelular.getText()); 
+            String edad = new String(txtEdad.getText());
+            clients.setEdad(Integer.valueOf(edad));
+            clients.setSexo(this.cmbSexo.getSelectedItem().toString());
+            clients.setEstadoCivil(txtEstadoCivil.getText());
+            clients.setFechaNacimiento(this.txtFechaN.getText());
+            clients.setOcupacion(txtOcupacion.getText());
+            clients.setDireccion(txtDireccion.getText());
+            clients.setFechaInscripcion(this.txtFechaInscripcion.getText().toString());
+            clients.setCorreoE(txtCorreoElectronico.getText());
+            clients.setRutaCuestionario(txtCuestionarioPrevio.getText());
+            clients.setFoto(txtFotoCliente.getText());
+            String idM = new String(txtMembresia.getText());
+            clients.setIdMembresia(Integer.valueOf(idM));
+        
+            if(sqlC.registrar(clients)){            
+                JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
+                this.Limpiar();
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al guardar");
+            }
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
