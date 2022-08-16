@@ -1,22 +1,42 @@
 package Modelo.Clientes;
 
-public class Clientes1 {
-    private int idCliente;
-    private String nombre; 
-    private String apellido; 
-    private String celular;
-    private int edad;
-    private String sexo;
-    private String estadoCivil;
-    private String fechaNacimiento;
-    private String ocupacion;
-    private String correoE;
-    private String direccion;
-    private String fechaInscripcion;
-    private String rutaCuestionario;
-    private String foto;
-    private int idMembresia; 
+import java.util.Date;
 
+public class Clientes1 {
+     private int idCliente;
+     private String nombre; 
+     private String apellido; 
+     private String celular;
+     private int edad;
+     private String sexo;
+     private String estadoCivil;
+     private String fechaNacimiento;
+     private String ocupacion;
+     private String correoE;
+     private String direccion;
+     private String fechaInscripcion;
+     private String rutaCuestionario;
+     private String foto;
+     int idMembresia; 
+
+    /*public Clientes1(int idCliente, String nombre, String apellido, String celular, int edad, String sexo, String estadoCivil, String fechaNacimiento, String ocupacion, String correoE, String direccion, String fechaInscripcion, String rutaCuestionario, String foto, int idMembresia) {
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.celular = celular;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.estadoCivil = estadoCivil;
+        this.fechaNacimiento = fechaNacimiento;
+        this.ocupacion = ocupacion;
+        this.correoE = correoE;
+        this.direccion = direccion;
+        this.fechaInscripcion = fechaInscripcion;
+        this.rutaCuestionario = rutaCuestionario;
+        this.foto = foto;
+        this.idMembresia = idMembresia;
+    }*/
+    
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
