@@ -2,10 +2,14 @@ package Vista.Ventanas.Clientes;
 
 import Vista.Ventanas.Historial;
 import Modelo.Conexion;
+import Vista.Ventanas.Poductos.VerProducto;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Container;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -74,9 +78,14 @@ public class Clientes extends javax.swing.JFrame {
 
         btnEdit.setBackground(new java.awt.Color(242, 242, 242));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btneli.setBackground(new java.awt.Color(242, 242, 242));
-        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
+        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Eliminar64.png"))); // NOI18N
         btneli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btneliActionPerformed(evt);
@@ -144,10 +153,10 @@ public class Clientes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 651, Short.MAX_VALUE)
                         .addComponent(btnHistorial))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(127, Short.MAX_VALUE)
+                        .addContainerGap(151, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
@@ -250,6 +259,47 @@ public class Clientes extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se encontró el cliente o no esta registrado");
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+         PreparedStatement ps = null;
+         ResultSet rs= null;
+         ModificarCliente modificarCliente = new ModificarCliente();
+         
+          try {
+              Conexion objCon= new Conexion();
+              Connection con = objCon.Conectar();
+              
+              int fila = ClienT.getSelectedRow();
+              String idCliente = ClienT.getValueAt(fila, 0).toString();
+              
+              ps=con.prepareStatement("SELECT idCliente,nombre,apellido,celular,edad,sexo,estadoCivil,fechaNacimiento,ocupacion,correoE,direccion,fechaInscripcion,rutaCuestionario,foto,idMembresia FROM Clientes WHERE idCliente= ?");
+              ps.setString(1, idCliente);
+              rs = ps.executeQuery();
+              
+              while(rs.next()){
+                  ModificarCliente.txtCliente.setText(rs.getString("idCliente"));
+                  ModificarCliente.txtNombre.setText(rs.getString("nombre"));
+                  ModificarCliente.txtApellidos.setText(rs.getString("apellido"));
+                  ModificarCliente.txtEdad.setText(rs.getString("edad"));
+                  ModificarCliente.txtCelular.setText(rs.getString("celular"));
+                  ModificarCliente.cmbSexo.setSelectedItem("sexo");
+                  ModificarCliente.txtEstadoCivil.setText(rs.getString("estadoCivil"));
+                  ModificarCliente.txtFechaN.setText(rs.getString("fechaNacimiento"));
+                  ModificarCliente.txtOcupacion.setText(rs.getString("ocupacion"));
+                  ModificarCliente.txtCorreoElectronico.setText(rs.getString("correoE"));
+                  ModificarCliente.txtDireccion.setText(rs.getString("direccion"));
+                  ModificarCliente.txtFechaInscripcion.setText(rs.getString("fechaInscripcion"));
+                  ModificarCliente.txtCuestionarioPrevio.setText(rs.getString("rutaCuestionario"));
+                  ModificarCliente.txtFotoCliente.setText(rs.getString("foto"));
+                  ModificarCliente.txtMembresia.setText(rs.getString("idMembresia"));
+                  
+                  modificarCliente.setVisible(true);
+              }
+              
+          }catch (SQLException e) {
+              JOptionPane.showMessageDialog(null, "Ocurrió un error al modificar");
+          }
+    }//GEN-LAST:event_btnEditActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -1,60 +1,32 @@
 /*
- * Descripción: ventana para registrar clientes
- * Nombre: Mariana Hernández Colio 
- * Fecha: agosto/2022
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista.Ventanas.Clientes;
 
-import Modelo.Clientes.sqlClientes;
 import Modelo.Clientes.Clientes1;
-import Modelo.Conexion;
-import java.awt.Color;
-import java.awt.Container;
+import Modelo.Clientes.sqlClientes;
+import static Vista.Ventanas.Clientes.addClientes.fechaActual;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class addClientes extends javax.swing.JFrame implements ActionListener {
-    
-    //JButton botonFotoCliente;
-    Container cont = this.getContentPane();
-    
-    public addClientes() {
+/**
+ *
+ * @author Mariana Hernández
+ */
+public class ModificarCliente extends javax.swing.JFrame {
+
+    /**
+     * Creates new form ModificarCliente
+     */
+    public ModificarCliente() {
         initComponents();
-
-        this.getContentPane().setBackground(Color.WHITE);
-
-        //---CODIGO PARA BOTONES DE FOTOS
-        //Codigo para el FileChooser de la foto del Cliente
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.btnFotoCliente.addActionListener(this);
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        //Codigo para el FileChooser de la foto del formulario
-        this.btnCuestionarioPrevio.addActionListener(this);
-
-        this.txtFechaInscripcion.setText(fechaActual());
-    }
-        
-    public static String fechaActual() {
-        Date fecha = new Date();
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY-MM-dd");
-        return formatoFecha.format(fecha);
-    }
-
-    public ImageIcon ResizeImage(String ImagePath) {
-        ImageIcon MyImage = new ImageIcon(ImagePath);
-        Image img = MyImage.getImage();
-        Image newImg = img.getScaledInstance(this.lblFotoCliente.getWidth(), this.lblFotoCliente.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImg);
-        return image;
     }
 
     /**
@@ -66,22 +38,28 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTelefono = new javax.swing.JLabel();
+        btnCuestionarioPrevio = new javax.swing.JButton();
+        txtCelular = new javax.swing.JTextField();
+        lblEdad = new javax.swing.JLabel();
+        btnFotoCliente = new javax.swing.JButton();
+        txtEdad = new javax.swing.JTextField();
+        btnModificar = new javax.swing.JButton();
+        lblSexo = new javax.swing.JLabel();
+        cmbSexo = new javax.swing.JComboBox<>();
+        txtDireccion = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        lblCuestionarioPrevio = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JButton();
+        lblMembresia = new javax.swing.JLabel();
+        txtMembresia = new javax.swing.JTextField();
+        txtFechaN = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
         txtCuestionarioPrevio = new javax.swing.JTextField();
         lblApellidos = new javax.swing.JLabel();
         lblFotoCliente = new javax.swing.JLabel();
         txtApellidos = new javax.swing.JTextField();
         txtFotoCliente = new javax.swing.JTextField();
-        lblTelefono = new javax.swing.JLabel();
-        btnCuestionarioPrevio = new javax.swing.JButton();
-        txtCelular = new javax.swing.JTextField();
-        lblEdad = new javax.swing.JLabel();
-        btnFotoCliente = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
-        txtEdad = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
-        lblSexo = new javax.swing.JLabel();
-        cmbSexo = new javax.swing.JComboBox<>();
         lblEstadoCivil = new javax.swing.JLabel();
         txtEstadoCivil = new javax.swing.JTextField();
         lblOcupacion = new javax.swing.JLabel();
@@ -92,46 +70,10 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         lblCorreoElectronico = new javax.swing.JLabel();
         txtCorreoElectronico = new javax.swing.JTextField();
         lblDireccion = new javax.swing.JLabel();
-        txtDireccion = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
-        lblCuestionarioPrevio = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
-        lblMembresia = new javax.swing.JLabel();
-        txtMembresia = new javax.swing.JTextField();
-        txtFechaN = new javax.swing.JTextField();
+        txtCliente = new javax.swing.JTextField();
+        lblNombre1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Clientes");
-
-        lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNombre.setText("Nombre(s):");
-
-        txtCuestionarioPrevio.setEditable(false);
-        txtCuestionarioPrevio.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        lblApellidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblApellidos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblApellidos.setText("Apellido(s):");
-
-        lblFotoCliente.setBackground(new java.awt.Color(204, 204, 204));
-        lblFotoCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFotoCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        txtApellidos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtApellidosKeyTyped(evt);
-            }
-        });
-
-        txtFotoCliente.setEditable(false);
-        txtFotoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtFotoCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFotoClienteActionPerformed(evt);
-            }
-        });
 
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTelefono.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -164,15 +106,6 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        btnLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/limpiar.png"))); // NOI18N
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
-
         txtEdad.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -180,12 +113,12 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/guadar.png"))); // NOI18N
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/guadar.png"))); // NOI18N
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -196,6 +129,65 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         cmbSexo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbSexo.setMaximumRowCount(3);
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mujer", "Hombre", "Otro" }));
+
+        txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
+
+        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+
+        lblCuestionarioPrevio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCuestionarioPrevio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblCuestionarioPrevio.setText("Cuestionario previo: ");
+
+        btnCerrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+
+        lblMembresia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblMembresia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblMembresia.setText("Membresía: ");
+
+        lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNombre.setText("Nombre(s):");
+
+        txtCuestionarioPrevio.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        lblApellidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblApellidos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblApellidos.setText("Apellido(s):");
+
+        lblFotoCliente.setBackground(new java.awt.Color(204, 204, 204));
+        lblFotoCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFotoCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtApellidos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosKeyTyped(evt);
+            }
+        });
+
+        txtFotoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtFotoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFotoClienteActionPerformed(evt);
+            }
+        });
 
         lblEstadoCivil.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEstadoCivil.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -239,36 +231,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblDireccion.setText("Dirección: ");
 
-        txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDireccionActionPerformed(evt);
-            }
-        });
-
-        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNombreKeyTyped(evt);
-            }
-        });
-
-        lblCuestionarioPrevio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblCuestionarioPrevio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblCuestionarioPrevio.setText("Cuestionario previo: ");
-
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-
-        lblMembresia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblMembresia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblMembresia.setText("Membresía: ");
+        lblNombre1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNombre1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNombre1.setText("ID Cliente:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,9 +267,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblApellidos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblNombre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(26, 26, 26)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCliente)
                                     .addComponent(txtNombre)
                                     .addComponent(txtApellidos)
                                     .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
@@ -317,10 +284,8 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMembresia, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCancelar)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnLimpiar))))
+                            .addComponent(btnCerrar))
+                        .addGap(67, 67, 67))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblFechaInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -331,7 +296,7 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnGuardar)
+                            .addComponent(btnModificar)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtDireccion)
                                 .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
@@ -341,21 +306,18 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCuestionarioPrevio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNombre1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnFotoCliente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -387,7 +349,14 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblOcupacion))))
+                            .addComponent(lblOcupacion)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFotoCliente))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
@@ -414,14 +383,36 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                             .addComponent(lblMembresia))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnLimpiar)
-                            .addComponent(btnCancelar)
-                            .addComponent(btnGuardar))))
+                            .addComponent(btnCerrar)
+                            .addComponent(btnModificar))))
                 .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCuestionarioPrevioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuestionarioPrevioActionPerformed
+        JFileChooser fileCustionario = new JFileChooser();
+        fileCustionario.setCurrentDirectory(new File(System.getProperty("user.dir")));
+
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.Images", "jpg", "png");
+        fileCustionario.addChoosableFileFilter(filtro);
+
+        int respuesta = fileCustionario.showSaveDialog(null);
+
+        if (respuesta == JFileChooser.APPROVE_OPTION) {
+            File fileSeleccionado = fileCustionario.getSelectedFile();
+            String ruta = fileSeleccionado.getAbsolutePath();
+            this.txtCuestionarioPrevio.setText(ruta);
+        } else if (respuesta == JFileChooser.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(null, "Debes agregar la foto del cuestionario");
+        }
+    }//GEN-LAST:event_btnCuestionarioPrevioActionPerformed
+
+    private void txtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtCelularKeyTyped
 
     private void btnFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoClienteActionPerformed
         JFileChooser fileCliente = new JFileChooser();
@@ -443,33 +434,43 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         }
     }//GEN-LAST:event_btnFotoClienteActionPerformed
 
-    private void btnCuestionarioPrevioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuestionarioPrevioActionPerformed
-        JFileChooser fileCustionario = new JFileChooser();
-        fileCustionario.setCurrentDirectory(new File(System.getProperty("user.dir")));
+    private void txtEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtEdadKeyTyped
 
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.Images", "jpg", "png");
-        fileCustionario.addChoosableFileFilter(filtro);
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+            sqlClientes sqlC = new sqlClientes();
+            Clientes1 clients = new Clientes1();
 
-        int respuesta = fileCustionario.showSaveDialog(null);
-
-        if (respuesta == JFileChooser.APPROVE_OPTION) {
-            File fileSeleccionado = fileCustionario.getSelectedFile();
-            String ruta = fileSeleccionado.getAbsolutePath();
-            this.txtCuestionarioPrevio.setText(ruta);
-        } else if (respuesta == JFileChooser.CANCEL_OPTION) {
-            JOptionPane.showMessageDialog(null, "Debes agregar la foto del cuestionario");
-        }
-
-    }//GEN-LAST:event_btnCuestionarioPrevioActionPerformed
-
-    private void txtFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFotoClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFotoClienteActionPerformed
-
-    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionActionPerformed
-
+            clients.setNombre(txtNombre.getText());
+            clients.setApellido(txtApellidos.getText());
+            clients.setCelular(txtCelular.getText());
+            String edad = new String(txtEdad.getText());
+            clients.setEdad(Integer.valueOf(edad));
+            clients.setSexo(this.cmbSexo.getSelectedItem().toString());
+            clients.setEstadoCivil(txtEstadoCivil.getText());
+            clients.setFechaNacimiento(this.txtFechaN.getText());
+            clients.setOcupacion(txtOcupacion.getText());
+            clients.setDireccion(txtDireccion.getText());
+            clients.setFechaInscripcion(this.txtFechaInscripcion.getText().toString());
+            clients.setCorreoE(txtCorreoElectronico.getText());
+            clients.setRutaCuestionario(txtCuestionarioPrevio.getText());
+            clients.setFoto(txtFotoCliente.getText());
+            String idM = new String(txtMembresia.getText());
+            clients.setIdMembresia(Integer.valueOf(idM));
+           String idC = new String(this.txtCliente.getText());
+            clients.setIdCliente(Integer.valueOf(idC));
+            
+            if(sqlC.modificar(clients)){
+                JOptionPane.showMessageDialog(null, "Cliente modificado con éxito");
+                this.Limpiar();
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al modificar");
+            }
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
+    
     public void Limpiar() {
         //this.txtIdCliente.setText("");
         this.txtNombre.setText("");
@@ -487,77 +488,57 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         this.txtFotoCliente.setText("");
         this.txtMembresia.setText("");
     }
+    
+    public static String fechaActual() {
+        Date fecha = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY-MM-dd");
+        return formatoFecha.format(fecha);
+    }
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        this.Limpiar();
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    public ImageIcon ResizeImage(String ImagePath) {
+        ImageIcon MyImage = new ImageIcon(ImagePath);
+        Image img = MyImage.getImage();
+        Image newImg = img.getScaledInstance(this.lblFotoCliente.getWidth(), this.lblFotoCliente.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(newImg);
+        return image;
+    }
+    
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        if((c<'a' || c>'z')&&(c<'A' || c>'Z')) evt.consume();        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         Clientes addC = new Clientes();
         addC.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if(this.txtNombre.getText().isEmpty()||this.txtApellidos.getText().isEmpty()||this.txtCelular.getText().isEmpty()||this.txtEdad.getText().isEmpty()||this.txtEstadoCivil.getText().isEmpty()|| this.txtFechaN.getText().isEmpty()||this.txtOcupacion.getText().isEmpty()||this.txtCorreoElectronico.getText().isEmpty()||this.txtCuestionarioPrevio.getText().isEmpty()||this.txtFotoCliente.getText().isEmpty()||this.txtMembresia.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Falta ingresar campos");
-        }else{
-            sqlClientes sqlC = new sqlClientes();
-            Clientes1 clients = new Clientes1(); 
-        
-            clients.setNombre(txtNombre.getText());
-            clients.setApellido(txtApellidos.getText());
-            clients.setCelular(txtCelular.getText()); 
-            String edad = new String(txtEdad.getText());
-            clients.setEdad(Integer.valueOf(edad));
-            clients.setSexo(this.cmbSexo.getSelectedItem().toString());
-            clients.setEstadoCivil(txtEstadoCivil.getText());
-            clients.setFechaNacimiento(this.txtFechaN.getText());
-            clients.setOcupacion(txtOcupacion.getText());
-            clients.setDireccion(txtDireccion.getText());
-            clients.setFechaInscripcion(this.txtFechaInscripcion.getText().toString());
-            clients.setCorreoE(txtCorreoElectronico.getText());
-            clients.setRutaCuestionario(txtCuestionarioPrevio.getText());
-            clients.setFoto(txtFotoCliente.getText());
-            String idM = new String(txtMembresia.getText());
-            clients.setIdMembresia(Integer.valueOf(idM));
-        
-            if(sqlC.registrar(clients)){            
-                JOptionPane.showMessageDialog(null, "Cliente agregado con éxito");
-                this.Limpiar();
-            }else{
-                JOptionPane.showMessageDialog(null, "Error al guardar");
-            }
-        }
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
+        char c = evt.getKeyChar();
+        if((c<'a' || c>'z')&&(c<'A' || c>'Z')) evt.consume();           // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidosKeyTyped
+
+    private void txtFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFotoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFotoClienteActionPerformed
+
+    private void txtEstadoCivilKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyTyped
+        char c = evt.getKeyChar();
+        if((c<'a' || c>'z')&&(c<'A' || c>'Z')) evt.consume();
+    }//GEN-LAST:event_txtEstadoCivilKeyTyped
 
     private void txtFechaInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInscripcionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaInscripcionActionPerformed
 
-    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-               // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreKeyTyped
-
-    private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
-                   // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidosKeyTyped
-
-    private void txtEstadoCivilKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyTyped
-        char c = evt.getKeyChar(); 
-        if((c<'a' || c>'z')&&(c<'A' || c>'Z')) evt.consume();   
-    }//GEN-LAST:event_txtEstadoCivilKeyTyped
-
-    private void txtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyTyped
-        char c = evt.getKeyChar(); 
-        if(c<'0' || c>'9') evt.consume();
-    }//GEN-LAST:event_txtCelularKeyTyped
-
-    private void txtEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyTyped
-        char c = evt.getKeyChar(); 
-        if(c<'0' || c>'9') evt.consume();
-    }//GEN-LAST:event_txtEdadKeyTyped
-
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -572,34 +553,30 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Clientes1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        new addClientes();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                new Clientes().setVisible(true);
+                new ModificarCliente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCuestionarioPrevio;
-    private javax.swing.JButton btnFotoCliente;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> cmbSexo;
+    private javax.swing.JButton btnCerrar;
+    public static javax.swing.JButton btnCuestionarioPrevio;
+    public static javax.swing.JButton btnFotoCliente;
+    private javax.swing.JButton btnModificar;
+    public static javax.swing.JComboBox<String> cmbSexo;
     private javax.swing.JLabel lblApellidos;
     private javax.swing.JLabel lblCorreoElectronico;
     private javax.swing.JLabel lblCuestionarioPrevio;
@@ -611,27 +588,23 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel lblFotoCliente;
     private javax.swing.JLabel lblMembresia;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombre1;
     private javax.swing.JLabel lblOcupacion;
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTelefono;
-    private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtCorreoElectronico;
-    private javax.swing.JTextField txtCuestionarioPrevio;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtEdad;
-    private javax.swing.JTextField txtEstadoCivil;
-    private javax.swing.JTextField txtFechaInscripcion;
-    private javax.swing.JTextField txtFechaN;
-    private javax.swing.JTextField txtFotoCliente;
-    private javax.swing.JTextField txtMembresia;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtOcupacion;
+    public static javax.swing.JTextField txtApellidos;
+    public static javax.swing.JTextField txtCelular;
+    public static javax.swing.JTextField txtCliente;
+    public static javax.swing.JTextField txtCorreoElectronico;
+    public static javax.swing.JTextField txtCuestionarioPrevio;
+    public static javax.swing.JTextField txtDireccion;
+    public static javax.swing.JTextField txtEdad;
+    public static javax.swing.JTextField txtEstadoCivil;
+    public static javax.swing.JTextField txtFechaInscripcion;
+    public static javax.swing.JTextField txtFechaN;
+    public static javax.swing.JTextField txtFotoCliente;
+    public static javax.swing.JTextField txtMembresia;
+    public static javax.swing.JTextField txtNombre;
+    public static javax.swing.JTextField txtOcupacion;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    
-    }
 }
