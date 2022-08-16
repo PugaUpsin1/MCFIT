@@ -397,12 +397,10 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         String FechaCompra = this.txtFechaHora.getText();
         String MetodoPago = cbxMetodoPago.getSelectedItem().toString();
         int IDEmpleado = Integer.parseInt(this.txtIdEmpleado.getText()); 
-        
-        
 
         ne.InsertarCompra(IDCompra, TotalCompra, Hora,FechaCompra, MetodoPago,IDEmpleado);
         
-        JOptionPane.showMessageDialog(null, "Membresia agregada con éxito");
+        JOptionPane.showMessageDialog(null, "Compra agregada con éxito");
         
         Principal cerr = new Principal();
         this.setVisible(false);

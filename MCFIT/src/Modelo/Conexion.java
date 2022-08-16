@@ -196,6 +196,20 @@ public class Conexion {
         }
     }
     
+    public boolean InsertarVenta(int IDPagoPr, double TotalVenta, String FechaPago,String Hora, String MetodoPago, int IDEmpleado, int IDCliente){
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggVentas('" + IDPagoPr + "','" + TotalVenta + "','" + FechaPago + "','" + Hora + "','" + MetodoPago + "','" + IDEmpleado + "','" + IDCliente+"');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
     
     public ResultSet SelectProductos() {
         Connection cn = Conectar();
