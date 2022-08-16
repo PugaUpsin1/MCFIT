@@ -396,8 +396,6 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         String FechaCompra = this.txtFechaHora.getText();
         String MetodoPago = cbxMetodoPago.getSelectedItem().toString();
         int IDEmpleado = Integer.parseInt(this.txtIdEmpleado.getText()); 
-        
-        
 
         ne.InsertarCompra(IDCompra, TotalCompra, Hora,FechaCompra, MetodoPago,IDEmpleado);
         
