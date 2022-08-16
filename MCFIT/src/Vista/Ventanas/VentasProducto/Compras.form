@@ -33,6 +33,8 @@
               <EmptySpace pref="49" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnRefreshC" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnEliminarC" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarC" min="-2" max="-2" attributes="0"/>
@@ -91,6 +93,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnEliminarC" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEditarC" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRefreshC" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -194,6 +197,19 @@
           <Image iconType="3" name="/Vista/Ventanas/Icons/eliminar.png"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRefreshC">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f2" green="f2" red="f2" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshCActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

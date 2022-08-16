@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class Detalle_compras extends javax.swing.JFrame implements Runnable{ 
    String hora, minutos, segundos; 
    Thread hilo; 
-   JTable DetaVent;
+   JTable DetaCom;
    ResultSet rs;
    Container cont = this.getContentPane();
     
@@ -39,20 +39,20 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         
         
         DefaultTableModel dfm = new DefaultTableModel();
-        DetaVent= this.tablaDetalleVentas;
-        DetaVent.setModel(dfm);
+        DetaCom= this.tablaDetalleCompras;
+        DetaCom.setModel(dfm);
         
-//        dfm.setColumnIdentifiers(new Object[]{"CANTIDAD","PRECIO","IDPRODUCTO"});
-//        
-//        Conexion cn = new Conexion();
-//        rs = cn.SelectDetalleVentas();
-//        try {
-//            while(rs.next()){
-//                dfm.addRow(new Object[]{rs.getInt("cantidad"),rs.getDouble("precio"),rs.getInt("idProducto")});
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
-//        }
+        dfm.setColumnIdentifiers(new Object[]{"CANTIDAD","PRECIO","IDPRODUCTO","IDCOMPRA"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectDetalleCompras();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("cantidad"),rs.getDouble("precio"),rs.getInt("idProducto"), rs.getInt("idCompra")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
+        }
     }
 
     
@@ -81,7 +81,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         lblTotalCompra = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tablaDetalleVentas = new javax.swing.JTable();
+        tablaDetalleCompras = new javax.swing.JTable();
         btnBuscarProd = new javax.swing.JButton();
         txtIdCompra = new javax.swing.JTextField();
         btnRegresarV = new javax.swing.JButton();
@@ -158,9 +158,9 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
 
         lblTotalCompra.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTotalCompra.setForeground(java.awt.Color.red);
-        lblTotalCompra.setText("$ ");
+        lblTotalCompra.setText("50");
 
-        tablaDetalleVentas.setModel(new javax.swing.table.DefaultTableModel(
+        tablaDetalleCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -168,7 +168,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
 
             }
         ));
-        jScrollPane2.setViewportView(tablaDetalleVentas);
+        jScrollPane2.setViewportView(tablaDetalleCompras);
 
         btnBuscarProd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
@@ -364,23 +364,22 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_txtHoraActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        //Para ejecutar la instrucción
+         //Para ejecutar la instrucción
         Conexion ne = new Conexion();
+        
+        int Cantidad = Integer.parseInt(this.spnCantidad.getValue().toString());
+        double Precio = Double.parseDouble(this.txtPrecio.getText());
+        int IDProducto = Integer.parseInt(this.txtIdProducto.getText()); 
+        int IDCompra = Integer.parseInt(this.txtIdCompra.getText());                 
+               
 
-        //int IDPagoProducto = Integer.parseInt(this.txtIdPagoPr.getText()); 
-        //String Plazo = this.txtFechaHora.getText();
-        //String TipoMembresia = (String)cbxTipoMem.getSelectedItem();
-        //String TipoMembresia = this.cbxTipoMem.getSelectedIndex();
-        //float Costo = Float.parseFloat(this.txtCosto.getText());
+        ne.InsertarDetalleCompra(Cantidad, Precio, IDProducto,IDCompra);
         
-
-        //ne.InsertarMembresia(IDMembresia, Plazo, Costo, TipoMembresia);
+        //JOptionPane.showMessageDialog(null, "DetallaCompra agregada con éxito");
         
-        //JOptionPane.showMessageDialog(null, "Membresia agregada con éxito");
-        
-        Principal cerr = new Principal();
-        this.setVisible(false);
-        cerr.setVisible(true);
+        //Compras com = new Compras();
+        //this.setVisible(false);
+        //com.setVisible(true);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -402,9 +401,9 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         
         JOptionPane.showMessageDialog(null, "Compra agregada con éxito");
         
-        Principal cerr = new Principal();
+        Compras com = new Compras();
         this.setVisible(false);
-        cerr.setVisible(true);
+        com.setVisible(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
     
     public static String fechaActual(){
@@ -503,7 +502,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel lblDetalleProd1;
     private javax.swing.JLabel lblTotalCompra;
     private javax.swing.JSpinner spnCantidad;
-    private javax.swing.JTable tablaDetalleVentas;
+    private javax.swing.JTable tablaDetalleCompras;
     private javax.swing.JTextField txtFechaHora;
     private javax.swing.JTextField txtHora;
     private javax.swing.JTextField txtIdCompra;

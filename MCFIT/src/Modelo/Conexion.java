@@ -195,6 +195,20 @@ public class Conexion {
             return false;
         }
     }
+    public boolean InsertarDetalleCompra(int Cantidad,double Precio,int IDProducto,int IDCompra) {
+
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggDetalleCompras('" + Cantidad + "','" + Precio + "','" + IDProducto + "','" +  IDCompra + "');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
     
     public boolean InsertarVenta(int IDPagoPr, double TotalVenta, String FechaPago,String Hora, String MetodoPago, int IDEmpleado, int IDCliente){
         Connection cn = Conectar();
@@ -270,6 +284,19 @@ public class Conexion {
         try {
             st = cn.createStatement();
             rs = st.executeQuery("SELECT * FROM Detalle_prod;");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+
+    }
+    public ResultSet SelectDetalleCompras() {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM detalleCompra;");
         } catch (SQLException ex) {
 
         }
