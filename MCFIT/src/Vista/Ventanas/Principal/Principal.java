@@ -4,6 +4,7 @@ package Vista.Ventanas.Principal;
 import Vista.Ventanas.Poductos.Productos;
 import Vista.Ventanas.Clientes.Clientes;
 import Vista.Ventanas.VentasProducto.Venta;
+import Vista.Ventanas.VentasProducto.Compras;
 import Vista.Ventanas.Membresias.Membresias;
 import java.awt.Color;
 import java.awt.Container;
@@ -30,9 +31,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnProductos = new javax.swing.JButton();
         btnMembresia = new javax.swing.JButton();
-        btnVentas = new javax.swing.JButton();
+        btnCompras = new javax.swing.JButton();
         btnClientes1 = new javax.swing.JButton();
         btnconf = new javax.swing.JButton();
+        btnVentas1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
 
@@ -73,17 +75,17 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 311, 230, 100));
 
-        btnVentas.setBackground(new java.awt.Color(242, 242, 242));
-        btnVentas.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/verificar (1).png"))); // NOI18N
-        btnVentas.setText("    Ventas");
-        btnVentas.setActionCommand("  Ventas");
-        btnVentas.addActionListener(new java.awt.event.ActionListener() {
+        btnCompras.setBackground(new java.awt.Color(242, 242, 242));
+        btnCompras.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/verificar (1).png"))); // NOI18N
+        btnCompras.setText("    Compras");
+        btnCompras.setActionCommand("  Ventas");
+        btnCompras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVentasActionPerformed(evt);
+                btnComprasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 311, 230, 100));
+        getContentPane().add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 230, 100));
 
         btnClientes1.setBackground(new java.awt.Color(242, 242, 242));
         btnClientes1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
@@ -105,6 +107,18 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnconf, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 10, 40, 30));
 
+        btnVentas1.setBackground(new java.awt.Color(242, 242, 242));
+        btnVentas1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        btnVentas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/verificar (1).png"))); // NOI18N
+        btnVentas1.setText("    Ventas");
+        btnVentas1.setActionCommand("  Ventas");
+        btnVentas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentas1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVentas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 311, 230, 100));
+
         jMenu4.setText("Propiedades");
         jMenuBar1.add(jMenu4);
 
@@ -125,11 +139,11 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnMembresiaActionPerformed
 
-    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
-        Venta Vent = new Venta();
-        Vent.setVisible(true);
+    private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
+        Compras comp = new Compras();
+        comp.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnVentasActionPerformed
+    }//GEN-LAST:event_btnComprasActionPerformed
 
     private void btnClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes1ActionPerformed
         // TODO add your handling code here:
@@ -142,6 +156,13 @@ public class Principal extends javax.swing.JFrame {
         Configuracion Conf = new Configuracion();
         Conf.setVisible(true);
     }//GEN-LAST:event_btnconfActionPerformed
+
+    private void btnVentas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentas1ActionPerformed
+        // TODO add your handling code here:
+        Venta vent = new Venta();
+        vent.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVentas1ActionPerformed
 
 
     public static void main(String args[]) {
@@ -178,9 +199,10 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton btnClientes1;
+    javax.swing.JButton btnCompras;
     javax.swing.JButton btnMembresia;
     javax.swing.JButton btnProductos;
-    javax.swing.JButton btnVentas;
+    javax.swing.JButton btnVentas1;
     javax.swing.JButton btnconf;
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;

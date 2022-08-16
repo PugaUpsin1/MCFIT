@@ -139,7 +139,20 @@ public class Conexion {
         }
         return rs;
     }
+    public ResultSet BuscarCompra(String FechaCompra) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
 
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from Compras where fechaCompra='" + FechaCompra + "';");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+    }
+    
     public ResultSet BuscarPagoMem(String Nombre) {
         Connection cn = Conectar();
         Statement st;
@@ -168,7 +181,22 @@ public class Conexion {
             return false;
         }
     }
+    public boolean InsertarCompra(int IDCompra, double TotalCompra, String Hora, String FechaCompra, String MetodoPago, int IDEmpleado) {
 
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggCompras('" + IDCompra + "','" + TotalCompra + "','" + Hora + "','" + FechaCompra + "','" + MetodoPago + "','" + IDEmpleado + "');";
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
+    
     public ResultSet SelectProductos() {
         Connection cn = Conectar();
         Statement st;
