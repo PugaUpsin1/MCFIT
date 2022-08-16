@@ -26,7 +26,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         initComponents();
         //this.setTitle("Tiendita GYM");
         this.getContentPane().setBackground(new Color(252,207,22));
-        
+        // Hola
         //Codigo para 
         this.txtFechaHora.setText(fechaActual());
         hilo = new Thread(this);
