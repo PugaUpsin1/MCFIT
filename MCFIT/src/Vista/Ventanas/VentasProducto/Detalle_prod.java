@@ -156,7 +156,6 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         txtFechaHora.setEditable(false);
         txtFechaHora.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        txtHora.setEditable(false);
         txtHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHoraActionPerformed(evt);
@@ -195,7 +194,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        btnRealizar.setText("Realizar la Venta");
+        btnRealizar.setText("Iniciar la Venta");
         btnRealizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRealizarActionPerformed(evt);
@@ -457,22 +456,22 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
     }
     
     public void hora(){
-        Calendar calendario = new GregorianCalendar(); 
-        Date horaActual = new Date(); 
-        calendario.setTime(horaActual);
-        hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
-        minutos = calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
-        segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+        //Calendar calendario = new GregorianCalendar(); 
+        //Date horaActual = new Date(); 
+        //calendario.setTime(horaActual);
+        //hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+        //minutos = calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
+        //segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
     }
     
     @Override
     public void run() {
-        Thread current = Thread.currentThread();
+        //Thread current = Thread.currentThread();
         
-        while(current == hilo){
-            hora();
-            txtHora.setText(hora+":"+minutos+":"+segundos);
-        }
+        //while(current == hilo){
+        //    hora();
+        //    txtHora.setText(hora+":"+minutos+":"+segundos);
+        //}
     }
     
     public static void main(String args[]) {
