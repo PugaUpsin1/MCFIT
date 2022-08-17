@@ -41,7 +41,7 @@ public class Configuracion extends javax.swing.JFrame {
         ConfPanel.setLayout(ConfPanelLayout);
         ConfPanelLayout.setHorizontalGroup(
             ConfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 327, Short.MAX_VALUE)
+            .addGap(0, 561, Short.MAX_VALUE)
         );
         ConfPanelLayout.setVerticalGroup(
             ConfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -50,6 +50,7 @@ public class Configuracion extends javax.swing.JFrame {
 
         btnEmple.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEmple.setText("Empleados");
+        btnEmple.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnEmple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEmpleActionPerformed(evt);
@@ -59,6 +60,7 @@ public class Configuracion extends javax.swing.JFrame {
         btnCerrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
         btnCerrar.setText("Cerrar");
+        btnCerrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
@@ -70,12 +72,15 @@ public class Configuracion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEmple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnEmple)
+                        .addGap(0, 12, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ConfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                .addComponent(ConfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
