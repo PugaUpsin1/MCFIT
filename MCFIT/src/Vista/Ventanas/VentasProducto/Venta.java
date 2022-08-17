@@ -33,7 +33,7 @@ public class Venta extends javax.swing.JFrame {
         rs = cn.SelectVentas();
         try {
             while(rs.next()){
-                dfm.addRow(new Object[]{rs.getInt("idPagoPr"),rs.getFloat("totalVenta"),rs.getDate("fechaPago"),rs.getString("hora"),rs.getString("metodoPago"),rs.getInt("idEmpleado"),rs.getInt("idCliente")});
+                dfm.addRow(new Object[]{rs.getInt("idPagoPr"),rs.getDouble("totalVenta"),rs.getDate("fechaPago"),rs.getString("hora"),rs.getString("metodoPago"),rs.getInt("idEmpleado"),rs.getInt("idCliente")});
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
@@ -187,17 +187,48 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarVActionPerformed
 
     private void btnRefreshVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshVActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel dfm = new DefaultTableModel();
+        Vent= this.tablaVentas;
+        Vent.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","TOTAL VENTA","FECHA PAGO","HORA","METODO PAGO", "IDEMPLEADO","IDCLIENTE"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectVentas();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idPagoPr"),rs.getDouble("totalVenta"),rs.getDate("fechaPago"),rs.getString("hora"),rs.getString("metodoPago"),rs.getInt("idEmpleado"),rs.getInt("idCliente")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
+        }
     }//GEN-LAST:event_btnRefreshVActionPerformed
 
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         Detalle_prod DetaVent = new Detalle_prod();
         DetaVent.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btnVentasActionPerformed
 
     private void btnBuscarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVActionPerformed
-        // TODO add your handling code here:
+        Conexion cn = new Conexion();
+        String FechaPago = this.txtBuscarV.getText();
+               
+        DefaultTableModel dfm = new DefaultTableModel();
+        Vent = this.Vent;
+        Vent.setModel(dfm);
+        
+       
+        dfm.setColumnIdentifiers(new Object[]{"ID","TOTAL VENTA","FECHA PAGO","HORA","METODO PAGO", "IDEMPLEADO","IDCLIENTE"});
+        
+        rs = cn.BuscarVenta(FechaPago);
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idPagoPr"),rs.getDouble("totalVenta"),rs.getDate("fechaPago"),rs.getString("hora"),rs.getString("metodoPago"),rs.getInt("idEmpleado"),rs.getInt("idCliente")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se encontró la compra o no esta registrado");
+        }
     }//GEN-LAST:event_btnBuscarVActionPerformed
 
     /**

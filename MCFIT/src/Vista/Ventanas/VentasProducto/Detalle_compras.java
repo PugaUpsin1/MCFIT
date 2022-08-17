@@ -266,7 +266,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                                 .addComponent(btnCalcular)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnAgregarC)))
-                        .addGap(0, 21, Short.MAX_VALUE))))
+                        .addGap(0, 35, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,7 +288,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtIdEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                                     .addComponent(txtIdCompra))))
-                        .addContainerGap(152, Short.MAX_VALUE))
+                        .addContainerGap(166, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -302,12 +302,12 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
                         .addGap(45, 45, 45))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 879, Short.MAX_VALUE))
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(134, 134, 134)
                     .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(518, Short.MAX_VALUE)))
+                    .addContainerGap(532, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,7 +397,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
 
     private void btnAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCActionPerformed
          //Para ejecutar la instrucción
-         //double Cantidad = cant;
+         
         Conexion ne = new Conexion();
         
         int Cantidad = Integer.parseInt(this.spnCantidad.getValue().toString());
@@ -414,18 +414,18 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         //this.setVisible(false);
         //com.setVisible(true);
     }//GEN-LAST:event_btnAgregarCActionPerformed
-    void calcularTotal(){
-    //double total = Double.parseDouble(this.lblTotalCompra.getText());    
-    total = 0;
-    for(int i=0; i<tablaDetalleCompras.getRowCount(); i++)
-        {
-            int Cantidad =Integer.parseInt(tablaDetalleCompras.getValueAt(i, 3).toString());
-            double Precio =Double.parseDouble(tablaDetalleCompras.getValueAt(i, 4).toString());
-            total=total+(Cantidad * Precio);
-            System.out.println("resultado:" + total);
-        }
-        lblTotalCompra.setText(""+total+"0");
-    }
+//    void calcularTotal(){
+//    //double total = Double.parseDouble(this.lblTotalCompra.getText());    
+//    total = 0;
+//    for(int i=0; i<tablaDetalleCompras.getRowCount(); i++)
+//        {
+//            int Cantidad =Integer.parseInt(tablaDetalleCompras.getValueAt(i, 3).toString());
+//            double Precio =Double.parseDouble(tablaDetalleCompras.getValueAt(i, 4).toString());
+//            total=total+(Cantidad * Precio);
+//            System.out.println("resultado:" + total);
+//        }
+//        lblTotalCompra.setText(""+total+"0");
+//    }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         int num1 = Integer.parseInt(spnCantidad.getValue().toString());
         double num2 = Double.parseDouble(this.txtPrecio.getText());
