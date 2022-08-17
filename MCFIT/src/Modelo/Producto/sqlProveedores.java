@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo.Producto;
 
 import Modelo.Clientes.Clientes1;
@@ -10,10 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author Mariana Hernández
- */
 public class sqlProveedores extends Conexion{
         public boolean registrar(Proveedores prov){
             PreparedStatement ps = null;
@@ -42,5 +34,30 @@ public class sqlProveedores extends Conexion{
             }
             
         }
+        
+        public boolean Modificar(Proveedores prov){
+            com.mysql.jdbc.PreparedStatement ps = null;
+            Connection cn = Conectar();
+
+            String sql = "UPDATE Proveedores SET  nombreP=?, domicilio=?, telefono=?, codigoP=?, nombreContacto=?, email=?, foto=? WHERE idProveedor= ?;";
+
+            try {
+                ps= (com.mysql.jdbc.PreparedStatement) cn.prepareStatement(sql);
+                ps.setInt(1, prov.getIdProveedor());
+                ps.setString(2, prov.getNombreP());
+                ps.setString(3, prov.getDomicilio());
+                ps.setString(4, prov.getTelefono());
+                ps.setString(5, prov.getCodigoP());
+                ps.setString(6, prov.getNombreContacto());
+                ps.setString(7, prov.getEmail());
+                ps.setString(8, prov.getFoto());
+                ps.execute();
+
+                return true;
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    return false;
+                }
+    }
      
 }
