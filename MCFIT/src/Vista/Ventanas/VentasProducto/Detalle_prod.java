@@ -2,6 +2,10 @@
 package Vista.Ventanas.VentasProducto;
 
 import Modelo.Conexion;
+import Modelo.sqlCompras.Compras1;
+import Modelo.sqlCompras.Ventas1;
+import Modelo.sqlCompras.sqlCompras;
+import Modelo.sqlCompras.sqlVentas;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Container;
@@ -434,7 +438,20 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_btnRealizarActionPerformed
 
     private void btnGuardarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarVActionPerformed
-        // TODO add your handling code here:
+        sqlVentas sqlC = new sqlVentas();
+            Ventas1 mod = new Ventas1();
+            
+            String tot = new String(lblTotalVenta.getText());
+            mod.setTotalPago(Double.valueOf(tot));
+            String id = new String(txtIdPagoPr.getText());
+            mod.setIdPago(Integer.valueOf(id));
+         
+            if(sqlC.actualizarTotalPago(mod)){
+                JOptionPane.showMessageDialog(null, "Cliente modificado con éxito");
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al modificar");
+            }
     }//GEN-LAST:event_btnGuardarVActionPerformed
 
     private void btnRefreshVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshVActionPerformed
