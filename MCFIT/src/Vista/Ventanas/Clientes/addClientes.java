@@ -234,6 +234,11 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         lblCorreoElectronico.setText("Correo electrónico: ");
 
         txtCorreoElectronico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtCorreoElectronico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorreoElectronicoKeyTyped(evt);
+            }
+        });
 
         lblDireccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -557,6 +562,10 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
         char c = evt.getKeyChar(); 
         if(c<'0' || c>'9') evt.consume();
     }//GEN-LAST:event_txtEdadKeyTyped
+
+    private void txtCorreoElectronicoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoElectronicoKeyTyped
+       
+    }//GEN-LAST:event_txtCorreoElectronicoKeyTyped
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
