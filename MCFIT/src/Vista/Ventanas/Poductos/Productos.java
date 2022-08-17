@@ -56,7 +56,6 @@ public class Productos extends javax.swing.JFrame {
         txtBus = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         lblBuscarP = new javax.swing.JLabel();
-        btnProveedores = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Productos");
@@ -141,12 +140,6 @@ public class Productos extends javax.swing.JFrame {
         lblBuscarP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblBuscarP.setText("Buscar: ");
 
-        btnProveedores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProveedoresActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,9 +147,7 @@ public class Productos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addGap(35, 1020, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(218, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,13 +175,8 @@ public class Productos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(btnProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -313,10 +299,6 @@ public class Productos extends javax.swing.JFrame {
                  
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedoresActionPerformed
-
-    }//GEN-LAST:event_btnProveedoresActionPerformed
-
 
 
     public static void main(String args[]) {
@@ -356,7 +338,6 @@ public class Productos extends javax.swing.JFrame {
     javax.swing.JButton btnAgg;
     javax.swing.JButton btnBuscar;
     javax.swing.JButton btnEdit;
-    javax.swing.JButton btnProveedores;
     javax.swing.JButton btnRefresh;
     javax.swing.JButton btnRegre;
     javax.swing.JLabel jLabel2;
