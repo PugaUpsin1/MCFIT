@@ -1,7 +1,22 @@
 // detalle_prod pero es, detalle de las ventas.
 package Vista.Ventanas.VentasProducto;
 
+import Modelo.Clientes.Clientes1;
+import Modelo.Clientes.sqlClientes;
 import Modelo.Conexion;
+import Modelo.sqlCompras.Compras1;
+import Modelo.sqlCompras.sqlCompras;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtApellidos;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtCelular;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtCorreoElectronico;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtCuestionarioPrevio;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtDireccion;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtEdad;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtEstadoCivil;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtFotoCliente;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtMembresia;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtNombre;
+import static Vista.Ventanas.Clientes.ModificarCliente.txtOcupacion;
 import Vista.Ventanas.Principal.Principal;
 import java.awt.Color;
 import java.awt.Container;
@@ -11,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -56,6 +72,14 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
         }
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     
@@ -429,8 +453,8 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         int num1 = Integer.parseInt(spnCantidad.getValue().toString());
         double num2 = Double.parseDouble(this.txtPrecio.getText());
-        total = total+(num1 * num2);
-        lblTotalCompra.setText(""+total+"0");
+        setTotal(total+(num1 * num2));
+        lblTotalCompra.setText(""+getTotal()+"0");
         //this.calcularTotal();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
@@ -480,7 +504,20 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_btnRefreshC1ActionPerformed
 
     private void btnGuardarC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarC1ActionPerformed
-        // TODO add your handling code here:
+            sqlCompras sqlC = new sqlCompras();
+            Compras1 mod = new Compras1();
+            
+            String tot = new String(lblTotalCompra.getText());
+            mod.setTotalCompra(Double.valueOf(tot));
+            String id = new String(txtIdCompra.getText());
+            mod.setIdCompras(Integer.valueOf(id));
+         
+            if(sqlC.actualizarTotalCompra(mod)){
+                JOptionPane.showMessageDialog(null, "Cliente modificado con éxito");
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al modificar");
+            }
     }//GEN-LAST:event_btnGuardarC1ActionPerformed
     
     public static String fechaActual(){

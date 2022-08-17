@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.*;
 
 public class sqlCompras extends Conexion{
-    public boolean actualizarTotalCompra(Compras co){
+    public boolean actualizarTotalCompra(Compras1 co){
         PreparedStatement ps = null;
         Connection cn = Conectar();
         

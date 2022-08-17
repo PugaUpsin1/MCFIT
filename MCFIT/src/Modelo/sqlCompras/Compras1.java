@@ -1,7 +1,7 @@
 
 package Modelo.sqlCompras;
 
-public class Compras {
+public class Compras1 {
     private int idCompras;
     private double totalCompra;
 
