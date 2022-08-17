@@ -152,6 +152,19 @@ public class Conexion {
         }
         return rs;
     }
+    public ResultSet BuscarVenta(String FechaPago) {
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("Select * from Pago_prod where fechaPago='" + FechaPago + "';");
+        } catch (SQLException ex) {
+
+        }
+        return rs;
+    }
     
     public ResultSet BuscarPagoMem(String Nombre) {
         Connection cn = Conectar();
@@ -214,20 +227,35 @@ public class Conexion {
         }
     }
     
-    public boolean InsertarVenta(int IDPagoPr, double TotalVenta, String FechaPago,String Hora, String MetodoPago, int IDEmpleado, int IDCliente){
+    public boolean InsertarVenta(int IDPagoProducto, double TotalVenta, String FechaPago,String Hora, String MetodoPago, int IDEmpleado, int IDCliente){
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
         try {
             st = cn.createStatement();
-            String cadenaSQL = "call aggVentas('" + IDPagoPr + "','" + TotalVenta + "','" + FechaPago + "','" + Hora + "','" + MetodoPago + "','" + IDEmpleado + "','" + IDCliente+"');";
+            String cadenaSQL = "call aggVentas('" + IDPagoProducto + "','" + TotalVenta + "','" + FechaPago + "','" + Hora + "','" + MetodoPago + "','" + IDEmpleado + "','" + IDCliente+"');";
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {
             return false;
         }
     }
-    
+    public boolean InsertarDetalleVenta(int Cantidad,double Precio,int IDProducto,int IDPagoProducto) {
+
+        Connection cn = Conectar();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = cn.createStatement();
+            String cadenaSQL = "call aggDetalleCompras('" + Cantidad + "','" + Precio + "','" + IDProducto + "','" +  IDPagoProducto + "');";
+            
+            //System.out.println(cadenaSQL);
+            int registro = st.executeUpdate(cadenaSQL);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
     
     public ResultSet SelectProductos() {
         Connection cn = Conectar();
