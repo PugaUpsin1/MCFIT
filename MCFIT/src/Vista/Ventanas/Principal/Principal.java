@@ -19,6 +19,7 @@ public class Principal extends javax.swing.JFrame {
         cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
         this.setTitle("MCFIT");
+        this.setSize(1301,700);
     }
 
 
@@ -47,7 +48,9 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar2.add(jMenu3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MC FIT");
         setBackground(new java.awt.Color(204, 204, 204));
+        setPreferredSize(new java.awt.Dimension(1301, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
