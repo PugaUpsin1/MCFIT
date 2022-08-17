@@ -110,6 +110,11 @@ public class Historial extends javax.swing.JFrame {
 
         btnEditarH.setBackground(new java.awt.Color(242, 242, 242));
         btnEditarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
+        btnEditarH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarHActionPerformed(evt);
+            }
+        });
 
         btnEliminarH.setBackground(new java.awt.Color(242, 242, 242));
         btnEliminarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
@@ -266,6 +271,10 @@ public class Historial extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnBuscarHActionPerformed
+
+    private void btnEditarHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarHActionPerformed
 
     /**
      * @param args the command line arguments
