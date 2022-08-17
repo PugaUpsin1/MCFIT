@@ -29,20 +29,19 @@ public class sqlProveedores extends Conexion{
                 return true;
                 
             } catch (SQLException ex) {
-                //java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 return false;
             }
             
         }
         
         public boolean Modificar(Proveedores prov){
-            com.mysql.jdbc.PreparedStatement ps = null;
+            PreparedStatement ps = null;
             Connection cn = Conectar();
 
-            String sql = "UPDATE Proveedores SET  nombreP=?, domicilio=?, telefono=?, codigoP=?, nombreContacto=?, email=?, foto=? WHERE idProveedor= ?;";
+            String sql = "UPDATE Proveedores SET  idProveedor=?,nombreP=?, domicilio=?, telefono=?, codigoP=?, nombreContacto=?, email=?, foto=? WHERE idProveedor=?;";
 
             try {
-                ps= (com.mysql.jdbc.PreparedStatement) cn.prepareStatement(sql);
+                ps= cn.prepareStatement(sql);
                 ps.setInt(1, prov.getIdProveedor());
                 ps.setString(2, prov.getNombreP());
                 ps.setString(3, prov.getDomicilio());
@@ -51,11 +50,13 @@ public class sqlProveedores extends Conexion{
                 ps.setString(6, prov.getNombreContacto());
                 ps.setString(7, prov.getEmail());
                 ps.setString(8, prov.getFoto());
+                ps.setInt(9, prov.getIdProveedor());
+                
+                String res = ps.toString();
+                System.out.println(res);
                 ps.execute();
-
                 return true;
                 } catch (SQLException ex) {
-                    java.util.logging.Logger.getLogger(Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                     return false;
                 }
     }

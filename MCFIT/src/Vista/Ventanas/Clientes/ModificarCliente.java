@@ -452,7 +452,7 @@ public class ModificarCliente extends javax.swing.JFrame {
             clients.setFoto(txtFotoCliente.getText());
             String idM = new String(txtMembresia.getText());
             clients.setIdMembresia(Integer.valueOf(idM));
-           String idC = new String(this.txtCliente.getText());
+            String idC = new String(this.txtCliente.getText());
             clients.setIdCliente(Integer.valueOf(idC));
             
             if(sqlC.modificar(clients)){

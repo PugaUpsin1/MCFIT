@@ -246,14 +246,14 @@ public class ModificarProveedores extends javax.swing.JFrame {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
            sqlProveedores sqlP = new sqlProveedores();
            Proveedores p = new Proveedores();
-
+           
            p.setNombreP(this.txtNombre.getText());
            p.setDomicilio(this.txtDomicilio.getText());
            p.setTelefono(this.txtTelefono.getText());
            p.setCodigoP(this.txtCP.getText());
+           p.setNombreContacto(txtNombreC.getText());
            p.setEmail(this.txtCorreoElectronico.getText());
            p.setFoto(this.txtFotoProveedor.getText());
-           
            String idP = new String(this.txtIdProveedor.getText());
            p.setIdProveedor(Integer.valueOf(idP));
             
@@ -271,6 +271,7 @@ public class ModificarProveedores extends javax.swing.JFrame {
         this.txtNombre.setText("");
         this.txtDomicilio.setText("");
         this.txtTelefono.setText("");
+        txtCP.setText("");
         this.txtNombreC.setText("");
         this.txtCorreoElectronico.setText("");
         this.txtFotoProveedor.setText("");
