@@ -1,27 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista.Ventanas;
 
 import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
+import java.awt.Color;
+import java.awt.Container;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- *
- * @author Lizbe
- */
+
 public class AgregarHistorial extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarHistorial
-     */
+    Container cont = this.getContentPane();
     public AgregarHistorial() {
-        
+        this.getContentPane().setBackground(new Color(252,207,22));
         initComponents();
         this.txtFecha.setText(fechaActual());
+        cont.setBackground(Color.white);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Detalle Compras");
     }
 
     /**
@@ -203,6 +200,7 @@ public class AgregarHistorial extends javax.swing.JFrame {
         Historial his = new Historial();
         his.setVisible(true);
         this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

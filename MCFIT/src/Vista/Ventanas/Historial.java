@@ -63,13 +63,13 @@ public class Historial extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         btnRegresarHistorial = new javax.swing.JButton();
-        lblBuscar = new javax.swing.JLabel();
         txtBuscarH = new javax.swing.JTextField();
         btnBuscarH = new javax.swing.JButton();
         btnNuevoH = new javax.swing.JButton();
         btnRefreshH = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaHistorial = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
@@ -85,9 +85,6 @@ public class Historial extends javax.swing.JFrame {
                 btnRegresarHistorialActionPerformed(evt);
             }
         });
-
-        lblBuscar.setText("Buscar:");
-        lblBuscar.setOpaque(true);
 
         btnBuscarH.setBackground(new java.awt.Color(242, 242, 242));
         btnBuscarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/lupa.png"))); // NOI18N
@@ -127,6 +124,9 @@ public class Historial extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaHistorial);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Buscar:");
+
         jMenu1.setText("Propiedades");
         jMenuBar1.add(jMenu1);
 
@@ -141,48 +141,47 @@ public class Historial extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
+                        .addComponent(btnRegresarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtBuscarH, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(btnBuscarH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnNuevoH)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRegresarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(177, 177, 177)
-                                .addComponent(lblBuscar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtBuscarH, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(btnBuscarH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(btnNuevoH))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnRefreshH))))))
-                    .addComponent(jLabel2))
-                .addContainerGap(83, Short.MAX_VALUE))
+                                .addGap(69, 69, 69)
+                                .addComponent(btnRefreshH)))))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtBuscarH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblBuscar))
+                        .addComponent(jLabel1))
                     .addComponent(btnBuscarH)
                     .addComponent(btnRegresarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(47, 47, 47)
                         .addComponent(btnNuevoH)
                         .addGap(226, 226, 226)
-                        .addComponent(btnRefreshH)))
-                .addGap(34, 34, 34))
+                        .addComponent(btnRefreshH))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(72, 72, 72))
         );
 
         pack();
@@ -220,7 +219,7 @@ public class Historial extends javax.swing.JFrame {
         
         AgregarHistorial ah= new AgregarHistorial();
         ah.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
                 
     }//GEN-LAST:event_btnNuevoHActionPerformed
 
@@ -292,11 +291,11 @@ public class Historial extends javax.swing.JFrame {
     javax.swing.JButton btnNuevoH;
     javax.swing.JButton btnRefreshH;
     javax.swing.JButton btnRegresarHistorial;
+    javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JScrollPane jScrollPane1;
-    javax.swing.JLabel lblBuscar;
     javax.swing.JTable tablaHistorial;
     javax.swing.JTextField txtBuscarH;
     // End of variables declaration//GEN-END:variables

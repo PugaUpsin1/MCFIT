@@ -53,7 +53,6 @@ public class Membresias extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnRegresarM = new javax.swing.JButton();
         btnNuevoM = new javax.swing.JButton();
-        btnEditarM = new javax.swing.JButton();
         btnRefreshM = new javax.swing.JButton();
         cbxTipoMem2 = new javax.swing.JComboBox<>();
         btnMembresia1 = new javax.swing.JButton();
@@ -116,9 +115,6 @@ public class Membresias extends javax.swing.JFrame {
             }
         });
 
-        btnEditarM.setBackground(new java.awt.Color(242, 242, 242));
-        btnEditarM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
-
         btnRefreshM.setBackground(new java.awt.Color(242, 242, 242));
         btnRefreshM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
         btnRefreshM.addActionListener(new java.awt.event.ActionListener() {
@@ -176,14 +172,11 @@ public class Membresias extends javax.swing.JFrame {
                                 .addComponent(btnMembresia1)))
                         .addGap(116, 116, 116))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1072, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRefreshM)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1072, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnNuevoM)
-                                    .addComponent(btnEditarM))))
+                            .addComponent(btnNuevoM)
+                            .addComponent(btnRefreshM))
                         .addContainerGap(31, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -204,15 +197,13 @@ public class Membresias extends javax.swing.JFrame {
                         .addComponent(cbxTipoMem2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnNuevoM)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditarM)))
-                .addGap(18, 18, 18)
-                .addComponent(btnRefreshM)
-                .addGap(54, 54, 54))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRefreshM)))
+                .addGap(52, 52, 52))
         );
 
         pack();
@@ -327,7 +318,6 @@ public class Membresias extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarM;
-    private javax.swing.JButton btnEditarM;
     private javax.swing.JButton btnMembresia;
     private javax.swing.JButton btnMembresia1;
     private javax.swing.JButton btnNuevoM;

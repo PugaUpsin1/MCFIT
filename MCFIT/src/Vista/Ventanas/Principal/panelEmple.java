@@ -5,6 +5,8 @@ import Modelo.Conexion;
 import Modelo.Hash;
 import Modelo.Usuarios;
 import Modelo.sqlUsuarios;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class panelEmple extends javax.swing.JPanel {
@@ -76,6 +78,11 @@ public class panelEmple extends javax.swing.JPanel {
         txtPass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         txtConfContra.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtConfContra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtConfContraKeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Nombre:");
@@ -94,6 +101,11 @@ public class panelEmple extends javax.swing.JPanel {
         txtapellido.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         txtcorreo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtcorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcorreoKeyTyped(evt);
+            }
+        });
 
         txtcelular.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -220,6 +232,14 @@ public class panelEmple extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtConfContraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfContraKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConfContraKeyTyped
+
+    private void txtcorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorreoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcorreoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
