@@ -193,6 +193,7 @@ public class PagoMembresia extends javax.swing.JFrame {
     private void btnAggPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggPMActionPerformed
         agregarPagoMem aggPM = new agregarPagoMem();
         aggPM.setVisible(true);
+        
        
     }//GEN-LAST:event_btnAggPMActionPerformed
 

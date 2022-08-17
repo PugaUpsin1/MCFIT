@@ -6,23 +6,23 @@ package Modelo.sqlCompras;
  * @author issacpuga
  */
 public class Ventas1 {
-    private int idPago;
-    private double totalPago;
+    private int idPagoPr;
+    private double totalVenta;
 
-    public int getIdPago() {
-        return idPago;
+    public int getIdPagoPr() {
+        return idPagoPr;
     }
 
-    public void setIdPago(int idPago) {
-        this.idPago = idPago;
+    public void setIdPagoPr(int idPagoPr) {
+        this.idPagoPr = idPagoPr;
     }
 
-    public double getTotalPago() {
-        return totalPago;
+    public double getTotalVenta() {
+        return totalVenta;
     }
 
-    public void setTotalPago(double totalPago) {
-        this.totalPago = totalPago;
+    public void setTotalVenta(double totalVenta) {
+        this.totalVenta = totalVenta;
     }
     
     

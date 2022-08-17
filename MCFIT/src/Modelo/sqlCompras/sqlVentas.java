@@ -15,12 +15,12 @@ public class sqlVentas extends Conexion{
         PreparedStatement ps = null;
         Connection cn = Conectar();
         
-        String sql = "UPDATE Pago_prod SET totalPago = ? WHERE idPagpPr = ?;";
+        String sql = "UPDATE Pago_prod SET totalVenta = ? WHERE idPagoPr = ?;";
         
         try {
             ps=  (PreparedStatement) cn.prepareStatement(sql);
-            ps.setDouble(1, vo.getTotalPago());
-            ps.setInt(2,vo.getIdPago());
+            ps.setDouble(1, vo.getTotalVenta());
+            ps.setInt(2,vo.getIdPagoPr());
             ps.execute();
             
             return true;

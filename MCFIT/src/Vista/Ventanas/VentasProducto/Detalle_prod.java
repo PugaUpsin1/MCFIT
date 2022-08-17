@@ -205,7 +205,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        btnGuardarV.setText("Finalizar la Compra");
+        btnGuardarV.setText("Finalizar la Venta");
         btnGuardarV.setToolTipText("");
         btnGuardarV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,8 +302,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtIdEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                                     .addComponent(txtIdCliente)
-                                    .addComponent(txtIdPagoPr))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtIdPagoPr))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtFechaHora, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
@@ -442,12 +441,12 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             Ventas1 mod = new Ventas1();
             
             String tot = new String(lblTotalVenta.getText());
-            mod.setTotalPago(Double.valueOf(tot));
+            mod.setTotalVenta(Double.valueOf(tot));
             String id = new String(txtIdPagoPr.getText());
-            mod.setIdPago(Integer.valueOf(id));
+            mod.setIdPagoPr(Integer.valueOf(id));
          
             if(sqlC.actualizarTotalPago(mod)){
-                JOptionPane.showMessageDialog(null, "Cliente modificado con éxito");
+                JOptionPane.showMessageDialog(null, "Venta modificado con éxito");
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Error al modificar");
