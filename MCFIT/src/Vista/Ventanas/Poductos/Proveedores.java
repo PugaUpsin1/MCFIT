@@ -11,6 +11,8 @@ import Modelo.Producto.sqlProveedores;
 import Vista.Ventanas.Poductos.ModificarProveedores;
 import Vista.Ventanas.Principal.Principal;
 import com.mysql.jdbc.Connection;
+import java.awt.Color;
+import java.awt.Container;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -21,10 +23,12 @@ import javax.swing.table.DefaultTableModel;
 public class Proveedores extends javax.swing.JFrame {
        JTable Prov;
        ResultSet rs;
-    
+    Container prov = this.getContentPane();
        public Proveedores() {
         initComponents();
-        
+        prov.setBackground(Color.white);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Proveedores");
         Conexion cn = new Conexion();
         String nombreP = this.txtBus.getText();
 
