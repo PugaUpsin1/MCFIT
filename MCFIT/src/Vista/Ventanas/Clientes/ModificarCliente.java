@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista.Ventanas.Clientes;
 
 import Modelo.Clientes.Clientes1;
@@ -22,9 +18,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class ModificarCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ModificarCliente
-     */
     public ModificarCliente() {
         initComponents();
     }
@@ -472,7 +465,7 @@ public class ModificarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarActionPerformed
     
     public void Limpiar() {
-        //this.txtIdCliente.setText("");
+        this.txtCliente.setText("");
         this.txtNombre.setText("");
         this.txtApellidos.setText("");
         this.txtCelular.setText("");
@@ -508,8 +501,7 @@ public class ModificarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-        char c = evt.getKeyChar();
-        if((c<'a' || c>'z')&&(c<'A' || c>'Z')) evt.consume();        // TODO add your handling code here:
+            // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -519,8 +511,7 @@ public class ModificarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
-        char c = evt.getKeyChar();
-        if((c<'a' || c>'z')&&(c<'A' || c>'Z')) evt.consume();           // TODO add your handling code here:
+                 // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidosKeyTyped
 
     private void txtFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFotoClienteActionPerformed
