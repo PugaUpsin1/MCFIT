@@ -139,11 +139,16 @@ public class Membresias extends javax.swing.JFrame {
                 cbxTipoMem2ItemStateChanged(evt);
             }
         });
+        cbxTipoMem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTipoMem2ActionPerformed(evt);
+            }
+        });
 
         btnMembresia1.setBackground(new java.awt.Color(242, 242, 242));
         btnMembresia1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         btnMembresia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/tarjeta-de-membresia 2.png"))); // NOI18N
-        btnMembresia1.setText("Pago Membresias");
+        btnMembresia1.setText("Pago Membresías");
         btnMembresia1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMembresia1ActionPerformed(evt);
@@ -288,6 +293,10 @@ public class Membresias extends javax.swing.JFrame {
         pago.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMembresia1ActionPerformed
+
+    private void cbxTipoMem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoMem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxTipoMem2ActionPerformed
 
     /**
      * @param args the command line arguments
