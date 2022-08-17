@@ -50,14 +50,12 @@ public class Productos extends javax.swing.JFrame {
         ProdT = new javax.swing.JTable();
         btnAgg = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
-        btneli = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnRegre = new javax.swing.JButton();
         txtBus = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         lblBuscarP = new javax.swing.JLabel();
-        btnProveedores = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Productos");
@@ -112,14 +110,6 @@ public class Productos extends javax.swing.JFrame {
             }
         });
 
-        btneli.setBackground(new java.awt.Color(242, 242, 242));
-        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
-        btneli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneliActionPerformed(evt);
-            }
-        });
-
         btnRefresh.setBackground(new java.awt.Color(242, 242, 242));
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -150,12 +140,6 @@ public class Productos extends javax.swing.JFrame {
         lblBuscarP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblBuscarP.setText("Buscar: ");
 
-        btnProveedores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProveedoresActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,9 +147,7 @@ public class Productos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addGap(35, 1020, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(218, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,8 +166,7 @@ public class Productos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(btnAgg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btneli))
+                                .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(btnRefresh)))))
@@ -194,13 +175,8 @@ public class Productos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(btnProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -208,19 +184,15 @@ public class Productos extends javax.swing.JFrame {
                         .addComponent(lblBuscarP))
                     .addComponent(btnBuscar)
                     .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
                         .addComponent(btnAgg)
-                        .addGap(20, 20, 20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEdit)
-                        .addGap(20, 20, 20)
-                        .addComponent(btneli)
-                        .addGap(72, 72, 72)
+                        .addGap(212, 212, 212)
                         .addComponent(btnRefresh))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -327,36 +299,6 @@ public class Productos extends javax.swing.JFrame {
                  
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedoresActionPerformed
-
-    }//GEN-LAST:event_btnProveedoresActionPerformed
-
-    private void btneliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliActionPerformed
-               PreparedStatement ps = null;
-         ResultSet rs= null;
-         VerProducto vPro = new VerProducto();
-         
-          try {
-              Conexion objCon= new Conexion();
-              Connection con = objCon.Conectar();
-              
-              int fila = ProdT.getSelectedRow();
-              String idProducto = ProdT.getValueAt(fila, 0).toString();
-              
-              ps=con.prepareStatement("DELETE FROM Productos WHERE idProducto = ?;");
-              ps.setString(1, idProducto);
-              ps.toString();
-              System.out.println(ps);
-              ps.executeUpdate();
-              
-              
-    
-              
-          } catch (SQLException e) {
-              Logger.getLogger(sqlUsuarios.class.getName()).log(Level.SEVERE, null, e);
-          } 
-    }//GEN-LAST:event_btneliActionPerformed
-
 
 
     public static void main(String args[]) {
@@ -396,10 +338,8 @@ public class Productos extends javax.swing.JFrame {
     javax.swing.JButton btnAgg;
     javax.swing.JButton btnBuscar;
     javax.swing.JButton btnEdit;
-    javax.swing.JButton btnProveedores;
     javax.swing.JButton btnRefresh;
     javax.swing.JButton btnRegre;
-    javax.swing.JButton btneli;
     javax.swing.JLabel jLabel2;
     javax.swing.JScrollPane jScrollPane1;
     javax.swing.JLabel lblBuscarP;

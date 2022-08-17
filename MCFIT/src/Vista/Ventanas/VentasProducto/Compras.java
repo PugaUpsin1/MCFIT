@@ -178,7 +178,7 @@ public class Compras extends javax.swing.JFrame {
         String FechaCompra = this.txtBuscarC.getText();
                
         DefaultTableModel dfm = new DefaultTableModel();
-        Comp = this.Comp;
+        Comp = this.tablaCompras;
         Comp.setModel(dfm);
         
        

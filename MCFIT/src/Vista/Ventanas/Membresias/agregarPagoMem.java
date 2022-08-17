@@ -23,7 +23,7 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     
     public agregarPagoMem() {
         initComponents();
-        this.txtHora.setText(fechaActual());
+        //this.txtFechaHora.setText(fechaActual());
         hilo = new Thread(this);
         hilo.start();
         setVisible(true);     
@@ -42,20 +42,20 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
     }
     
     public void hora(){
-        Calendar calendario = new GregorianCalendar(); 
-        Date horaActual = new Date(); 
-        calendario.setTime(horaActual);
-        hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
-        minutos = calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
-        segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+        //Calendar calendario = new GregorianCalendar(); 
+        //Date horaActual = new Date(); 
+        //calendario.setTime(horaActual);
+        //hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+        //minutos = calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
+        //segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
     }
     
     public void run() {
-        Thread current = Thread.currentThread();
-        while(current == hilo){
-            hora();
-            txtHora.setText(hora+":"+minutos+":"+segundos);
-        }        
+        //Thread current = Thread.currentThread();
+        //while(current == hilo){
+        //    hora();
+        //    txtHora.setText(hora+":"+minutos+":"+segundos);
+        //}        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -174,7 +174,6 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
         lblIdProducto1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIdProducto1.setText("Id Pago Membresia:");
 
-        txtHora.setEditable(false);
         txtHora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
