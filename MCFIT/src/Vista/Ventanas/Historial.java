@@ -67,8 +67,6 @@ public class Historial extends javax.swing.JFrame {
         txtBuscarH = new javax.swing.JTextField();
         btnBuscarH = new javax.swing.JButton();
         btnNuevoH = new javax.swing.JButton();
-        btnEditarH = new javax.swing.JButton();
-        btnEliminarH = new javax.swing.JButton();
         btnRefreshH = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaHistorial = new javax.swing.JTable();
@@ -107,17 +105,6 @@ public class Historial extends javax.swing.JFrame {
                 btnNuevoHActionPerformed(evt);
             }
         });
-
-        btnEditarH.setBackground(new java.awt.Color(242, 242, 242));
-        btnEditarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/usuario.png"))); // NOI18N
-        btnEditarH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarHActionPerformed(evt);
-            }
-        });
-
-        btnEliminarH.setBackground(new java.awt.Color(242, 242, 242));
-        btnEliminarH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
 
         btnRefreshH.setBackground(new java.awt.Color(242, 242, 242));
         btnRefreshH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
@@ -168,10 +155,7 @@ public class Historial extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(btnNuevoH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnEditarH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnEliminarH)))
+                                        .addComponent(btnNuevoH))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(btnRefreshH))))))
@@ -196,11 +180,7 @@ public class Historial extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(btnNuevoH)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnEditarH)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnEliminarH)
-                        .addGap(72, 72, 72)
+                        .addGap(226, 226, 226)
                         .addComponent(btnRefreshH)))
                 .addGap(34, 34, 34))
         );
@@ -272,10 +252,6 @@ public class Historial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscarHActionPerformed
 
-    private void btnEditarHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarHActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -313,8 +289,6 @@ public class Historial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton btnBuscarH;
-    javax.swing.JButton btnEditarH;
-    javax.swing.JButton btnEliminarH;
     javax.swing.JButton btnNuevoH;
     javax.swing.JButton btnRefreshH;
     javax.swing.JButton btnRegresarHistorial;
