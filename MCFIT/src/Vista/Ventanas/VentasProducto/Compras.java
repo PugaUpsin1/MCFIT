@@ -210,7 +210,7 @@ public class Compras extends javax.swing.JFrame {
     private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
         Detalle_compras DetaComp = new Detalle_compras();
         DetaComp.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_btnComprasActionPerformed
 
     private void btnRefreshCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCActionPerformed

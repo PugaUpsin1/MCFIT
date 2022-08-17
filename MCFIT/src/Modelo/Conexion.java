@@ -206,7 +206,7 @@ public class Conexion {
             st = cn.createStatement();
             String cadenaSQL = "call aggDetalleCompras('" + Cantidad + "','" + Precio + "','" + IDProducto + "','" +  IDCompra + "');";
             
-            System.out.println(cadenaSQL);
+            //System.out.println(cadenaSQL);
             int registro = st.executeUpdate(cadenaSQL);
             return true;
         } catch (SQLException ex) {

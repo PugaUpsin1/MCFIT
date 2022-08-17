@@ -62,7 +62,11 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblTotalCompra" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="btnRefreshC1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnRefreshC1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnGuardarC1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -79,7 +83,7 @@
                               <Component id="btnAgregarC" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -215,7 +219,10 @@
                           <Component id="lblTotalCompra" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnRefreshC1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnRefreshC1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGuardarC1" min="-2" pref="35" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Component id="jScrollPane2" min="-2" pref="138" max="-2" attributes="0"/>
               </Group>
@@ -393,7 +400,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="50"/>
+        <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -455,7 +462,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardarC">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Realizar la Compra"/>
+        <Property name="text" type="java.lang.String" value="Iniciar la Compra"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
@@ -473,6 +480,15 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshC1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnGuardarC1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Finalizar la Compra"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarC1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
