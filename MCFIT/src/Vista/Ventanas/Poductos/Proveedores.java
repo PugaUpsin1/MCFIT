@@ -253,6 +253,9 @@ public class Proveedores extends javax.swing.JFrame {
             
             int fila = ProveT.getSelectedRow();
             String idProveedor = ProveT.getValueAt(fila, 0).toString();
+            
+            ps = (PreparedStatement) con.prepareStatement("SELECT idProveedor, nombreP, domicilio, telefono,codigoP,nombreContacto, email,foto FROM Proveedores WHERE idProveedor=?;");
+            ps.setString(1, idProveedor);
             rs = ps.executeQuery();
             
             while(rs.next()){
@@ -324,7 +327,7 @@ public class Proveedores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Proveedores().setVisible(true);
+                new Proveedores().setVisible(true);
             }
         });
     }

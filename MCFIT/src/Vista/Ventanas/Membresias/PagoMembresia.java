@@ -51,7 +51,6 @@ public class PagoMembresia extends javax.swing.JFrame {
         tablaPagoM = new javax.swing.JTable();
         btnBuscarPM = new javax.swing.JButton();
         btnAggPM = new javax.swing.JButton();
-        btnEliminarPM = new javax.swing.JButton();
         btnRefreshPM = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,9 +99,6 @@ public class PagoMembresia extends javax.swing.JFrame {
             }
         });
 
-        btnEliminarPM.setBackground(new java.awt.Color(242, 242, 242));
-        btnEliminarPM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
-
         btnRefreshPM.setBackground(new java.awt.Color(242, 242, 242));
         btnRefreshPM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/iconmonstr-synchronization-3-32.png"))); // NOI18N
         btnRefreshPM.addActionListener(new java.awt.event.ActionListener() {
@@ -136,8 +132,7 @@ public class PagoMembresia extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnAggPM)
-                                    .addComponent(btnRefreshPM)
-                                    .addComponent(btnEliminarPM))))))
+                                    .addComponent(btnRefreshPM))))))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -156,14 +151,13 @@ public class PagoMembresia extends javax.swing.JFrame {
                                 .addComponent(txtBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnRegresarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAggPM)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEliminarPM)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRefreshPM))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -245,7 +239,6 @@ public class PagoMembresia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAggPM;
     private javax.swing.JButton btnBuscarPM;
-    private javax.swing.JButton btnEliminarPM;
     private javax.swing.JButton btnRefreshPM;
     private javax.swing.JButton btnRegresarPM;
     private javax.swing.JLabel jLabel2;
