@@ -237,7 +237,7 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
                         .addComponent(lblPrecioVenta1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtHora))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

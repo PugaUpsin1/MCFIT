@@ -50,7 +50,6 @@ public class Productos extends javax.swing.JFrame {
         ProdT = new javax.swing.JTable();
         btnAgg = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
-        btneli = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnRegre = new javax.swing.JButton();
@@ -109,14 +108,6 @@ public class Productos extends javax.swing.JFrame {
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
-            }
-        });
-
-        btneli.setBackground(new java.awt.Color(242, 242, 242));
-        btneli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/eliminar.png"))); // NOI18N
-        btneli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneliActionPerformed(evt);
             }
         });
 
@@ -184,8 +175,7 @@ public class Productos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(btnAgg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btneli))
+                                .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(btnRefresh)))))
@@ -208,19 +198,15 @@ public class Productos extends javax.swing.JFrame {
                         .addComponent(lblBuscarP))
                     .addComponent(btnBuscar)
                     .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
                         .addComponent(btnAgg)
-                        .addGap(20, 20, 20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEdit)
-                        .addGap(20, 20, 20)
-                        .addComponent(btneli)
-                        .addGap(72, 72, 72)
+                        .addGap(212, 212, 212)
                         .addComponent(btnRefresh))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -331,32 +317,6 @@ public class Productos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnProveedoresActionPerformed
 
-    private void btneliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliActionPerformed
-               PreparedStatement ps = null;
-         ResultSet rs= null;
-         VerProducto vPro = new VerProducto();
-         
-          try {
-              Conexion objCon= new Conexion();
-              Connection con = objCon.Conectar();
-              
-              int fila = ProdT.getSelectedRow();
-              String idProducto = ProdT.getValueAt(fila, 0).toString();
-              
-              ps=con.prepareStatement("DELETE FROM Productos WHERE idProducto = ?;");
-              ps.setString(1, idProducto);
-              ps.toString();
-              System.out.println(ps);
-              ps.executeUpdate();
-              
-              
-    
-              
-          } catch (SQLException e) {
-              Logger.getLogger(sqlUsuarios.class.getName()).log(Level.SEVERE, null, e);
-          } 
-    }//GEN-LAST:event_btneliActionPerformed
-
 
 
     public static void main(String args[]) {
@@ -399,7 +359,6 @@ public class Productos extends javax.swing.JFrame {
     javax.swing.JButton btnProveedores;
     javax.swing.JButton btnRefresh;
     javax.swing.JButton btnRegre;
-    javax.swing.JButton btneli;
     javax.swing.JLabel jLabel2;
     javax.swing.JScrollPane jScrollPane1;
     javax.swing.JLabel lblBuscarP;
