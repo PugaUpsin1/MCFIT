@@ -2,40 +2,18 @@
 package Vista.Ventanas.Poductos;
 
 import Modelo.Producto.sqlProveedores;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import Modelo.Producto.Proveedores;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class AggProveedores extends javax.swing.JFrame implements ActionListener {
-    JButton botonFotoCliente;
-    
-    public AggProveedores() {
+public class ModificarProveedores extends javax.swing.JFrame {
+
+    public ModificarProveedores() {
         initComponents();
-        //this.getContentPane().setBackground(new Color(139,150,216));
-        this.getContentPane().setBackground(Color.WHITE);
-        
-        //---CODIGO PARA BOTONES DE FOTOS
-        //Codigo para el FileChooser de la foto del Cliente
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.btnFotoCliente.addActionListener(this);
-        //this.lblFotoCliente.setBounds(500,400,10,10);
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        
-    }
-        
-    public ImageIcon ResizeImage(String ImagePath){
-        ImageIcon MyImage = new ImageIcon(ImagePath);
-        Image img = MyImage.getImage();
-        Image newImg = img.getScaledInstance(this.lblFotoProveedor.getWidth(), this.lblFotoProveedor.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImg);
-        return image;
     }
 
     /**
@@ -47,82 +25,51 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblNombre = new javax.swing.JLabel();
-        lblnombrep = new javax.swing.JLabel();
+        lblcp = new javax.swing.JLabel();
         lbldom = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
         lblCorreoElectronico = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JButton();
         lblFotoProveedor = new javax.swing.JLabel();
+        btnFotoCliente = new javax.swing.JButton();
         txtCorreoElectronico = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
+        txtNombreC = new javax.swing.JTextField();
         txtIdProveedor = new javax.swing.JTextField();
+        btnEditar = new javax.swing.JButton();
         txtFotoProveedor = new javax.swing.JTextField();
+        txtDomicilio = new javax.swing.JTextField();
         lblTelefono = new javax.swing.JLabel();
         lblIdp = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         txtCP = new javax.swing.JTextField();
-        lblcp = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JButton();
-        btnFotoCliente = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
-        txtNombreC = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
-        txtDomicilio = new javax.swing.JTextField();
+        lblnombrep = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Clientes");
-
-        lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblNombre.setText("Nombre:");
-
-        lblnombrep.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblnombrep.setText("Nombre de Contacto:");
-
-        lbldom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbldom.setText("Domicilio:");
-
-        lblCorreoElectronico.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblCorreoElectronico.setText("Correo electrónico: ");
-
-        lblFotoProveedor.setBackground(new java.awt.Color(204, 204, 204));
-        lblFotoProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFotoProveedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        txtCorreoElectronico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        txtIdProveedor.setEditable(false);
-        txtIdProveedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        txtFotoProveedor.setEditable(false);
-        txtFotoProveedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtFotoProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFotoProveedorActionPerformed(evt);
-            }
-        });
-
-        lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblTelefono.setText("Teléfono:");
-
-        lblIdp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblIdp.setText("Id Proveedor:");
-
-        txtCP.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblcp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblcp.setText("Codigo Postal:");
 
+        lbldom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbldom.setText("Domicilio:");
+
         txtNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        lblCorreoElectronico.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCorreoElectronico.setText("Correo electrónico: ");
+
+        btnCerrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/cancelar.png"))); // NOI18N
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
+
+        lblFotoProveedor.setBackground(new java.awt.Color(204, 204, 204));
+        lblFotoProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFotoProveedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnFotoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/foto.png"))); // NOI18N
         btnFotoCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -132,27 +79,47 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
             }
         });
 
-        btnLimpiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/limpiar.png"))); // NOI18N
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
+        txtCorreoElectronico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         txtNombreC.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/guadar.png"))); // NOI18N
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        txtIdProveedor.setEditable(false);
+        txtIdProveedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/editar.png"))); // NOI18N
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        txtFotoProveedor.setEditable(false);
+        txtFotoProveedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtFotoProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFotoProveedorActionPerformed(evt);
             }
         });
 
         txtDomicilio.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelefono.setText("Teléfono:");
+
+        lblIdp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIdp.setText("Id Proveedor:");
+
+        lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNombre.setText("Nombre:");
+
+        txtCP.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        lblnombrep.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblnombrep.setText("Nombre de Contacto:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +130,21 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblcp)
+                            .addComponent(lblIdp, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNombre)
+                            .addComponent(lbldom)
+                            .addComponent(lblTelefono))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFotoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtFotoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(57, 57, 57))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblCorreoElectronico)
                                 .addGap(11, 11, 11))
@@ -170,38 +152,22 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
                                 .addComponent(lblnombrep)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCorreoElectronico)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtNombreC, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtCP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
-                        .addGap(86, 86, 86))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblcp)
-                            .addComponent(lblIdp, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNombre)
-                            .addComponent(lbldom)
-                            .addComponent(lblTelefono))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblFotoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtFotoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(57, 57, 57))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(btnCancelar)
-                .addGap(80, 80, 80)
-                .addComponent(btnLimpiar)
-                .addGap(75, 75, 75)
-                .addComponent(btnGuardar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(btnCerrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEditar))
+                            .addComponent(txtCorreoElectronico)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtNombreC, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtCP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(86, 86, 86))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,28 +205,23 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblnombrep))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCorreoElectronico)
                     .addComponent(txtCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpiar)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnCancelar))
-                .addGap(40, 40, 40))
+                    .addComponent(btnCerrar)
+                    .addComponent(btnEditar))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFotoProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFotoProveedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFotoProveedorActionPerformed
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoClienteActionPerformed
         JFileChooser fileProveedor = new JFileChooser();
@@ -278,14 +239,33 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
             this.lblFotoProveedor.setIcon(ResizeImage(path));
             this.txtFotoProveedor.setText(path);
         }else if(resultFtCliente == JFileChooser.CANCEL_OPTION){
-            JOptionPane.showMessageDialog(null, "Debes agregar la imagen del proveedor");
-       }
+            //System.out.println("No Select File");
+        }
     }//GEN-LAST:event_btnFotoClienteActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        this.Limpiar();
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+           sqlProveedores sqlP = new sqlProveedores();
+           Proveedores p = new Proveedores();
 
+           p.setNombreP(this.txtNombre.getText());
+           p.setDomicilio(this.txtDomicilio.getText());
+           p.setTelefono(this.txtTelefono.getText());
+           p.setCodigoP(this.txtCP.getText());
+           p.setEmail(this.txtCorreoElectronico.getText());
+           p.setFoto(this.txtFotoProveedor.getText());
+           
+           String idP = new String(this.txtIdProveedor.getText());
+           p.setIdProveedor(Integer.valueOf(idP));
+            
+            if(sqlP.Modificar(p)){
+                JOptionPane.showMessageDialog(null, "Proveedor modificado con éxito");
+                this.Limpiar();
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al modificar");
+            }
+        
+        
+    }//GEN-LAST:event_btnEditarActionPerformed
     public void Limpiar(){
         this.txtIdProveedor.setText("");
         this.txtNombre.setText("");
@@ -294,29 +274,24 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
         this.txtNombreC.setText("");
         this.txtCorreoElectronico.setText("");
         this.txtFotoProveedor.setText("");
-    }    
+    } 
     
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+     public ImageIcon ResizeImage(String ImagePath){
+        ImageIcon MyImage = new ImageIcon(ImagePath);
+        Image img = MyImage.getImage();
+        Image newImg = img.getScaledInstance(this.lblFotoProveedor.getWidth(), this.lblFotoProveedor.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(newImg);
+        return image;
+    }
 
-            sqlProveedores sqlP = new sqlProveedores();
-            Proveedores prov = new Proveedores(); 
-            
-            prov.setNombreP(this.txtNombre.getText());
-            prov.setDomicilio(this.txtDomicilio.getText());
-            prov.setTelefono(this.txtTelefono.getText());
-            prov.setCodigoP(this.txtCP.getText());
-            prov.setNombreContacto(this.txtNombreC.getText());
-            prov.setEmail(this.txtCorreoElectronico.getText());
-            prov.setFoto(this.txtFotoProveedor.getText());
-                    
-            if(sqlP.registrar(prov)){            
-                JOptionPane.showMessageDialog(null, "Proveedor agregado con éxito");
-                this.Limpiar();
-            }else{
-                JOptionPane.showMessageDialog(null, "Error al guardar");
-            }
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    
+    private void txtFotoProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFotoProveedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFotoProveedorActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -331,32 +306,28 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarProveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarProveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarProveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModificarProveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        new Proveedores();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                new AggProveedores().setVisible(true);
+                new ModificarProveedores().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnFotoCliente;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnEditar;
+    public static javax.swing.JButton btnFotoCliente;
     private javax.swing.JLabel lblCorreoElectronico;
     private javax.swing.JLabel lblFotoProveedor;
     private javax.swing.JLabel lblIdp;
@@ -365,18 +336,13 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
     private javax.swing.JLabel lblcp;
     private javax.swing.JLabel lbldom;
     private javax.swing.JLabel lblnombrep;
-    private javax.swing.JTextField txtCP;
-    private javax.swing.JTextField txtCorreoElectronico;
-    private javax.swing.JTextField txtDomicilio;
-    private javax.swing.JTextField txtFotoProveedor;
-    private javax.swing.JTextField txtIdProveedor;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNombreC;
-    private javax.swing.JTextField txtTelefono;
+    public static javax.swing.JTextField txtCP;
+    public static javax.swing.JTextField txtCorreoElectronico;
+    public static javax.swing.JTextField txtDomicilio;
+    public static javax.swing.JTextField txtFotoProveedor;
+    public static javax.swing.JTextField txtIdProveedor;
+    public static javax.swing.JTextField txtNombre;
+    public static javax.swing.JTextField txtNombreC;
+    public static javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void actionPerformed(ActionEvent e) {    
-        
-    }
 }

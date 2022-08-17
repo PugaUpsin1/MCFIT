@@ -77,7 +77,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnCompras.setBackground(new java.awt.Color(242, 242, 242));
         btnCompras.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/verificar (1).png"))); // NOI18N
+        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/DetalleCompra.png"))); // NOI18N
         btnCompras.setText("    Compras");
         btnCompras.setActionCommand("  Ventas");
         btnCompras.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +85,11 @@ public class Principal extends javax.swing.JFrame {
                 btnComprasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 230, 100));
+        getContentPane().add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 230, 100));
 
         btnClientes1.setBackground(new java.awt.Color(242, 242, 242));
         btnClientes1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/juventud (1).png"))); // NOI18N
+        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/Clientes.png"))); // NOI18N
         btnClientes1.setText("Clientes");
         btnClientes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +109,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnVentas1.setBackground(new java.awt.Color(242, 242, 242));
         btnVentas1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        btnVentas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/verificar (1).png"))); // NOI18N
+        btnVentas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/DetalleVentas.png"))); // NOI18N
         btnVentas1.setText("    Ventas");
         btnVentas1.setActionCommand("  Ventas");
         btnVentas1.addActionListener(new java.awt.event.ActionListener() {

@@ -4,23 +4,25 @@
  */
 package Vista.Ventanas.Poductos;
 
+import com.mysql.jdbc.PreparedStatement;
 import Modelo.Conexion;
+import Modelo.Producto.sqlProveedores;
+//import Modelo.Producto.Proveedores;
+import Vista.Ventanas.Poductos.ModificarProveedores;
 import Vista.Ventanas.Principal.Principal;
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import java.sql.*;
 
-/**
- *
- * @author issacpuga
- */
+
 public class Proveedores extends javax.swing.JFrame {
        JTable Prov;
        ResultSet rs;
-    public Proveedores() {
+    
+       public Proveedores() {
         initComponents();
         
         Conexion cn = new Conexion();
@@ -241,29 +243,34 @@ public class Proveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAggActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        PreparedStatement ps = null;
-        ResultSet rs= null;
-
-
-        try {
-            Conexion objCon= new Conexion();
+        PreparedStatement ps = null; 
+        ResultSet rs = null; 
+        ModificarProveedores modificarProv = new ModificarProveedores(); 
+        
+        try{
+            Conexion objCon = new Conexion(); 
             Connection con = (Connection) objCon.Conectar();
-
+            
             int fila = ProveT.getSelectedRow();
-            String idProducto = ProveT.getValueAt(fila, 0).toString();
-
-            ps=(PreparedStatement) con.prepareStatement("SELECT  FROM Productos WHERE = ?");
-            ps.setString(1, idProducto);
+            String idProveedor = ProveT.getValueAt(fila, 0).toString();
             rs = ps.executeQuery();
-
+            
             while(rs.next()){
-
+                //idProveedor, nombreP, domicilio, telefono, codigoP, nombreContacto, email, foto
+                ModificarProveedores.txtIdProveedor.setText(rs.getString("idProveedor"));
+                ModificarProveedores.txtNombre.setText(rs.getString("nombreP"));
+                ModificarProveedores.txtDomicilio.setText(rs.getString("domicilio"));
+                ModificarProveedores.txtTelefono.setText(rs.getString("telefono"));
+                ModificarProveedores.txtCP.setText(rs.getString("codigoP"));
+                ModificarProveedores.txtNombreC.setText(rs.getString("nombreContacto"));
+                ModificarProveedores.txtCorreoElectronico.setText(rs.getString("email"));
+                ModificarProveedores.txtFotoProveedor.setText(rs.getString("foto"));
                 
+                 modificarProv.setVisible(true);
             }
-
-        } catch (SQLException e) {
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al modificar");
         }
-
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
@@ -317,7 +324,7 @@ public class Proveedores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Proveedores().setVisible(true);
+                //new Proveedores().setVisible(true);
             }
         });
     }
