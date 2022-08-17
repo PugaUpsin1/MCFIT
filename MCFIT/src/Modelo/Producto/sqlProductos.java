@@ -1,5 +1,5 @@
 
-package Modelo.ActProducto;
+package Modelo.Producto;
 
 import Modelo.Conexion;
 import com.mysql.jdbc.PreparedStatement;

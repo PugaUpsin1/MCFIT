@@ -5,8 +5,8 @@
  */
 package Vista.Ventanas.Poductos;
 
-import Modelo.ActProducto.Productos1;
-import Modelo.ActProducto.sqlProductos;
+import Modelo.Producto.Productos1;
+import Modelo.Producto.sqlProductos;
 import Modelo.Conexion;
 import Vista.Ventanas.Principal.Principal;
 import com.mysql.jdbc.Connection;
