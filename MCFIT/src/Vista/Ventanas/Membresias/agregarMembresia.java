@@ -169,9 +169,9 @@ public class agregarMembresia extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "Membresia agregada con éxito");
         
-        Principal cerr = new Principal();
-        this.setVisible(false);
-        cerr.setVisible(true);
+        //Principal cerr = new Principal();
+        //this.setVisible(false);
+        //cerr.setVisible(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void cbxTipoMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoMemActionPerformed

@@ -187,9 +187,9 @@ public class AgregarHistorial extends javax.swing.JFrame {
         ne.InsertarHistorial(IDHistorial, Altura, Fecha, Peso, IDcliente);
         this.Limpiar();
         
-        Principal cerr = new Principal();
-        this.setVisible(false);
-        cerr.setVisible(true);
+        //Principal cerr = new Principal();
+        //this.setVisible(false);
+        //cerr.setVisible(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed

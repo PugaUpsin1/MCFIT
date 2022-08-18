@@ -298,10 +298,10 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
 
         JOptionPane.showMessageDialog(null, "Pago membresia agregado con éxito");
 
-        PagoMembresia pagM = new PagoMembresia();
-        this.setVisible(false);
-        pagM.setVisible(true);
-        this.dispose();
+        //PagoMembresia pagM = new PagoMembresia();
+        //this.setVisible(false);
+        //pagM.setVisible(true);
+        //this.dispose();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
