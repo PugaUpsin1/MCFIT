@@ -508,7 +508,7 @@ public class ModificarCliente extends javax.swing.JFrame {
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         Clientes addC = new Clientes();
-        addC.setVisible(true);
+        //addC.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 

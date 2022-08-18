@@ -267,6 +267,7 @@ public class VerProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTipoProductoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        Productos prod = new Productos();
         this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 

@@ -499,8 +499,9 @@ public class addClientes extends javax.swing.JFrame implements ActionListener {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         Clientes addC = new Clientes();
-        addC.setVisible(true);
-        this.setVisible(false);
+        //addC.setVisible(true);
+        //this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed

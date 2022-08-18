@@ -225,7 +225,8 @@ Container cont = this.getContentPane();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        this.setVisible(false);
+        Proveedores prov = new Proveedores();
+        this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnFotoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoClienteActionPerformed
