@@ -44,7 +44,7 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         btnconf = new javax.swing.JButton();
         btnVentas1 = new javax.swing.JButton();
         btnCompras = new javax.swing.JButton();
-        txtHora = new javax.swing.JTextField();
+        lblHoraActual = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
 
@@ -145,8 +145,10 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         });
         getContentPane().add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 230, 100));
 
-        txtHora.setEditable(false);
-        getContentPane().add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
+        lblHoraActual.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblHoraActual.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHoraActual.setText("     ");
+        getContentPane().add(lblHoraActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
         jMenu4.setText("Propiedades");
         jMenuBar1.add(jMenu4);
@@ -212,7 +214,8 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         Thread current = Thread.currentThread();
         while(current == hilo){
             hora();
-            txtHora.setText(hora+":"+minutos+":"+segundos);
+            lblHoraActual.setText(hora+":"+minutos+":"+segundos);
+            //txtHora.setText(hora+":"+minutos+":"+segundos);
         }        
     }
 
@@ -263,6 +266,6 @@ public class Principal extends javax.swing.JFrame implements Runnable{
     javax.swing.JMenu jMenu4;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JMenuBar jMenuBar2;
-    javax.swing.JTextField txtHora;
+    javax.swing.JLabel lblHoraActual;
     // End of variables declaration//GEN-END:variables
 }
