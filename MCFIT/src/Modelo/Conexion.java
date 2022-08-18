@@ -80,7 +80,7 @@ public class Conexion {
         }
     }
 
-    public ResultSet BuscarHistorial(int IDcliente) {
+    public ResultSet BuscarHistorial(String Nombre) {
         Connection cn = Conectar();
         Statement st;
         ResultSet rs = null;
@@ -88,7 +88,7 @@ public class Conexion {
         try {
             st = cn.createStatement();
 
-            rs = st.executeQuery("select * from Historial where idCliente ='" + IDcliente + "';");
+            rs = st.executeQuery("Select * from Historial inner join Clientes on Historial.idCliente = Clientes.idCliente where nombre='" + Nombre + "';");
         } catch (SQLException ex) {
 
         }

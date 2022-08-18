@@ -274,7 +274,7 @@ public class Membresias extends javax.swing.JFrame {
     private void btnMembresia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresia1ActionPerformed
         PagoMembresia pago = new PagoMembresia();
         pago.setVisible(true);
-        this.dispose();
+        //this.dispose();
     }//GEN-LAST:event_btnMembresia1ActionPerformed
 
     private void cbxTipoMem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoMem2ActionPerformed

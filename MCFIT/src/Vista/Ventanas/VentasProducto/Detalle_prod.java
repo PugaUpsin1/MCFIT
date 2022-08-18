@@ -394,8 +394,9 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
 
     private void btnRegresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarVActionPerformed
         Venta Vent = new Venta();
-        Vent.setVisible(true);
-        this.setVisible(false);
+        //Vent.setVisible(true);
+        //this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarVActionPerformed
 
     private void txtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActionPerformed
@@ -446,7 +447,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             mod.setIdPagoPr(Integer.valueOf(id));
          
             if(sqlC.actualizarTotalPago(mod)){
-                JOptionPane.showMessageDialog(null, "Venta modificado con éxito");
+                JOptionPane.showMessageDialog(null, "Venta realizada con éxito");
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Error al modificar");

@@ -155,10 +155,8 @@ public class Historial extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnNuevoH)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(btnRefreshH)))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                            .addComponent(btnRefreshH))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,16 +170,17 @@ public class Historial extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addComponent(btnBuscarH)
                     .addComponent(btnRegresarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(btnNuevoH)
-                        .addGap(226, 226, 226)
-                        .addComponent(btnRefreshH))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(72, 72, 72))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRefreshH)
+                        .addGap(80, 80, 80))))
         );
 
         pack();
@@ -220,6 +219,7 @@ public class Historial extends javax.swing.JFrame {
         AgregarHistorial ah= new AgregarHistorial();
         ah.setVisible(true);
         //this.setVisible(false);
+        //this.dispose();
                 
     }//GEN-LAST:event_btnNuevoHActionPerformed
 
@@ -227,7 +227,7 @@ public class Historial extends javax.swing.JFrame {
         
               
         DefaultTableModel dfm = new DefaultTableModel();
-        int IDcliente = Integer.parseInt(this.txtBuscarH.getText());
+        String Nombre = (this.txtBuscarH.getText());
         
         
         Hist= this.tablaHistorial;
@@ -236,7 +236,7 @@ public class Historial extends javax.swing.JFrame {
         dfm.setColumnIdentifiers(new Object[]{"ID","ALTURA","FECHA","PESO", "IDCLIENTE"});
         
         Conexion cn = new Conexion();
-        rs = cn.BuscarHistorial(IDcliente);
+        rs = cn.BuscarHistorial(Nombre);
         try {
             while(rs.next()){
                 dfm.addRow(new Object[]{rs.getInt("idHistorial"),rs.getFloat("altura"),rs.getDate("fecha"),rs.getFloat("peso"),rs.getInt("idCliente")});

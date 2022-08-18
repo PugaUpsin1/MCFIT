@@ -9,13 +9,19 @@ import Vista.Ventanas.VentasProducto.Compras;
 import Vista.Ventanas.Membresias.Membresias;
 import java.awt.Color;
 import java.awt.Container;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 
-public class Principal extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame implements Runnable{
     Container cont = this.getContentPane();
- 
+    String hora, minutos, segundos; 
+    Thread hilo; 
     public Principal() {
         initComponents();
+        hilo = new Thread(this);
+        hilo.start();
         cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
         this.setTitle("MCFIT");
@@ -38,6 +44,7 @@ public class Principal extends javax.swing.JFrame {
         btnconf = new javax.swing.JButton();
         btnVentas1 = new javax.swing.JButton();
         btnCompras = new javax.swing.JButton();
+        txtHora = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
 
@@ -50,7 +57,7 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MC FIT");
         setBackground(new java.awt.Color(204, 204, 204));
-        setPreferredSize(new java.awt.Dimension(1301, 700));
+        setPreferredSize(new java.awt.Dimension(1280, 400));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -135,6 +142,9 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 230, 100));
 
+        txtHora.setEditable(false);
+        getContentPane().add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
+
         jMenu4.setText("Propiedades");
         jMenuBar1.add(jMenu4);
 
@@ -185,7 +195,22 @@ public class Principal extends javax.swing.JFrame {
         comp.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnComprasActionPerformed
-
+    public void hora(){
+        Calendar calendario = new GregorianCalendar(); 
+        Date horaActual = new Date(); 
+        calendario.setTime(horaActual);
+        hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+    }
+    
+    public void run() {
+        Thread current = Thread.currentThread();
+        while(current == hilo){
+            hora();
+            txtHora.setText(hora+":"+minutos+":"+segundos);
+        }        
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -215,6 +240,7 @@ public class Principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
+                
             }
         });
     }
@@ -233,5 +259,6 @@ public class Principal extends javax.swing.JFrame {
     javax.swing.JMenu jMenu4;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JMenuBar jMenuBar2;
+    javax.swing.JTextField txtHora;
     // End of variables declaration//GEN-END:variables
 }

@@ -198,8 +198,8 @@ public class AgregarHistorial extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         Historial his = new Historial();
-        his.setVisible(true);
-        this.setVisible(false);
+        //his.setVisible(true);
+        //this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 

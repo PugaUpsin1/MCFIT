@@ -165,8 +165,9 @@ public class PagoMembresia extends javax.swing.JFrame {
 
     private void btnRegresarPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarPMActionPerformed
         Membresias Prin = new Membresias();
-        Prin.setVisible(true);
-        this.setVisible(false);
+        //Prin.setVisible(true);
+        //this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarPMActionPerformed
 
     private void btnBuscarPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPMActionPerformed
@@ -198,7 +199,20 @@ public class PagoMembresia extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAggPMActionPerformed
 
     private void btnRefreshPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshPMActionPerformed
-
+        DefaultTableModel dfm = new DefaultTableModel();
+        PagoM= this.tablaPagoM;
+        PagoM.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","METODO PAGO","FECHA PAGO","HORA","IDCLIENTE", "IDEMPLEADO", "IDMEMBRESIA"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectPagoMembresia();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idPagoMem"),rs.getString("metodoPago"),rs.getDate("fechaPago"),rs.getString("hora"),rs.getInt("idCliente"),rs.getInt("idEmpleado"),rs.getInt("idMembresia")});
+            }
+        } catch (Exception e) {
+        }
 
     }//GEN-LAST:event_btnRefreshPMActionPerformed
 

@@ -410,8 +410,9 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
 
     private void btnRegresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarVActionPerformed
         Compras com = new Compras();
-        com.setVisible(true);
-        this.setVisible(false);
+        //com.setVisible(true);
+        //this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarVActionPerformed
 
     private void txtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActionPerformed
@@ -512,7 +513,7 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
             mod.setIdCompras(Integer.valueOf(id));
          
             if(sqlC.actualizarTotalCompra(mod)){
-                JOptionPane.showMessageDialog(null, "Cliente modificado con éxito");
+                JOptionPane.showMessageDialog(null, "Compra realizada con éxito");
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Error al modificar");

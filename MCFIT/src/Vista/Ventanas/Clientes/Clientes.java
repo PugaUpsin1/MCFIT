@@ -149,21 +149,21 @@ public class Clientes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(151, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnRefresh)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(171, 171, 171)
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(8, 8, 8)
-                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(171, 171, 171)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtBus, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1051, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAgg)
-                    .addComponent(btnEdit, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnAgg)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnRefresh))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -184,22 +184,37 @@ public class Clientes extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addComponent(btnBuscar))
                 .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAgg)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEdit))
+                        .addComponent(btnEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRefresh))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRefresh)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel dfm = new DefaultTableModel();
+        Client= this.ClienT;
+        Client.setModel(dfm);
+        
+        //dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD","SEXO","ESTADO CIVIL","FECHA DE NACIMIENTO","OCUPACION","CORREO","DIRECCION","FECHA DE INSCRIPCION","CUESTIONARIO","FOTO","MEMBRESIA"});
+        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","TELEFONO","EDAD", "CORREO"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectClientes();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE")});
+                //dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre"),rs.getString("apellido"),rs.getString("celular"),rs.getInt("edad"),rs.getString("correoE"),rs.getString("sexo"),rs.getString("estadoCivil"), rs.getString("fechaNacimiento"),rs.getString("ocupacion"),rs.getString("correoE"), rs.getString("direccion"), rs.getString("fechaInscripcion"), rs.getString("rutaCuestionario"), rs.getString("foto"), rs.getInt("idMembresia")});
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnRegreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegreActionPerformed

@@ -170,7 +170,9 @@ public class Venta extends javax.swing.JFrame {
     private void btnRegresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarVActionPerformed
         Principal Prin = new Principal();
         Prin.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
+        this.dispose();
+
     }//GEN-LAST:event_btnRegresarVActionPerformed
 
     private void btnRefreshVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshVActionPerformed
@@ -194,7 +196,7 @@ public class Venta extends javax.swing.JFrame {
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         Detalle_prod DetaVent = new Detalle_prod();
         DetaVent.setVisible(true);
-        
+        //this.dispose();
     }//GEN-LAST:event_btnVentasActionPerformed
 
     private void btnBuscarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVActionPerformed

@@ -180,8 +180,8 @@ public class agregarMembresia extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         Membresias mem = new Membresias();
-        mem.setVisible(true);
-        this.setVisible(false);
+        //mem.setVisible(true);
+        //this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 

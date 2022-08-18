@@ -170,7 +170,8 @@ public class Compras extends javax.swing.JFrame {
     private void btnRegresarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarCActionPerformed
         Principal Prin = new Principal();
         Prin.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarCActionPerformed
 
     private void btnBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCActionPerformed
@@ -198,10 +199,25 @@ public class Compras extends javax.swing.JFrame {
         Detalle_compras DetaComp = new Detalle_compras();
         DetaComp.setVisible(true);
         //this.setVisible(false);
+        //this.dispose();
     }//GEN-LAST:event_btnComprasActionPerformed
 
     private void btnRefreshCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel dfm = new DefaultTableModel();
+        Comp= this.tablaCompras;
+        Comp.setModel(dfm);
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","TOTAL COMPRA","HORA","FECHA COMPRA","METODO PAGO", "IDEMPLEADO"});
+        
+        Conexion cn = new Conexion();
+        rs = cn.SelectCompras();
+        try {
+            while(rs.next()){
+                dfm.addRow(new Object[]{rs.getInt("idCompra"),rs.getFloat("totalCompra"),rs.getString("hora"),rs.getString("fechaCompra"),rs.getString("metodoPago"),rs.getInt("idEmpleado")});
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se mostro Correctamente");
+        }
     }//GEN-LAST:event_btnRefreshCActionPerformed
 
     /**

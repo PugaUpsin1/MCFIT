@@ -316,8 +316,8 @@ public class agregarPagoMem extends javax.swing.JFrame implements Runnable{
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         PagoMembresia pagM = new PagoMembresia();
-        pagM.setVisible(true);
-        this.setVisible(false);
+        //pagM.setVisible(true);
+        //this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
