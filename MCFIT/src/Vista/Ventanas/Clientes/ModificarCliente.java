@@ -3,6 +3,8 @@ package Vista.Ventanas.Clientes;
 import Modelo.Clientes.Clientes1;
 import Modelo.Clientes.sqlClientes;
 import static Vista.Ventanas.Clientes.addClientes.fechaActual;
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Image;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -12,14 +14,14 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-/**
- *
- * @author Mariana Hernández
- */
-public class ModificarCliente extends javax.swing.JFrame {
 
+public class ModificarCliente extends javax.swing.JFrame {
+    Container cont = this.getContentPane();
     public ModificarCliente() {
         initComponents();
+        cont.setBackground(Color.WHITE);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Pago Membresia");
     }
 
     /**

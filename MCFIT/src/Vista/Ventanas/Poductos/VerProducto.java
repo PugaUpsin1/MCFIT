@@ -12,6 +12,7 @@ import Vista.Ventanas.Principal.Principal;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -24,12 +25,15 @@ public class VerProducto extends javax.swing.JFrame {
 
     
     public VerProducto() {
-        
+        Container cont = this.getContentPane();
         initComponents();
         //this.getContentPane().setBackground(new Color(139,150,216));
-        this.getContentPane().setBackground(Color.white);
-        this.setSize(638, 420);
+        //this.getContentPane().setBackground(Color.white);
+        //this.setSize(638, 420);
+        //this.setLocationRelativeTo(null);
+        cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
+        this.setTitle("Pago Membresia");
         
 
         

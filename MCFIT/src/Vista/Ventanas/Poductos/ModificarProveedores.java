@@ -3,6 +3,8 @@ package Vista.Ventanas.Poductos;
 
 import Modelo.Producto.sqlProveedores;
 import Modelo.Producto.Proveedores;
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -11,9 +13,12 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ModificarProveedores extends javax.swing.JFrame {
-
+Container cont = this.getContentPane();
     public ModificarProveedores() {
         initComponents();
+        cont.setBackground(Color.WHITE);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Pago Membresia");
     }
 
     /**
