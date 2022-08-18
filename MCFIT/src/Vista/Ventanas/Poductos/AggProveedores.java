@@ -297,7 +297,6 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
     }    
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
             sqlProveedores sqlP = new sqlProveedores();
             Proveedores prov = new Proveedores(); 
             
