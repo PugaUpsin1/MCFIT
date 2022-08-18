@@ -4,9 +4,12 @@ package Vista.Ventanas.Principal;
 import Vista.Ventanas.Poductos.Productos;
 import Vista.Ventanas.Poductos.Proveedores;
 import Vista.Ventanas.Clientes.Clientes;
+import Vista.Ventanas.Clientes.addClientes;
 import Vista.Ventanas.VentasProducto.Venta;
 import Vista.Ventanas.VentasProducto.Compras;
 import Vista.Ventanas.Membresias.Membresias;
+import Vista.Ventanas.Membresias.agregarPagoMem;
+import Vista.Ventanas.VentasProducto.Detalle_prod;
 import java.awt.Color;
 import java.awt.Container;
 import java.util.Calendar;
@@ -46,7 +49,14 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         btnCompras = new javax.swing.JButton();
         lblHoraActual = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
+        menuPropiedades = new javax.swing.JMenu();
+        menuClientes = new javax.swing.JMenu();
+        menuAddCliente = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menuMembresia = new javax.swing.JMenu();
+        menuPagoMem = new javax.swing.JMenu();
+        menuVentas = new javax.swing.JMenu();
+        menuAggVenta = new javax.swing.JMenu();
 
         jMenu1.setText("File");
         jMenuBar2.add(jMenu1);
@@ -57,7 +67,10 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MC FIT");
         setBackground(new java.awt.Color(204, 204, 204));
+<<<<<<< Updated upstream
         setPreferredSize(new java.awt.Dimension(1300, 700));
+=======
+>>>>>>> Stashed changes
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -150,8 +163,53 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         lblHoraActual.setText("     ");
         getContentPane().add(lblHoraActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
-        jMenu4.setText("Propiedades");
-        jMenuBar1.add(jMenu4);
+        menuPropiedades.setText("Propiedades");
+        menuPropiedades.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenuBar1.add(menuPropiedades);
+
+        menuClientes.setText("Clientes");
+        menuClientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        menuAddCliente.setText("Nuevo cliente");
+        menuAddCliente.setToolTipText("");
+        menuAddCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menuAddCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAddClienteActionPerformed(evt);
+            }
+        });
+        menuClientes.add(menuAddCliente);
+        menuClientes.add(jSeparator1);
+
+        jMenuBar1.add(menuClientes);
+
+        menuMembresia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        menuMembresia.setLabel("Membresías");
+
+        menuPagoMem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menuPagoMem.setLabel("Pago de membresía/inscripcion");
+        menuPagoMem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPagoMemActionPerformed(evt);
+            }
+        });
+        menuMembresia.add(menuPagoMem);
+
+        jMenuBar1.add(menuMembresia);
+
+        menuVentas.setText("Ventas");
+        menuVentas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        menuAggVenta.setText("Agregar venta");
+        menuAggVenta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menuAggVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAggVentaActionPerformed(evt);
+            }
+        });
+        menuVentas.add(menuAggVenta);
+
+        jMenuBar1.add(menuVentas);
 
         setJMenuBar(jMenuBar1);
 
@@ -201,6 +259,21 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         comp.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnComprasActionPerformed
+
+    private void menuAddClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAddClienteActionPerformed
+        addClientes c = new addClientes();
+        c.setVisible(true);
+    }//GEN-LAST:event_menuAddClienteActionPerformed
+
+    private void menuPagoMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPagoMemActionPerformed
+        agregarPagoMem pagoM = new agregarPagoMem(); 
+        pagoM.setVisible(true);
+    }//GEN-LAST:event_menuPagoMemActionPerformed
+
+    private void menuAggVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAggVentaActionPerformed
+        Detalle_prod ventaProd = new Detalle_prod();
+        ventaProd.setVisible(true);
+    }//GEN-LAST:event_menuAggVentaActionPerformed
     public void hora(){
         Calendar calendario = new GregorianCalendar(); 
         Date horaActual = new Date(); 
@@ -263,9 +336,16 @@ public class Principal extends javax.swing.JFrame implements Runnable{
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;
     javax.swing.JMenu jMenu3;
-    javax.swing.JMenu jMenu4;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JMenuBar jMenuBar2;
+    javax.swing.JPopupMenu.Separator jSeparator1;
     javax.swing.JLabel lblHoraActual;
+    javax.swing.JMenu menuAddCliente;
+    javax.swing.JMenu menuAggVenta;
+    javax.swing.JMenu menuClientes;
+    javax.swing.JMenu menuMembresia;
+    javax.swing.JMenu menuPagoMem;
+    javax.swing.JMenu menuPropiedades;
+    javax.swing.JMenu menuVentas;
     // End of variables declaration//GEN-END:variables
 }
