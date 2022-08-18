@@ -68,6 +68,9 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         btnProductos.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/proteina.png"))); // NOI18N
         btnProductos.setText("  Productos");
+        btnProductos.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        btnProductos.setMinimumSize(new java.awt.Dimension(0, 0));
+        btnProductos.setPreferredSize(new java.awt.Dimension(1301, 700));
         btnProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProductosActionPerformed(evt);

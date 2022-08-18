@@ -21,7 +21,7 @@ public class ModificarCliente extends javax.swing.JFrame {
         initComponents();
         cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
-        this.setTitle("Pago Membresia");
+        this.setTitle("Clientes");
     }
 
     /**

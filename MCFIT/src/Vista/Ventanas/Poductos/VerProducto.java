@@ -33,7 +33,7 @@ public class VerProducto extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
         cont.setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
-        this.setTitle("Pago Membresia");
+        this.setTitle("Producto");
         
 
         
