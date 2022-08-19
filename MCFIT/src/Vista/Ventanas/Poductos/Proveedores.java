@@ -281,23 +281,23 @@ public class Proveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-
+        Conexion cn = new Conexion();
+        String nombreP = this.txtBus.getText();
+        
         DefaultTableModel dfm = new DefaultTableModel();
         Prov= this.ProveT;
         Prov.setModel(dfm);
-
-        dfm.setColumnIdentifiers(new Object[]{"ID","PRODUCTO","DESCRIPCION","PV","PC","EXISTENCIA", "PROVEDOR"});
-
-        Conexion cn = new Conexion();
-        rs = cn.SelectProductos();
+        
+        dfm.setColumnIdentifiers(new Object[]{"ID","NOMBRE","DOMICILIO","TELEFONO","CONTACTO","EMAIL"});
+        
+        
+        rs = cn.SelectProveedores();
         try {
             while(rs.next()){
-                dfm.addRow(new Object[]{rs.getInt("idProducto"),rs.getString("tipoProducto"),rs.getString("descripcion"),rs.getDouble("precioVenta"),rs.getDouble("precioCompra"),rs.getInt("existencia"),rs.getInt("idProveedor")});
+                dfm.addRow(new Object[]{rs.getInt("idProveedor"),rs.getString("nombreP"),rs.getString("domicilio"),rs.getString("telefono"),rs.getString("nombreContacto"),rs.getString("email")});
             }
         } catch (Exception e) {
         }
-
-        this.txtBus.setText("");
 
     }//GEN-LAST:event_btnRefreshActionPerformed
 
