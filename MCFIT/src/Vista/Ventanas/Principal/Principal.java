@@ -49,12 +49,8 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         btnCompras = new javax.swing.JButton();
         lblHoraActual = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        menuAddCliente = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         menuAggPagoMem = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        menuAggVenta = new javax.swing.JMenu();
 
         jMenu1.setText("File");
         jMenuBar2.add(jMenu1);
@@ -158,20 +154,6 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         lblHoraActual.setText("     ");
         getContentPane().add(lblHoraActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
-        jMenu4.setText("Clientes");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        menuAddCliente.setText("+ Nuevo cliente");
-        menuAddCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        menuAddCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAddClienteActionPerformed(evt);
-            }
-        });
-        jMenu4.add(menuAddCliente);
-
-        jMenuBar1.add(jMenu4);
-
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Ventanas/Icons/tarjeta-de-membresia.png"))); // NOI18N
         jMenu5.setText("Membresías");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -186,20 +168,6 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         jMenu5.add(menuAggPagoMem);
 
         jMenuBar1.add(jMenu5);
-
-        jMenu6.setText("Ventas");
-        jMenu6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        menuAggVenta.setText("+ Agregar Venta");
-        menuAggVenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        menuAggVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAggVentaActionPerformed(evt);
-            }
-        });
-        jMenu6.add(menuAggVenta);
-
-        jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
 
@@ -250,20 +218,10 @@ public class Principal extends javax.swing.JFrame implements Runnable{
         this.dispose();
     }//GEN-LAST:event_btnComprasActionPerformed
 
-    private void menuAddClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAddClienteActionPerformed
-        addClientes nuevoC = new addClientes(); 
-        nuevoC.setVisible(true);
-    }//GEN-LAST:event_menuAddClienteActionPerformed
-
     private void menuAggPagoMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAggPagoMemActionPerformed
         agregarPagoMem pagoM = new agregarPagoMem(); 
         pagoM.setVisible(true);
     }//GEN-LAST:event_menuAggPagoMemActionPerformed
-
-    private void menuAggVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAggVentaActionPerformed
-        Detalle_prod venta = new Detalle_prod(); 
-        venta.setVisible(true);
-    }//GEN-LAST:event_menuAggVentaActionPerformed
     public void hora(){
         Calendar calendario = new GregorianCalendar(); 
         Date horaActual = new Date(); 
@@ -326,14 +284,10 @@ public class Principal extends javax.swing.JFrame implements Runnable{
     javax.swing.JLabel jLabel2;
     javax.swing.JMenu jMenu1;
     javax.swing.JMenu jMenu3;
-    javax.swing.JMenu jMenu4;
     javax.swing.JMenu jMenu5;
-    javax.swing.JMenu jMenu6;
     javax.swing.JMenuBar jMenuBar1;
     javax.swing.JMenuBar jMenuBar2;
     javax.swing.JLabel lblHoraActual;
-    javax.swing.JMenu menuAddCliente;
     javax.swing.JMenuItem menuAggPagoMem;
-    javax.swing.JMenu menuAggVenta;
     // End of variables declaration//GEN-END:variables
 }

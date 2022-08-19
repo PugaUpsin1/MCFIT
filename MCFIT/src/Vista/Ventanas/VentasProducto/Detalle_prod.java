@@ -131,6 +131,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel10.setText("Total Venta:");
 
+        btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAgregar.setText("+");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,6 +192,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("ID PagoPr:");
 
+        btnCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,6 +200,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             }
         });
 
+        btnRealizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRealizar.setText("Iniciar la Venta");
         btnRealizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,6 +208,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
             }
         });
 
+        btnGuardarV.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGuardarV.setText("Finalizar la Venta");
         btnGuardarV.setToolTipText("");
         btnGuardarV.addActionListener(new java.awt.event.ActionListener() {
@@ -284,7 +288,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                                 .addComponent(btnRegresarV, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblDetalleProd, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(115, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -310,7 +314,7 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                         .addGap(178, 178, 178))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE))
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
