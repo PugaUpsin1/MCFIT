@@ -414,6 +414,10 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
                
 
         ne.InsertarDetalleVenta(Cantidad, Precio, IDProducto,IDPagoPr);
+        
+        this.txtIdProductoV.setText("");
+        this.spnCantidad.setToolTipText("");
+        this.txtPrecio.setText("");
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -448,6 +452,11 @@ public class Detalle_prod extends javax.swing.JFrame implements Runnable{
          
             if(sqlC.actualizarTotalPago(mod)){
                 JOptionPane.showMessageDialog(null, "Venta realizada con éxito");
+                this.txtIdEmpleado.setText("");
+                this.txtIdPagoPr.setText("");
+                this.txtIdCliente.setText("");
+                this.txtHora.setText("");
+                this.cbxMetodoPago.setToolTipText("");
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Error al modificar");

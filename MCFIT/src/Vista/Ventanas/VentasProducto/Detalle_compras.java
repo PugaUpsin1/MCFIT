@@ -432,24 +432,14 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
 
         ne.InsertarDetalleCompra(Cantidad, Precio, IDProducto,IDCompra);
         
-        //JOptionPane.showMessageDialog(null, "DetalleCompra agregada con éxito");
-        
+        this.txtIdProducto.setText("");
+        this.spnCantidad.setToolTipText("");
+        this.txtPrecio.setText("");
         //Compras com = new Compras();
         //this.setVisible(false);
         //com.setVisible(true);
     }//GEN-LAST:event_btnAgregarCActionPerformed
-//    void calcularTotal(){
-//    //double total = Double.parseDouble(this.lblTotalCompra.getText());    
-//    total = 0;
-//    for(int i=0; i<tablaDetalleCompras.getRowCount(); i++)
-//        {
-//            int Cantidad =Integer.parseInt(tablaDetalleCompras.getValueAt(i, 3).toString());
-//            double Precio =Double.parseDouble(tablaDetalleCompras.getValueAt(i, 4).toString());
-//            total=total+(Cantidad * Precio);
-//            System.out.println("resultado:" + total);
-//        }
-//        lblTotalCompra.setText(""+total+"0");
-//    }
+
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         int num1 = Integer.parseInt(spnCantidad.getValue().toString());
         double num2 = Double.parseDouble(this.txtPrecio.getText());
@@ -514,7 +504,10 @@ public class Detalle_compras extends javax.swing.JFrame implements Runnable{
          
             if(sqlC.actualizarTotalCompra(mod)){
                 JOptionPane.showMessageDialog(null, "Compra realizada con éxito");
-                
+                this.txtIdEmpleado.setText("");
+                this.txtIdCompra.setText("");
+                this.txtHora.setText("");
+                this.cbxMetodoPago.setToolTipText("");
             }else{
                 JOptionPane.showMessageDialog(null, "Error al modificar");
             }
