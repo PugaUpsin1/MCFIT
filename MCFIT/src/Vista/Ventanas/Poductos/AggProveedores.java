@@ -290,6 +290,7 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
         this.txtIdProveedor.setText("");
         this.txtNombre.setText("");
         this.txtDomicilio.setText("");
+        this.txtCP.setText("");
         this.txtTelefono.setText("");
         this.txtNombreC.setText("");
         this.txtCorreoElectronico.setText("");
