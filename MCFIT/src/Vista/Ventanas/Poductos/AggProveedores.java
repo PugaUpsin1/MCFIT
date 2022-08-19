@@ -69,7 +69,7 @@ public class AggProveedores extends javax.swing.JFrame implements ActionListener
         txtDomicilio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Clientes");
+        setTitle("Proveedores");
 
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNombre.setText("Nombre:");
